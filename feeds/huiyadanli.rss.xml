@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>An acre of land</title><link>http://huiyadanli.github.io/</link><description></description><atom:link href="http://huiyadanli.github.io/feeds/huiyadanli.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 23 Nov 2015 22:24:00 +0800</lastBuildDate><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。&lt;/p&gt;
+&lt;h3 id="63177c"&gt;未完成的新博客&lt;/h3&gt;
+&lt;hr/&gt;
+&lt;p&gt;是什么原因让我又来搞了个博客来糟蹋呢？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;让我那些散落在硬盘角落里的东西重见天日。&lt;/li&gt;
+&lt;li&gt;顺便折腾下Python，还有提升我那半吊子的前端能力。&lt;/li&gt;
+&lt;li&gt;提升逼格！（这才是主要原因吧 (╯°Д°)╯︵ ┻━┻ ）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我用了些什么东西来建造博客？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主机：&lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;  （贱笑）&lt;/li&gt;
+&lt;li&gt;域名：打算在Godaddy买个，名字叫什么真的好纠结呢。&lt;/li&gt;
+&lt;li&gt;使用&lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt;生成的静态博客，并加装了&lt;a href="http://blog.atime.me/"&gt;Ma Wenbao&lt;/a&gt;的&lt;a href="https://github.com/mawenbao/niu-x2-sidebar/tree/master"&gt;Niu-X2&lt;/a&gt;主题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;容我再折腾折腾。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Mon, 23 Nov 2015 22:24:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2015-11-23:life/build-a-blog.html</guid><category>pelican</category><category>python</category><category>blog</category></item></channel></rss>

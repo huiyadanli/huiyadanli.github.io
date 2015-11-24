@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分类 - An acre of land</title>
+    <title>标签 - An acre of land</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="http://huiyadanli.github.io/theme/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="http://huiyadanli.github.io/theme/font-awesome/css/font-awesome.min.css" type="text/css" />
@@ -94,18 +94,18 @@
 </div>    </div>
     
     <div id="body-content">
-    <div class="niu2-page">
-      <h1>分类</h1>
-      <ul class="niu2-category-list">
-
-        <li><a href="http://huiyadanli.github.io/life/index.html">
-            <i class="fa fa-coffee"></i>日常
-        </a>(1)</li>
-      </ul>
+<div class="col-md-8 col-md-offset-2">
+    <h1><i class="fa fa-tags"></i>标签</h1>
+    <input id="niu2-tagcloud-filter-input" type="text" placeholder="过滤标签，不妨试试[0-9]{3}"
+           class="form-control pull-left" onkeyup="tag_filter()">
+    <button class="btn btn-success niu2-button" 
+            onclick="$('#niu2-tagcloud-filter-input').val('');tag_filter()">清空</button>
+    <div id="niu2-tagcloud">
     </div>
+</div>
     </div>
 
-    <div id="body-footer" class="col-md-6 col-md-offset-2">
+<div id="body-footer" class="col-md-8 col-md-offset-2">
 <div class="niu2-footer">
     <hr/>
 	<p>
@@ -132,7 +132,7 @@
 	            <i class="fa fa-rss fa-lg"></i>
 	        </a>
 	</p>
-</div>    </div>
+</div></div>
 <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","XXXXXX"]);_gaq.push(["_trackPageview"]);(function(){var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();</script>    
     <div id="niu2-pygments" data-theme="github"></div>
 
@@ -140,6 +140,19 @@
     <script type="text/javascript" src="http://huiyadanli.github.io/theme/js/niu2.min.js"></script>
     <script type="text/javascript" src="http://huiyadanli.github.io/theme/js/bootstrap.min.js"></script>
     <div id="niu2-lazy-load-text" data-loading="(｡・`ω´･) 拼命加载中"></div>
-    <script type="text/javascript"></script>
+<script type="text/javascript" src="http://huiyadanli.github.io/theme/js/tagcloud.min.js"></script>
+    <script type="text/javascript">
+var tc = TagCloud.create();
+tc.add('python', 1, 'http://huiyadanli.github.io/tag/python.html', null);
+tc.add('pelican', 1, 'http://huiyadanli.github.io/tag/pelican.html', null);
+tc.add('blog', 1, 'http://huiyadanli.github.io/tag/blog.html', null);
+tc.loadEffector('CountSize');tc.loadEffector('CountSize');
+
+function tag_filter() {
+  tc.searchAndDisplay('niu2-tagcloud', $('#niu2-tagcloud-filter-input').val());
+  return false;
+}
+tc.setup('niu2-tagcloud');
+</script>
   </body>
 </html>
