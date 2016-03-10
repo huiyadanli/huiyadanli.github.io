@@ -9,15 +9,25 @@
 &lt;p&gt;返回信息如下，后面会用到 &lt;code&gt;servertime&lt;/code&gt; &lt;code&gt;nonce&lt;/code&gt; &lt;code&gt;pcid&lt;/code&gt; &lt;code&gt;pubkey&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt; 这几个参数，其中&lt;code&gt;pubkey&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt;的值是固定的（1年多都没变）。
 还有一个&lt;code&gt;showpin&lt;/code&gt;上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登陆时会需要验证码。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;sinaSSOController.preloginCallBack({"retcode":0,"servertime": 1457525116,"pcid":"ja-69837828b9f065232d6ea4a3130fe2cdbd47","nonce":"7R4XFC","pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443","rsakv":"1330428213","is_openlock":0,"showpin":0,"exectime":12})&lt;/p&gt;
+&lt;p&gt;sinaSSOController.preloginCallBack({"retcode":0,"servertime": 1457525116,
+"pcid":"ja-69837828b9f065232d6ea4a3130fe2cdbd47","nonce":"7R4XFC",
+"pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062
+882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F
+444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6
+739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",
+"rsakv":"1330428213","is_openlock":0,"showpin":0,"exectime":12})&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;2.自己构造以下数据POST到http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)
 其中&lt;code&gt;su&lt;/code&gt;依旧是Base64加密后的用户名，&lt;code&gt;servertime&lt;/code&gt; &lt;code&gt;nonce&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt; 字段的值就是刚刚GET得到的值，&lt;code&gt;sp&lt;/code&gt;是经过RSA2加密后的密码。其余的值都可以保持不变。
 这里有一个登陆的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html
 ！如果上面一步的返回值&lt;code&gt;showpin&lt;/code&gt;=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=&lt;code&gt;pcid&lt;/code&gt; 来得到验证码图片（&lt;code&gt;pcid&lt;/code&gt; 也来自上一步哟），然后在下面的POST数据中加上&lt;code&gt;pcid&lt;/code&gt; &lt;code&gt;door&lt;/code&gt; 两个字段，&lt;code&gt;door&lt;/code&gt;的值就是验证码的值&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;entry=weibo&amp;amp;gateway=1&amp;amp;from=&amp;amp;savestate=7&amp;amp;useticket=1&amp;amp;pagerefer=&amp;amp;vsnf=1&amp;amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;amp;service=miniblog&amp;amp;servertime=1457525116&amp;amp;nonce=7R4XFC&amp;amp;pwencode=rsa2&amp;amp;rsakv=1330428213&amp;amp;sp=&lt;code&gt;加密后的密码&lt;/code&gt;&amp;amp;sr=1745*982&amp;amp;encoding=UTF-8&amp;amp;prelt=78&amp;amp;url=http%3A%2F%2F
-www.weibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;amp;returntype=META&lt;/p&gt;
+&lt;p&gt;entry=weibo&amp;amp;gateway=1&amp;amp;from=&amp;amp;savestate=7&amp;amp;useticket=1&amp;amp;pagerefer=
+&amp;amp;vsnf=1&amp;amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;amp;service=miniblog&amp;amp;servertime=1457525116
+&amp;amp;nonce=7R4XFC&amp;amp;pwencode=rsa2&amp;amp;rsakv=1330428213&amp;amp;sp=&lt;code&gt;加密后的密码&lt;/code&gt;
+&amp;amp;sr=1745*982&amp;amp;encoding=UTF-8&amp;amp;prelt=78&amp;amp;url=http%3A%2F%2F
+www.weibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26
+callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;amp;returntype=META&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登陆的结果（0-登陆成功，2070-验证码错误，4049-验证码为空，101密码错误）&lt;/p&gt;
 &lt;p&gt;跳转到那个页面，就可以得到登陆的cookie，模拟登陆完成。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登陆</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。&lt;/p&gt;
