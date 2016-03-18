@@ -104,9 +104,8 @@
 </div>
 <div id="niu2-left-container" class="col-md-6 col-md-offset-2 with-right-border">
     <div id="niu2-main-content">
-        <h1 id="05bb23">C#实现新浪微博模拟登陆</h1>
-<p>14年暑假写的东西，今天试用了一下发现居然还能用。</p>
-<h2 id="cb4b1d">大致过程</h2>
+        <p>14年暑假写的东西，今天试用了一下发现居然还能用。</p>
+<h2 id="0dc905">模拟登陆原理</h2>
 <p>1.输入用户名时，发送如下GET请求，返回一大堆登陆所需要的参数。其中<code>entry</code> <code>callback</code> <code>rsakt</code> <code>client</code>参数都是固定不变的，<code>su</code>是经过Base64加密后的用户名，<code>checkpin</code> =1时，会返回<code>showpin</code>告诉你是否需要验证码，<code>_</code>很明显是时间戳，没有这个参数也可以正常得到返回信息。</p>
 <blockquote>
 <p>http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;callback=sinaSSOController.preloginCallBack&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;rsakt=mod&amp;checkpin=1&amp;client=ssologin.js(v1.4.18)&amp;_=1457524967315</p>
@@ -124,8 +123,8 @@
 </blockquote>
 <p>2.自己构造以下数据POST到http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)
 其中<code>su</code>依旧是Base64加密后的用户名，<code>servertime</code> <code>nonce</code> <code>rsakv</code> 字段的值就是刚刚GET得到的值，<code>sp</code>是经过RSA2加密后的密码。其余的值都可以保持不变。
-这里有一个登陆的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html
-！如果上面一步的返回值<code>showpin</code>=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=<code>pcid</code> 来得到验证码图片（<code>pcid</code> 也来自上一步哟），然后在下面的POST数据中加上<code>pcid</code> <code>door</code> 两个字段，<code>door</code>的值就是验证码的值</p>
+这里有一个登陆的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html</p>
+<p>！如果上面一步的返回值<code>showpin</code>=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=<code>pcid</code> 来得到验证码图片（<code>pcid</code> 也来自上一步哟），然后在下面的POST数据中加上<code>pcid</code> <code>door</code> 两个字段，<code>door</code>的值就是验证码的值</p>
 <blockquote>
 <p>entry=weibo&amp;gateway=1&amp;from=&amp;savestate=7&amp;useticket=1&amp;pagerefer=
 &amp;vsnf=1&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;service=miniblog&amp;servertime=1457525116
@@ -136,6 +135,9 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
 </blockquote>
 <p>POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登陆的结果（0-登陆成功，2070-验证码错误，4049-验证码为空，101密码错误）</p>
 <p>跳转到那个页面，就可以得到登陆的cookie，模拟登陆完成。</p>
+<h2 id="a6e20d">C#实现</h2>
+<p>直接看代码吧：
+https://github.com/huiyadanli/SinaLogin</p>
     </div>
     <div id="content-comments">
 <!-- 多说评论框 start -->
@@ -161,7 +163,7 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
         <div class="niu2-sidebar-label"><i class="fa fa-calendar"></i>发布时间:</div>
         <div class="niu2-sidebar-value">2016-03-10 23:03</div>
         <div class="niu2-sidebar-label"><i class="fa fa-pencil" style="font-size: 1.05em;"></i>最后修改:</div>
-        <div class="niu2-sidebar-value">2016-03-10 23:03</div>
+        <div class="niu2-sidebar-value">2016-03-18 13:00</div>
         <div class="niu2-sidebar-label"><i class="fa fa-code"></i>分类:</div>
         <div class="niu2-sidebar-value"><a href="http://huiyadanli.github.io/code/index.html">代码</a></div>
         <div class="niu2-sidebar-label"><i class="fa fa-tag"></i>标签:</div>
@@ -176,7 +178,7 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
         </div>
         <ol id="niu2-sidebar-toc-list">
             <li><a href="#content-heading">C#实现新浪模微博拟登陆v1.4.18</a></li>
-            <li><a href='#05bb23'>C#实现新浪微博模拟登陆</a><ol><li><a href='#cb4b1d'>大致过程</a></li></ol></li>
+            <li><a href='#0dc905'>模拟登陆原理</a></li><li><a href='#a6e20d'>C#实现</a></li>
             <li><a href="#content-comments">评论</a></li>
         </ol>
     </div>
