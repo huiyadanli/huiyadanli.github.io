@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C#实现新浪模微博拟登陆v1.4.18 - An acre of land</title>
+    <title>C# 实现新浪微博模拟登录v1.4.18 - An acre of land</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="http://huiyadanli.github.io/theme/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="http://huiyadanli.github.io/theme/font-awesome/css/font-awesome.min.css" type="text/css" />
@@ -100,18 +100,18 @@
     
     <div id="body-content">
 <div class="col-md-8 col-md-offset-2">
-    <h1 id="content-heading">C#实现新浪模微博拟登陆v1.4.18</h1>
+    <h1 id="content-heading">C# 实现新浪微博模拟登录v1.4.18</h1>
 </div>
 <div id="niu2-left-container" class="col-md-6 col-md-offset-2 with-right-border">
     <div id="niu2-main-content">
         <p>14年暑假写的东西，今天试用了一下发现居然还能用。</p>
-<h2 id="0dc905">模拟登陆原理</h2>
-<p>1.输入用户名时，发送如下GET请求，返回一大堆登陆所需要的参数。其中<code>entry</code> <code>callback</code> <code>rsakt</code> <code>client</code>参数都是固定不变的，<code>su</code>是经过Base64加密后的用户名，<code>checkpin</code> =1时，会返回<code>showpin</code>告诉你是否需要验证码，<code>_</code>很明显是时间戳，没有这个参数也可以正常得到返回信息。</p>
+<h2 id="e82624">模拟登录原理</h2>
+<p>1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中<code>entry</code> <code>callback</code> <code>rsakt</code> <code>client</code>参数都是固定不变的，<code>su</code>是经过Base64加密后的用户名，<code>checkpin</code> =1时，会返回<code>showpin</code>告诉你是否需要验证码，<code>_</code>很明显是时间戳，没有这个参数也可以正常得到返回信息。</p>
 <blockquote>
 <p>http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;callback=sinaSSOController.preloginCallBack&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;rsakt=mod&amp;checkpin=1&amp;client=ssologin.js(v1.4.18)&amp;_=1457524967315</p>
 </blockquote>
 <p>返回信息如下，后面会用到 <code>servertime</code> <code>nonce</code> <code>pcid</code> <code>pubkey</code> <code>rsakv</code> 这几个参数，其中<code>pubkey</code> <code>rsakv</code>的值是固定的（1年多都没变）。
-还有一个<code>showpin</code>上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登陆时会需要验证码。</p>
+还有一个<code>showpin</code>上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登录时会需要验证码。</p>
 <blockquote>
 <p>sinaSSOController.preloginCallBack({"retcode":0,"servertime": 1457525116,
 "pcid":"ja-69837828b9f065232d6ea4a3130fe2cdbd47","nonce":"7R4XFC",
@@ -123,7 +123,7 @@
 </blockquote>
 <p>2.自己构造以下数据POST到http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)
 其中<code>su</code>依旧是Base64加密后的用户名，<code>servertime</code> <code>nonce</code> <code>rsakv</code> 字段的值就是刚刚GET得到的值，<code>sp</code>是经过RSA2加密后的密码。其余的值都可以保持不变。
-这里有一个登陆的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html</p>
+这里有一个登录的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html</p>
 <p>！如果上面一步的返回值<code>showpin</code>=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=<code>pcid</code> 来得到验证码图片（<code>pcid</code> 也来自上一步哟），然后在下面的POST数据中加上<code>pcid</code> <code>door</code> 两个字段，<code>door</code>的值就是验证码的值</p>
 <blockquote>
 <p>entry=weibo&amp;gateway=1&amp;from=&amp;savestate=7&amp;useticket=1&amp;pagerefer=
@@ -133,15 +133,15 @@
 www.weibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26
 callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
 </blockquote>
-<p>POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登陆的结果（0-登陆成功，2070-验证码错误，4049-验证码为空，101密码错误）</p>
-<p>跳转到那个页面，就可以得到登陆的cookie，模拟登陆完成。</p>
+<p>POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登录的结果（0-登录成功，2070-验证码错误，4049-验证码为空，101密码错误）</p>
+<p>跳转到那个页面，就可以得到登录的cookie，模拟登录完成。</p>
 <h2 id="a6e20d">C#实现</h2>
 <p>直接看代码吧：
-https://github.com/huiyadanli/SinaLogin</p>
+<a href="https://github.com/huiyadanli/SinaLogin">https://github.com/huiyadanli/SinaLogin</a></p>
     </div>
     <div id="content-comments">
 <!-- 多说评论框 start -->
-<div class="ds-thread" data-thread-key="/code/sinaLogin.html" data-title="C#实现新浪模微博拟登陆v1.4.18" data-url="http://huiyadanli.github.io/code/sinaLogin.html"></div>
+<div class="ds-thread" data-thread-key="/code/sinaLogin.html" data-title="C# 实现新浪微博模拟登录v1.4.18" data-url="http://huiyadanli.github.io/code/sinaLogin.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -169,7 +169,7 @@ https://github.com/huiyadanli/SinaLogin</p>
         <div class="niu2-sidebar-label"><i class="fa fa-tag"></i>标签:</div>
  
             <div class="niu2-sidebar-inter-value niu2-sidebar-tag"><a href="http://huiyadanli.github.io/tag/c.html">C#</a><sup>1</sup></div>
-            <div class="niu2-sidebar-inter-value niu2-sidebar-tag"><a href="http://huiyadanli.github.io/tag/mo-ni-deng-lu.html">模拟登陆</a><sup>1</sup></div>
+            <div class="niu2-sidebar-inter-value niu2-sidebar-tag"><a href="http://huiyadanli.github.io/tag/mo-ni-deng-lu.html">模拟登录</a><sup>1</sup></div>
     </div>
 
     <div id="niu2-sidebar-toc" class="niu2-sidebar" data-status="closed">
@@ -177,8 +177,8 @@ https://github.com/huiyadanli/SinaLogin</p>
             <i id="niu2-sidebar-toc-ctrl" class="fa fa-plus"></i>目录
         </div>
         <ol id="niu2-sidebar-toc-list">
-            <li><a href="#content-heading">C#实现新浪模微博拟登陆v1.4.18</a></li>
-            <li><a href='#0dc905'>模拟登陆原理</a></li><li><a href='#a6e20d'>C#实现</a></li>
+            <li><a href="#content-heading">C# 实现新浪微博模拟登录v1.4.18</a></li>
+            <li><a href='#e82624'>模拟登录原理</a></li><li><a href='#a6e20d'>C#实现</a></li>
             <li><a href="#content-comments">评论</a></li>
         </ol>
     </div>
