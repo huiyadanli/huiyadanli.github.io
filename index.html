@@ -14,6 +14,16 @@
         <script src="http://huiyadanli.github.io/theme/js/html5shiv.js"></script>
         <script src="http://huiyadanli.github.io/theme/js/respond.min.js"></script>
     <![endif]-->
+    <script>
+		jQuery(document).ready(function() {
+		    function c() {
+		        document.title = document[a] ? "(°∀°)ﾉ 藏起来 - " + d : d
+		    }
+		    var a, b, d = document.title;
+		    "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
+		    "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
+		});
+	</script>
   </head>
   <body> 
     <div id="body-header">
