@@ -2,6 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>An acre of land</title><link>http://huiyadanli.github.io/</link><description></description><atom:link href="http://huiyadanli.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Apr 2016 17:03:00 +0800</lastBuildDate><item><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link>http://huiyadanli.github.io/code/WeiboMonitor.html</link><description>&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="js" src="http://huiyadanli.github.io/static/article/weibo_js.png"/&gt;&lt;/p&gt;
 &lt;p&gt;这种页面加载模式导致不能直接使用HTML解析器去提取各条微博，使用正则表达式提取的话，工作量又太大。&lt;/p&gt;
 &lt;p&gt;Ctrl + F 微博正文可以找出各条微博内容都在 &lt;code&gt;&amp;lt;script&amp;gt;FM.view({"ns":"pl.content.homeFeed.index"&lt;/code&gt; 开头的那一行 js 中，这段字符串就是要操作的对象。&lt;/p&gt;
 &lt;p&gt;观察过后发现 FM.view() 内使用的 Json 格式，果断尝试使用 &lt;a href="http://www.newtonsoft.com/json"&gt;Newtonsoft.Json&lt;/a&gt; 对其中的数据进行反序列化。&lt;/p&gt;
@@ -54,7 +55,8 @@ foreach (HtmlNode feedListItem in topNode.ChildNodes)
 }
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="ede752"&gt;附赠&lt;/h2&gt;
-&lt;p&gt;以上东西的应用：&lt;a href="https://github.com/huiyadanli/WeiboMonitor"&gt;微博秒赞器&lt;/a&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>http://huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
+&lt;p&gt;以上东西的应用：&lt;a href="https://github.com/huiyadanli/WeiboMonitor"&gt;微博秒赞器&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>http://huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
 &lt;h2 id="e82624"&gt;模拟登录原理&lt;/h2&gt;
 &lt;p&gt;1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中&lt;code&gt;entry&lt;/code&gt; &lt;code&gt;callback&lt;/code&gt; &lt;code&gt;rsakt&lt;/code&gt; &lt;code&gt;client&lt;/code&gt;参数都是固定不变的，&lt;code&gt;su&lt;/code&gt;是经过Base64加密后的用户名，&lt;code&gt;checkpin&lt;/code&gt; =1时，会返回&lt;code&gt;showpin&lt;/code&gt;告诉你是否需要验证码，&lt;code&gt;_&lt;/code&gt;很明显是时间戳，没有这个参数也可以正常得到返回信息。&lt;/p&gt;
 &lt;blockquote&gt;

@@ -107,6 +107,7 @@
         <p>本文主要是通过解析页面来提取各条微博的内容和相关信息。</p>
 <h2 id="add2db">提取页面</h2>
 <p>下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。</p>
+<p><img alt="js" src="http://huiyadanli.github.io/static/article/weibo_js.png"/></p>
 <p>这种页面加载模式导致不能直接使用HTML解析器去提取各条微博，使用正则表达式提取的话，工作量又太大。</p>
 <p>Ctrl + F 微博正文可以找出各条微博内容都在 <code>&lt;script&gt;FM.view({"ns":"pl.content.homeFeed.index"</code> 开头的那一行 js 中，这段字符串就是要操作的对象。</p>
 <p>观察过后发现 FM.view() 内使用的 Json 格式，果断尝试使用 <a href="http://www.newtonsoft.com/json">Newtonsoft.Json</a> 对其中的数据进行反序列化。</p>
@@ -159,7 +160,8 @@ foreach (HtmlNode feedListItem in topNode.ChildNodes)
 }
 </pre></div>
 <h2 id="ede752">附赠</h2>
-<p>以上东西的应用：<a href="https://github.com/huiyadanli/WeiboMonitor">微博秒赞器</a><img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/></p>
+<p>以上东西的应用：<a href="https://github.com/huiyadanli/WeiboMonitor">微博秒赞器</a></p>
+<p><img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/></p>
     </div>
     <div id="content-comments">
 <!-- 多说评论框 start -->
