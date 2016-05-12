@@ -137,7 +137,7 @@ function initToolbar() {
                 leftContainer.animate({width: '65%'}, leftCSlideDuration, complete=function() {
                     restoreVerticalPosition(function() {
                         enableSidebarCtrlButton();
-                        ctrlIcon.attr('class', 'fa fa-3x fa-chevron-left');
+                        ctrlIcon.attr('class', 'fa fa-3x fa-chevron-circle-left');
                         ctrlSidebar.attr('title', showSidebarTitle);
                         loadingOverly.hide();
                     });
@@ -160,7 +160,7 @@ function initToolbar() {
                     });
                     restoreVerticalPosition(function() {
                         enableSidebarCtrlButton();
-                        ctrlIcon.attr('class', 'fa fa-3x fa-chevron-right');
+                        ctrlIcon.attr('class', 'fa fa-3x fa-chevron-circle-right');
                         ctrlSidebar.attr('title', hideSidebarTitle);
                         window.gEnableTocStatusUpdate = true;
                         locateTocInViewport();

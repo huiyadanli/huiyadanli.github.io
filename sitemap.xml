@@ -4,112 +4,112 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://huiyadanli.github.io/</loc>
-<lastmod>2016-04-21T17:19:04-00:00</lastmod>
+<loc>http://localhost:8000/</loc>
+<lastmod>2016-05-11T23:37:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/archives.html</loc>
-<lastmod>2016-04-21T17:19:04-00:00</lastmod>
+<loc>http://localhost:8000/archives.html</loc>
+<lastmod>2016-05-11T23:37:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/categories.html</loc>
-<lastmod>2016-04-21T17:19:04-00:00</lastmod>
+<loc>http://localhost:8000/categories.html</loc>
+<lastmod>2016-05-11T23:37:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/code/WeiboMonitor.html</loc>
+<loc>http://localhost:8000/code/WeiboMonitor.html</loc>
 <lastmod>2016-04-21T17:03:00+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/code/sinaLogin.html</loc>
+<loc>http://localhost:8000/code/sinaLogin.html</loc>
 <lastmod>2016-03-10T23:03:00+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/life/build-a-blog.html</loc>
+<loc>http://localhost:8000/life/build-a-blog.html</loc>
 <lastmod>2015-11-23T22:24:00+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/code/index.html</loc>
+<loc>http://localhost:8000/code/index.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/life/index.html</loc>
+<loc>http://localhost:8000/life/index.html</loc>
 <lastmod>2015-11-23T22:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/pelican.html</loc>
+<loc>http://localhost:8000/tag/pelican.html</loc>
 <lastmod>2015-11-23T22:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/c.html</loc>
+<loc>http://localhost:8000/tag/c.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/python.html</loc>
+<loc>http://localhost:8000/tag/python.html</loc>
 <lastmod>2015-11-23T22:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/javascript.html</loc>
+<loc>http://localhost:8000/tag/javascript.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/mo-ni-deng-lu.html</loc>
+<loc>http://localhost:8000/tag/mo-ni-deng-lu.html</loc>
 <lastmod>2016-03-10T23:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/blog.html</loc>
+<loc>http://localhost:8000/tag/blog.html</loc>
 <lastmod>2015-11-23T22:24:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/json.html</loc>
+<loc>http://localhost:8000/tag/json.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/tag/html.html</loc>
+<loc>http://localhost:8000/tag/html.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
