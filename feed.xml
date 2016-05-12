@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>http://localhost:8000/</link><description></description><atom:link href="http://localhost:8000/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Apr 2016 17:03:00 +0800</lastBuildDate><item><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link>http://localhost:8000/code/WeiboMonitor.html</link><description>&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>http://huiyadanli.github.io/</link><description></description><atom:link href="http://huiyadanli.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Apr 2016 17:03:00 +0800</lastBuildDate><item><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link>http://huiyadanli.github.io/code/WeiboMonitor.html</link><description>&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="js" src="http://huiyadanli.github.io/static/article/weibo_js.png"/&gt;&lt;/p&gt;
@@ -56,7 +56,7 @@ foreach (HtmlNode feedListItem in topNode.ChildNodes)
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id="ede752"&gt;附赠&lt;/h2&gt;
 &lt;p&gt;以上东西的应用：&lt;a href="https://github.com/huiyadanli/WeiboMonitor"&gt;微博秒赞器&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:localhost:8000,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>http://localhost:8000/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>http://huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
 &lt;h2 id="e82624"&gt;模拟登录原理&lt;/h2&gt;
 &lt;p&gt;1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中&lt;code&gt;entry&lt;/code&gt; &lt;code&gt;callback&lt;/code&gt; &lt;code&gt;rsakt&lt;/code&gt; &lt;code&gt;client&lt;/code&gt;参数都是固定不变的，&lt;code&gt;su&lt;/code&gt;是经过Base64加密后的用户名，&lt;code&gt;checkpin&lt;/code&gt; =1时，会返回&lt;code&gt;showpin&lt;/code&gt;告诉你是否需要验证码，&lt;code&gt;_&lt;/code&gt;很明显是时间戳，没有这个参数也可以正常得到返回信息。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -89,7 +89,7 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;amp;returntype=META&
 &lt;p&gt;跳转到那个页面，就可以得到登录的cookie，模拟登录完成。&lt;/p&gt;
 &lt;h2 id="a6e20d"&gt;C#实现&lt;/h2&gt;
 &lt;p&gt;直接看代码吧：
-&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:localhost:8000,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://localhost:8000/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。&lt;/p&gt;
+&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。&lt;/p&gt;
 &lt;h3 id="63177c"&gt;未完成的新博客&lt;/h3&gt;
 &lt;hr/&gt;
 &lt;p&gt;是什么原因让我又来搞了个博客来糟蹋呢？&lt;/p&gt;
@@ -104,4 +104,4 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;amp;returntype=META&
 &lt;li&gt;域名：打算在Godaddy买个，名字叫什么真的好纠结呢。&lt;/li&gt;
 &lt;li&gt;使用&lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt;生成的静态博客，并加装了&lt;a href="http://blog.atime.me/"&gt;Ma Wenbao&lt;/a&gt;的&lt;a href="https://github.com/mawenbao/niu-x2-sidebar/tree/master"&gt;Niu-X2&lt;/a&gt;主题。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;容我再折腾折腾。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Mon, 23 Nov 2015 22:24:00 +0800</pubDate><guid>tag:localhost:8000,2015-11-23:life/build-a-blog.html</guid><category>pelican</category><category>python</category><category>blog</category></item></channel></rss>
+&lt;p&gt;容我再折腾折腾。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Mon, 23 Nov 2015 22:24:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2015-11-23:life/build-a-blog.html</guid><category>pelican</category><category>python</category><category>blog</category></item></channel></rss>
