@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>一亩地</title><link href="http://huiyadanli.github.io/" rel="alternate"></link><link href="http://huiyadanli.github.io/feeds/huiyadanli.atom.xml" rel="self"></link><id>http://huiyadanli.github.io/</id><updated>2016-04-21T17:03:00+08:00</updated><entry><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link href="http://huiyadanli.github.io/code/WeiboMonitor.html" rel="alternate"></link><updated>2016-04-21T17:03:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</id><summary type="html">&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>一亩地</title><link href="http://huiyadanli.github.io/" rel="alternate"></link><link href="http://huiyadanli.github.io/feeds/huiyadanli.atom.xml" rel="self"></link><id>http://huiyadanli.github.io/</id><updated>2016-05-14T17:37:00+08:00</updated><entry><title>在 GitHub Contributions上画像素画</title><link href="http://huiyadanli.github.io/soft/GitHub%20Contributions.html" rel="alternate"></link><updated>2016-05-14T17:37:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-05-14:soft/GitHub Contributions.html</id><summary type="html">&lt;p&gt;只需要用 &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。&lt;/p&gt;
+&lt;h2 id="9e1bb0"&gt;使用说明&lt;/h2&gt;
+&lt;p&gt;直接按照  &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 作者说的做就可以了。&lt;/p&gt;
+&lt;p&gt;我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。&lt;/p&gt;
+&lt;p&gt;然后改用 ubuntu 本地安装   &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; &lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;$ git clone https://github.com/IonicaBizau/github-contributions.git
+$ cd github-contributions
+$ npm i
+$ npm start
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;但是在 &lt;code&gt;npm start&lt;/code&gt; 这一步的时候报错&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&amp;gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
+&amp;gt; node ./lib/server.js
+
+sh: 1: node: not found
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;一番搜索以后发现 &lt;code&gt;node&lt;/code&gt; 命令被更名为  &lt;code&gt;nodejs&lt;/code&gt; ，使用这条命令&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;nodejs lib/server.js
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;手动启动就可以使用了。（貌似安装 &lt;code&gt;nodejs-legacy&lt;/code&gt; 就不会出现这个问题了）&lt;/p&gt;
+&lt;p&gt;成功启动后，打开 &lt;code&gt;localhost:9000&lt;/code&gt; 尽情的作画吧&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions_2.png"/&gt;&lt;/p&gt;
+&lt;p&gt;画完后点击 &lt;code&gt;Generate repository from data&lt;/code&gt; 就会自动生成一个 repo，上传就能看到效果了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions.png"/&gt;&lt;/p&gt;
+&lt;h2 id="1c1648"&gt;类似软件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/gelstudios/gitfiti"&gt;gitfiti&lt;/a&gt;  这个是 Python 写的，没有用过&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="GitHub"></category></entry><entry><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link href="http://huiyadanli.github.io/code/WeiboMonitor.html" rel="alternate"></link><updated>2016-04-21T17:03:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</id><summary type="html">&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="js" src="http://huiyadanli.github.io/static/article/weibo_js.png"/&gt;&lt;/p&gt;
