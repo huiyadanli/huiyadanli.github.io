@@ -1,5 +1,2 @@
-A Chinese blog...
-
-一个中文博客，缓慢进化中...
-
-Theme:[niu-x2-sidebar](https://github.com/mawenbao/niu-x2-sidebar/tree/master)
+# huiyadanli.github.io
+a blog
