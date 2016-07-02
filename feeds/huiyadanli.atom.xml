@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>一亩地</title><link href="http://huiyadanli.github.io/" rel="alternate"></link><link href="http://huiyadanli.github.io/feeds/huiyadanli.atom.xml" rel="self"></link><id>http://huiyadanli.github.io/</id><updated>2016-05-14T17:37:00+08:00</updated><entry><title>在 GitHub Contributions上画像素画</title><link href="http://huiyadanli.github.io/soft/GitHub%20Contributions.html" rel="alternate"></link><updated>2016-05-14T17:37:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-05-14:soft/GitHub Contributions.html</id><summary type="html">&lt;p&gt;只需要用 &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>一亩地</title><link href="http://huiyadanli.github.io/" rel="alternate"></link><link href="http://huiyadanli.github.io/feeds/huiyadanli.atom.xml" rel="self"></link><id>http://huiyadanli.github.io/</id><updated>2016-05-14T17:37:00+08:00</updated><entry><title>在 GitHub Contributions上画像素画</title><link href="http://huiyadanli.github.io/soft/GitHub-Contributions.html" rel="alternate"></link><updated>2016-05-14T17:37:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-05-14:soft/GitHub-Contributions.html</id><summary type="html">&lt;p&gt;只需要用 &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。&lt;/p&gt;
 &lt;h2 id="9e1bb0"&gt;使用说明&lt;/h2&gt;
 &lt;p&gt;直接按照  &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 作者说的做就可以了。&lt;/p&gt;
 &lt;p&gt;我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。&lt;/p&gt;
@@ -26,6 +26,7 @@ sh: 1: node: not found
 &lt;h2 id="1c1648"&gt;类似软件&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/gelstudios/gitfiti"&gt;gitfiti&lt;/a&gt;  这个是 Python 写的，没有用过&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ben174/git-draw"&gt;Git Draw&lt;/a&gt; 最近刚刚发现的，一个 Chrome 插件&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="GitHub"></category></entry><entry><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link href="http://huiyadanli.github.io/code/WeiboMonitor.html" rel="alternate"></link><updated>2016-04-21T17:03:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</id><summary type="html">&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
