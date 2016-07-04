@@ -94,25 +94,34 @@
 <p>直接按照  <a href="https://github.com/IonicaBizau/github-contributions">gh-contributions</a> 作者说的做就可以了。</p>
 <p>我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。</p>
 <p>然后改用 ubuntu 本地安装   <a href="https://github.com/IonicaBizau/github-contributions">gh-contributions</a> </p>
-<div class="codehilite"><pre>$ git clone https://github.com/IonicaBizau/github-contributions.git
-$ cd github-contributions
-$ npm i
-$ npm start
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>git clone https://github.com/IonicaBizau/github-contributions.git
+<span class="nv">$ </span><span class="nb">cd </span>github-contributions
+<span class="nv">$ </span>npm i
+<span class="nv">$ </span>npm start
 </pre></div>
+</td></tr></table>
 <p>但是在 <code>npm start</code> 这一步的时候报错</p>
-<div class="codehilite"><pre>&gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre>&gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
 &gt; node ./lib/server.js
 
 sh: 1: node: not found
 </pre></div>
+</td></tr></table>
 <p>一番搜索以后发现 <code>node</code> 命令被更名为  <code>nodejs</code> ，使用这条命令</p>
-<div class="codehilite"><pre>nodejs lib/server.js
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>nodejs lib/server.js
 </pre></div>
+</td></tr></table>
 <p>手动启动就可以使用了。（貌似安装 <code>nodejs-legacy</code> 就不会出现这个问题了）</p>
 <p>成功启动后，打开 <code>localhost:9000</code> 尽情的作画吧</p>
-<p><img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions_2.png"/></p>
+<p><img alt="Contributions" src="/static/article/contributions_2.png"/></p>
 <p>画完后点击 <code>Generate repository from data</code> 就会自动生成一个 repo，上传就能看到效果了。</p>
-<p><img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions.png"/></p>
+<p><img alt="Contributions" src="/static/article/contributions.png"/></p>
 <h2 id="1c1648">类似软件</h2>
 <ul>
 <li><a href="https://github.com/gelstudios/gitfiti">gitfiti</a>  这个是 Python 写的，没有用过</li>
@@ -193,7 +202,7 @@ sh: 1: node: not found
 	</p>
 </div>    </div>
     
-    <div id="niu2-pygments" data-theme="github"></div>
+    <div id="niu2-pygments" data-theme="monokai-hui"></div>
 
     <script type="text/javascript" src="/theme/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/theme/js/niu2.min.js"></script>

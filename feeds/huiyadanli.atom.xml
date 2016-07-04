@@ -4,25 +4,34 @@
 &lt;p&gt;直接按照  &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 作者说的做就可以了。&lt;/p&gt;
 &lt;p&gt;我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。&lt;/p&gt;
 &lt;p&gt;然后改用 ubuntu 本地安装   &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; &lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;$ git clone https://github.com/IonicaBizau/github-contributions.git
-$ cd github-contributions
-$ npm i
-$ npm start
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git clone https://github.com/IonicaBizau/github-contributions.git
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;github-contributions
+&lt;span class="nv"&gt;$ &lt;/span&gt;npm i
+&lt;span class="nv"&gt;$ &lt;/span&gt;npm start
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;但是在 &lt;code&gt;npm start&lt;/code&gt; 这一步的时候报错&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&amp;gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&amp;gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
 &amp;gt; node ./lib/server.js
 
 sh: 1: node: not found
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;一番搜索以后发现 &lt;code&gt;node&lt;/code&gt; 命令被更名为  &lt;code&gt;nodejs&lt;/code&gt; ，使用这条命令&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;nodejs lib/server.js
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;nodejs lib/server.js
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;手动启动就可以使用了。（貌似安装 &lt;code&gt;nodejs-legacy&lt;/code&gt; 就不会出现这个问题了）&lt;/p&gt;
 &lt;p&gt;成功启动后，打开 &lt;code&gt;localhost:9000&lt;/code&gt; 尽情的作画吧&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions_2.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Contributions" src="/static/article/contributions_2.png"/&gt;&lt;/p&gt;
 &lt;p&gt;画完后点击 &lt;code&gt;Generate repository from data&lt;/code&gt; 就会自动生成一个 repo，上传就能看到效果了。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Contributions" src="http://huiyadanli.github.io/static/article/contributions.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Contributions" src="/static/article/contributions.png"/&gt;&lt;/p&gt;
 &lt;h2 id="1c1648"&gt;类似软件&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/gelstudios/gitfiti"&gt;gitfiti&lt;/a&gt;  这个是 Python 写的，没有用过&lt;/li&gt;
@@ -30,58 +39,98 @@ sh: 1: node: not found
 &lt;/ul&gt;</summary><category term="GitHub"></category></entry><entry><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link href="http://huiyadanli.github.io/code/WeiboMonitor.html" rel="alternate"></link><updated>2016-04-21T17:03:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</id><summary type="html">&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="js" src="http://huiyadanli.github.io/static/article/weibo_js.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="js" src="/static/article/weibo_js.png"/&gt;&lt;/p&gt;
 &lt;p&gt;这种页面加载模式导致不能直接使用HTML解析器去提取各条微博，使用正则表达式提取的话，工作量又太大。&lt;/p&gt;
 &lt;p&gt;Ctrl + F 微博正文可以找出各条微博内容都在 &lt;code&gt;&amp;lt;script&amp;gt;FM.view({"ns":"pl.content.homeFeed.index"&lt;/code&gt; 开头的那一行 js 中，这段字符串就是要操作的对象。&lt;/p&gt;
 &lt;p&gt;观察过后发现 FM.view() 内使用的 Json 格式，果断尝试使用 &lt;a href="http://www.newtonsoft.com/json"&gt;Newtonsoft.Json&lt;/a&gt; 对其中的数据进行反序列化。&lt;/p&gt;
 &lt;p&gt;先写一个对应其格式的类，格式可以用 &lt;a href="http://json.cn/"&gt;在线解析器&lt;/a&gt;  查看&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;/// &amp;lt;summary&amp;gt;
-/// 用于Json解析
-/// &amp;lt;/summary&amp;gt;
-public class ViewJson
-{
-    public string ns { get; set; }
-    public string domid { get; set; }
-    public string[] css { get; set; }
-    public string js { get; set; }
-    public string html { get; set; } 
-} 
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c1"&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+&lt;span class="c1"&gt;/// 用于Json解析&lt;/span&gt;
+&lt;span class="c1"&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+&lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ViewJson&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;ns&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;get&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;domid&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;get&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="n"&gt;css&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;get&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;get&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="k"&gt;get&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; 
+&lt;span class="p"&gt;}&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;然后直接使用 &lt;a href="http://www.newtonsoft.com/json"&gt;Newtonsoft.Json&lt;/a&gt; 提供的 &lt;code&gt;JsonConvert.DeserializeObject&amp;lt;T&amp;gt;()&lt;/code&gt; 方法反序列化 Json 数据。&lt;code&gt;viewJson.html&lt;/code&gt; 就是我需要的内容（各条微博的信息都在里面）&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt; //取出&amp;lt;script&amp;gt;标签内的Json数据
-string jsonStr = jsStr.Replace("&amp;lt;script&amp;gt;FM.view(", "").Replace(")&amp;lt;/script&amp;gt;", "");
- //使用 Newtonsoft.Json 反序列化
-ViewJson viewJson = JsonConvert.DeserializeObject&amp;lt;ViewJson&amp;gt;(jsonStr);
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt; &lt;span class="c1"&gt;//取出&amp;lt;script&amp;gt;标签内的Json数据&lt;/span&gt;
+&lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;jsonStr&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;jsStr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"&amp;lt;script&amp;gt;FM.view("&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;Replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;")&amp;lt;/script&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+ &lt;span class="c1"&gt;//使用 Newtonsoft.Json 反序列化&lt;/span&gt;
+&lt;span class="n"&gt;ViewJson&lt;/span&gt; &lt;span class="n"&gt;viewJson&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;JsonConvert&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DeserializeObject&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;ViewJson&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;(&lt;/span&gt;&lt;span class="n"&gt;jsonStr&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h2 id="51a731"&gt;页面解析&lt;/h2&gt;
 &lt;p&gt;C# 解析 HTML 当选 &lt;a href="http://htmlagilitypack.codeplex.com/"&gt;HtmlAgilityPack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;找到顶层节点然后使用 &lt;a href="http://www.w3school.com.cn/xpath/"&gt;XPath&lt;/a&gt; 得到自己所需要的数据，这是个体力活，直接给出代码。&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;// 使用 HtmlAgilityPack 解析HTML
-HtmlDocument doc = new HtmlDocument();
-// 载入刚刚得到的 viewJson.html
-doc.LoadHtml(viewJson.html);
-HtmlNode topNode = doc.DocumentNode.ChildNodes[1];
-// 我自己定义的 WeiboFeed 类，用于存放微博
-List&amp;lt;WeiboFeed&amp;gt; wbFeedList = new List&amp;lt;WeiboFeed&amp;gt;();
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// 使用 HtmlAgilityPack 解析HTML&lt;/span&gt;
+&lt;span class="n"&gt;HtmlDocument&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;HtmlDocument&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="c1"&gt;// 载入刚刚得到的 viewJson.html&lt;/span&gt;
+&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;LoadHtml&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;viewJson&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;HtmlNode&lt;/span&gt; &lt;span class="n"&gt;topNode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DocumentNode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChildNodes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="c1"&gt;// 我自己定义的 WeiboFeed 类，用于存放微博&lt;/span&gt;
+&lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;WeiboFeed&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;wbFeedList&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;List&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;WeiboFeed&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;();&lt;/span&gt;
 
-foreach (HtmlNode feedListItem in topNode.ChildNodes)
-{
-    if (feedListItem.Attributes.Contains("action-type") &amp;amp;&amp;amp; feedListItem.Attributes["action-type"].Value == "feed_list_item")
-    {
-        // 微博 mid
-        string mid = feedListItem.Attributes["mid"].Value;
-        // 发送该微博的用户的昵称
-        string username = feedListItem.SelectSingleNode("div[1]/div[@class='WB_detail']/div[1]/a[1]").InnerHtml;
-        // 发送时间
-        string time = feedListItem.SelectSingleNode("div[1]/div[@class='WB_detail']/div[2]/a[1]").Attributes["title"].Value;
-        // 微博正文内容
-        string content = feedListItem.SelectSingleNode("div[1]/div[@class='WB_detail']/div[3]").InnerHtml;
+&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HtmlNode&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;topNode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChildNodes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Attributes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Contains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"action-type"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Attributes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;"action-type"&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt; &lt;span class="p"&gt;==&lt;/span&gt; &lt;span class="s"&gt;"feed_list_item"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="c1"&gt;// 微博 mid&lt;/span&gt;
+        &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;mid&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Attributes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;"mid"&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="c1"&gt;// 发送该微博的用户的昵称&lt;/span&gt;
+        &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SelectSingleNode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"div[1]/div[@class='WB_detail']/div[1]/a[1]"&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;InnerHtml&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="c1"&gt;// 发送时间&lt;/span&gt;
+        &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SelectSingleNode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"div[1]/div[@class='WB_detail']/div[2]/a[1]"&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;Attributes&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;"title"&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="n"&gt;Value&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="c1"&gt;// 微博正文内容&lt;/span&gt;
+        &lt;span class="kt"&gt;string&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;feedListItem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SelectSingleNode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"div[1]/div[@class='WB_detail']/div[3]"&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;InnerHtml&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-        WeiboFeed wbFeedTmp = new WeiboFeed(this, mid, username, time, content);
-        wbFeedList.Add(wbFeedTmp);
-    }
-}
+        &lt;span class="n"&gt;WeiboFeed&lt;/span&gt; &lt;span class="n"&gt;wbFeedTmp&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;WeiboFeed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;wbFeedList&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wbFeedTmp&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h2 id="ede752"&gt;附赠&lt;/h2&gt;
 &lt;p&gt;以上东西的应用：&lt;a href="https://github.com/huiyadanli/WeiboMonitor"&gt;微博秒赞器&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</summary><category term="C#"></category><category term="Json"></category><category term="Javascript"></category><category term="HTML"></category></entry><entry><title>C# 实现新浪微博模拟登录v1.4.18</title><link href="http://huiyadanli.github.io/code/sinaLogin.html" rel="alternate"></link><updated>2016-03-10T23:03:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</id><summary type="html">&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
