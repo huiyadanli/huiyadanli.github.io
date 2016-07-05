@@ -129,8 +129,7 @@
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/theme/js/hui.js"></script>
     <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/theme/js/headroom.js"></script>
-    <script type="text/javascript" src="/theme/js/jquery.headroom.js"></script>
+    <script type="text/javascript" src="/theme/js/headroom.min.js"></script>
 
     <div id="niu2-lazy-load-text" data-loading="(｡・`ω´･) 拼命加载中"></div>
 <script type="text/javascript" src="/theme/js/tagcloud.min.js"></script>
@@ -138,7 +137,15 @@
          // $(".navbar-fixed-top").headroom();
          var myElement = document.querySelector(".navbar-fixed-top");
 			// 创建 Headroom 对象，将页面元素传递进去
-			var headroom  = new Headroom(myElement);
+			var headroom  = new Headroom(myElement, {
+			   "tolerance": 5,
+			   "offset": 205,
+			   "classes": {
+			   "initial": "animated",
+			   "pinned": "slideDown",
+			   "unpinned": "slideUp"
+			  }
+			});
 			// 初始化
 			headroom.init(); 
     </script>

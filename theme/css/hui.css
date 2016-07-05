@@ -20,6 +20,53 @@ canvas {
     pointer-events: none;
 }
 
+/* Headroom animated */
+.animated.slideUp {
+    animation-name: slideUp;
+}
+
+@keyframes slideUp {
+0% {
+    transform: translateY(0px);
+}
+100% {
+    transform: translateY(-4em);
+}
+}
+@keyframes slideUp {
+0% {
+    transform: translateY(0px);
+}
+100% {
+    transform: translateY(-4em);
+}
+}
+.animated.slideDown {
+    animation-name: slideDown;
+}
+@keyframes slideDown {
+0% {
+    transform: translateY(-4em);
+}
+100% {
+    transform: translateY(0px);
+}
+}
+
+@keyframes slideDown {
+0% {
+    transform: translateY(-4em);
+}
+100% {
+    transform: translateY(0px);
+}
+}
+
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
 pre {
     word-break: normal;
     word-wrap: normal;
