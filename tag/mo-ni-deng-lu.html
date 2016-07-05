@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>标签 模拟登录 - 一亩地</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/niu2.min.css" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/hui.css" type="text/css" />
     
     <script type="text/javascript">window.onload=function(){};</script>
     <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
   <body> 
     <div id="body-header">
 <div class="navbar navbar-default navbar-fixed-top">
-<div class="col-md-12">
+<div class="col-md-8 col-md-offset-2">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -38,7 +38,7 @@
                 <i class="fa fa-rocket"></i>作品</a>
             </li>
             <li><a href="/tag/" title="tags">
-                <i class="fa fa-tag"></i>标签</a>
+                <i class="fa fa-tags"></i>标签</a>
             </li>
         <!-- category dropdown list -->
         <li class="dropdown">
@@ -85,7 +85,7 @@
 <div class="col-md-8 col-md-offset-2">
 
 <h1 class="niu2-index-title">
-<i class="fa fa-tag fa-lg"></i>模拟登录
+<i class="fa fa-tag"></i>模拟登录
 </h1>
 
 </div>
@@ -102,7 +102,7 @@
         <i class="fa fa-calendar"></i>2016-03-10
     </span>
     <span class="niu2-meta-category-index">
-        <i class="fa fa-code"></i><a href="http://huiyadanli.github.io/code/index.html">代码</a>
+        <i class="fa fa fa-code"></i><a href="http://huiyadanli.github.io/code/index.html">代码</a>
     </span>
     <span class="niu2-meta-tag-index">
         <i class="fa fa-tag"></i>
@@ -137,33 +137,35 @@
     </p>
     <p class="niu2-icons">
 	        <a class="niu2-footer-icon" href="mailto: huiyadanli@126.com" title="my email address">
-	            <i class="fa fa-envelope-o fa-lg"></i>
+	            <i class="fa fa fa-envelope-o fa-lg"></i>
 	        </a>
 	        <a class="niu2-footer-icon" href="https://github.com/huiyadanli" title="my github page">
-	            <i class="fa fa-github-alt fa-lg"></i>
+	            <i class="fa fa fa-github-alt fa-lg"></i>
 	        </a>
 	        <a class="niu2-footer-icon" href="/feed.xml" title="subscribe my blog">
-	            <i class="fa fa-rss fa-lg"></i>
+	            <i class="fa fa fa-rss fa-lg"></i>
 	        </a>
 	</p>
 </div></div>
     
     <div id="niu2-pygments" data-theme="monokai-hui"></div>
+    
+    <canvas></canvas>
 
-    <script type="text/javascript" src="/theme/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/theme/js/niu2.min.js"></script>
-    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/hui.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/headroom.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.headroom.js"></script>
+
     <div id="niu2-lazy-load-text" data-loading="(｡・`ω´･) 拼命加载中"></div>
-    <script type="text/javascript" src="/theme/js/canvas-nest.min.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function() {
-            function c() {
-                document.title = document[a] ? "标题被我吃掉了 (°∀°)ﾉ - " + d : d
-            }
-            var a, b, d = document.title;
-            "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
-            "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
-        });
+         // $(".navbar-fixed-top").headroom();
+         var myElement = document.querySelector(".navbar-fixed-top");
+			// 创建 Headroom 对象，将页面元素传递进去
+			var headroom  = new Headroom(myElement);
+			// 初始化
+			headroom.init(); 
     </script>
     <script type="text/javascript"></script>
   </body>

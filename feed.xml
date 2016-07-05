@@ -136,32 +136,57 @@ sh: 1: node: not found
 &lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>http://huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;/p&gt;
 &lt;h2 id="e82624"&gt;模拟登录原理&lt;/h2&gt;
 &lt;p&gt;1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中&lt;code&gt;entry&lt;/code&gt; &lt;code&gt;callback&lt;/code&gt; &lt;code&gt;rsakt&lt;/code&gt; &lt;code&gt;client&lt;/code&gt;参数都是固定不变的，&lt;code&gt;su&lt;/code&gt;是经过Base64加密后的用户名，&lt;code&gt;checkpin&lt;/code&gt; =1时，会返回&lt;code&gt;showpin&lt;/code&gt;告诉你是否需要验证码，&lt;code&gt;_&lt;/code&gt;很明显是时间戳，没有这个参数也可以正常得到返回信息。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;amp;callback=sinaSSOController.preloginCallBack&amp;amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;amp;rsakt=mod&amp;amp;checkpin=1&amp;amp;client=ssologin.js(v1.4.18)&amp;amp;_=1457524967315&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;amp;callback=sinaSSOController.preloginCallBack&amp;amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;amp;rsakt=mod&amp;amp;checkpin=1&amp;amp;client=ssologin.js(v1.4.18)&amp;amp;_=1457524967315
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;返回信息如下，后面会用到 &lt;code&gt;servertime&lt;/code&gt; &lt;code&gt;nonce&lt;/code&gt; &lt;code&gt;pcid&lt;/code&gt; &lt;code&gt;pubkey&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt; 这几个参数，其中&lt;code&gt;pubkey&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt;的值是固定的（1年多都没变）。
 还有一个&lt;code&gt;showpin&lt;/code&gt;上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登录时会需要验证码。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sinaSSOController.preloginCallBack({"retcode":0,"servertime": 1457525116,
-"pcid":"ja-69837828b9f065232d6ea4a3130fe2cdbd47","nonce":"7R4XFC",
-"pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062
-882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F
-444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6
-739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",
-"rsakv":"1330428213","is_openlock":0,"showpin":0,"exectime":12})&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt; &lt;span class="nx"&gt;sinaSSOController&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;preloginCallBack&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+    &lt;span class="s2"&gt;"retcode"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"servertime"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1457525116&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"pcid"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"ja-69837828b9f065232d6ea4a3130fe2cdbd47"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"nonce"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"7R4XFC"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"pubkey"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062&lt;/span&gt;
+&lt;span class="s2"&gt;882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F&lt;/span&gt;
+&lt;span class="s2"&gt;444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6&lt;/span&gt;
+&lt;span class="s2"&gt;739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"rsakv"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"1330428213"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"is_openlock"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"showpin"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;"exectime"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;
+ &lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;2.自己构造以下数据POST到http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)
 其中&lt;code&gt;su&lt;/code&gt;依旧是Base64加密后的用户名，&lt;code&gt;servertime&lt;/code&gt; &lt;code&gt;nonce&lt;/code&gt; &lt;code&gt;rsakv&lt;/code&gt; 字段的值就是刚刚GET得到的值，&lt;code&gt;sp&lt;/code&gt;是经过RSA2加密后的密码。其余的值都可以保持不变。
 这里有一个登录的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html&lt;/p&gt;
 &lt;p&gt;！如果上面一步的返回值&lt;code&gt;showpin&lt;/code&gt;=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=&lt;code&gt;pcid&lt;/code&gt; 来得到验证码图片（&lt;code&gt;pcid&lt;/code&gt; 也来自上一步哟），然后在下面的POST数据中加上&lt;code&gt;pcid&lt;/code&gt; &lt;code&gt;door&lt;/code&gt; 两个字段，&lt;code&gt;door&lt;/code&gt;的值就是验证码的值&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;entry=weibo&amp;amp;gateway=1&amp;amp;from=&amp;amp;savestate=7&amp;amp;useticket=1&amp;amp;pagerefer=
-&amp;amp;vsnf=1&amp;amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;amp;service=miniblog&amp;amp;servertime=1457525116
-&amp;amp;nonce=7R4XFC&amp;amp;pwencode=rsa2&amp;amp;rsakv=1330428213&amp;amp;sp=&lt;code&gt;加密后的密码&lt;/code&gt;
-&amp;amp;sr=1745*982&amp;amp;encoding=UTF-8&amp;amp;prelt=78&amp;amp;url=http%3A%2F%2F
-www.weibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26
-callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;amp;returntype=META&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;entry = weibo &amp;amp; gateway = 1 &amp;amp; from = &amp;amp; savestate = 7 &amp;amp; useticket = 1 &amp;amp; pagerefer = &amp;amp; 
+vsnf = 1 &amp;amp; su = aHVpeWFkYW5saSU0MDEyNi5jb20 % 3D &amp;amp; service = miniblog &amp;amp; 
+servertime = 1457525116 &amp;amp; nonce = 7R4XFC &amp;amp; pwencode = rsa2 &amp;amp; rsakv = 1330428213 &amp;amp; 
+sp = `加密后的密码` &amp;amp; sr = 1745 * 982 &amp;amp; encoding = UTF - 8 &amp;amp; prelt = 78 &amp;amp; url = http % 3A % 2F % 2F
+www.weibo.com % 2Fajaxlogin.php % 3Fframelogin % 3D1 % 26
+callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp;amp; returntype = META
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登录的结果（0-登录成功，2070-验证码错误，4049-验证码为空，101密码错误）&lt;/p&gt;
 &lt;p&gt;跳转到那个页面，就可以得到登录的cookie，模拟登录完成。&lt;/p&gt;
 &lt;h2 id="a6e20d"&gt;C#实现&lt;/h2&gt;

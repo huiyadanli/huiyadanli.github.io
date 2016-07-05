@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C# 实现新浪微博模拟登录v1.4.18 - 一亩地</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/niu2.min.css" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/css/hui.css" type="text/css" />
 
     <link rel="canonical" href="http://huiyadanli.github.io/code/sinaLogin.html" />
     
@@ -20,7 +20,7 @@
   <body> 
     <div id="body-header">
 <div class="navbar navbar-default navbar-fixed-top">
-<div class="col-md-12">
+<div class="col-md-8 col-md-offset-2">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -40,7 +40,7 @@
                 <i class="fa fa-rocket"></i>作品</a>
             </li>
             <li><a href="/tag/" title="tags">
-                <i class="fa fa-tag"></i>标签</a>
+                <i class="fa fa-tags"></i>标签</a>
             </li>
         <!-- category dropdown list -->
         <li class="dropdown">
@@ -92,32 +92,57 @@
         <p>14年暑假写的东西，今天试用了一下发现居然还能用。</p>
 <h2 id="e82624">模拟登录原理</h2>
 <p>1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中<code>entry</code> <code>callback</code> <code>rsakt</code> <code>client</code>参数都是固定不变的，<code>su</code>是经过Base64加密后的用户名，<code>checkpin</code> =1时，会返回<code>showpin</code>告诉你是否需要验证码，<code>_</code>很明显是时间戳，没有这个参数也可以正常得到返回信息。</p>
-<blockquote>
-<p>http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;callback=sinaSSOController.preloginCallBack&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;rsakt=mod&amp;checkpin=1&amp;client=ssologin.js(v1.4.18)&amp;_=1457524967315</p>
-</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;callback=sinaSSOController.preloginCallBack&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;rsakt=mod&amp;checkpin=1&amp;client=ssologin.js(v1.4.18)&amp;_=1457524967315
+</pre></div>
+</td></tr></table>
 <p>返回信息如下，后面会用到 <code>servertime</code> <code>nonce</code> <code>pcid</code> <code>pubkey</code> <code>rsakv</code> 这几个参数，其中<code>pubkey</code> <code>rsakv</code>的值是固定的（1年多都没变）。
 还有一个<code>showpin</code>上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登录时会需要验证码。</p>
-<blockquote>
-<p>sinaSSOController.preloginCallBack({"retcode":0,"servertime": 1457525116,
-"pcid":"ja-69837828b9f065232d6ea4a3130fe2cdbd47","nonce":"7R4XFC",
-"pubkey":"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062
-882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F
-444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6
-739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",
-"rsakv":"1330428213","is_openlock":0,"showpin":0,"exectime":12})</p>
-</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre> <span class="nx">sinaSSOController</span><span class="p">.</span><span class="nx">preloginCallBack</span><span class="p">({</span>
+    <span class="s2">"retcode"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"servertime"</span><span class="o">:</span> <span class="mi">1457525116</span><span class="p">,</span>
+    <span class="s2">"pcid"</span><span class="o">:</span> <span class="s2">"ja-69837828b9f065232d6ea4a3130fe2cdbd47"</span><span class="p">,</span>
+    <span class="s2">"nonce"</span><span class="o">:</span> <span class="s2">"7R4XFC"</span><span class="p">,</span>
+    <span class="s2">"pubkey"</span><span class="o">:</span> <span class="s2">"EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062</span>
+<span class="s2">882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F</span>
+<span class="s2">444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6</span>
+<span class="s2">739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443"</span><span class="p">,</span>
+    <span class="s2">"rsakv"</span><span class="o">:</span> <span class="s2">"1330428213"</span><span class="p">,</span>
+    <span class="s2">"is_openlock"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"showpin"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"exectime"</span><span class="o">:</span> <span class="mi">12</span>
+ <span class="p">})</span>
+</pre></div>
+</td></tr></table>
 <p>2.自己构造以下数据POST到http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)
 其中<code>su</code>依旧是Base64加密后的用户名，<code>servertime</code> <code>nonce</code> <code>rsakv</code> 字段的值就是刚刚GET得到的值，<code>sp</code>是经过RSA2加密后的密码。其余的值都可以保持不变。
 这里有一个登录的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html</p>
 <p>！如果上面一步的返回值<code>showpin</code>=1，则需要GET  http://login.sina.com.cn/cgi/pin.php?p=<code>pcid</code> 来得到验证码图片（<code>pcid</code> 也来自上一步哟），然后在下面的POST数据中加上<code>pcid</code> <code>door</code> 两个字段，<code>door</code>的值就是验证码的值</p>
-<blockquote>
-<p>entry=weibo&amp;gateway=1&amp;from=&amp;savestate=7&amp;useticket=1&amp;pagerefer=
-&amp;vsnf=1&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;service=miniblog&amp;servertime=1457525116
-&amp;nonce=7R4XFC&amp;pwencode=rsa2&amp;rsakv=1330428213&amp;sp=<code>加密后的密码</code>
-&amp;sr=1745*982&amp;encoding=UTF-8&amp;prelt=78&amp;url=http%3A%2F%2F
-www.weibo.com%2Fajaxlogin.php%3Fframelogin%3D1%26
-callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
-</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre>entry = weibo &amp; gateway = 1 &amp; from = &amp; savestate = 7 &amp; useticket = 1 &amp; pagerefer = &amp; 
+vsnf = 1 &amp; su = aHVpeWFkYW5saSU0MDEyNi5jb20 % 3D &amp; service = miniblog &amp; 
+servertime = 1457525116 &amp; nonce = 7R4XFC &amp; pwencode = rsa2 &amp; rsakv = 1330428213 &amp; 
+sp = `加密后的密码` &amp; sr = 1745 * 982 &amp; encoding = UTF - 8 &amp; prelt = 78 &amp; url = http % 3A % 2F % 2F
+www.weibo.com % 2Fajaxlogin.php % 3Fframelogin % 3D1 % 26
+callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp; returntype = META
+</pre></div>
+</td></tr></table>
 <p>POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登录的结果（0-登录成功，2070-验证码错误，4049-验证码为空，101密码错误）</p>
 <p>跳转到那个页面，就可以得到登录的cookie，模拟登录完成。</p>
 <h2 id="a6e20d">C#实现</h2>
@@ -149,7 +174,7 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
         <div class="niu2-sidebar-value">2016-03-10 23:03</div>
         <div class="niu2-sidebar-label"><i class="fa fa-pencil" style="font-size: 1.05em;"></i>最后修改:</div>
         <div class="niu2-sidebar-value">2016-03-18 13:00</div>
-        <div class="niu2-sidebar-label"><i class="fa fa-code"></i>分类:</div>
+        <div class="niu2-sidebar-label"><i class="fa fa fa-code"></i>分类:</div>
         <div class="niu2-sidebar-value"><a href="http://huiyadanli.github.io/code/index.html">代码</a></div>
         <div class="niu2-sidebar-label"><i class="fa fa-tag"></i>标签:</div>
  
@@ -159,7 +184,7 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
 
     <div id="niu2-sidebar-toc" class="niu2-sidebar" data-status="closed">
         <div class="niu2-sidebar-label">
-            <i id="niu2-sidebar-toc-ctrl" class="fa fa-plus"></i>目录
+            <i id="niu2-sidebar-toc-ctrl" class="fa fa-list"></i>目录
         </div>
         <ol id="niu2-sidebar-toc-list">
             <li><a href="#content-heading">C# 实现新浪微博模拟登录v1.4.18</a></li>
@@ -188,33 +213,35 @@ callback%3Dparent.sinaSSOController.feedBackUrlCallBack&amp;returntype=META</p>
     </p>
     <p class="niu2-icons">
 	        <a class="niu2-footer-icon" href="mailto: huiyadanli@126.com" title="my email address">
-	            <i class="fa fa-envelope-o fa-lg"></i>
+	            <i class="fa fa fa-envelope-o fa-lg"></i>
 	        </a>
 	        <a class="niu2-footer-icon" href="https://github.com/huiyadanli" title="my github page">
-	            <i class="fa fa-github-alt fa-lg"></i>
+	            <i class="fa fa fa-github-alt fa-lg"></i>
 	        </a>
 	        <a class="niu2-footer-icon" href="/feed.xml" title="subscribe my blog">
-	            <i class="fa fa-rss fa-lg"></i>
+	            <i class="fa fa fa-rss fa-lg"></i>
 	        </a>
 	</p>
 </div>    </div>
     
     <div id="niu2-pygments" data-theme="monokai-hui"></div>
+    
+    <canvas></canvas>
 
-    <script type="text/javascript" src="/theme/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/theme/js/niu2.min.js"></script>
-    <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/hui.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/theme/js/headroom.js"></script>
+    <script type="text/javascript" src="/theme/js/jquery.headroom.js"></script>
+
     <div id="niu2-lazy-load-text" data-loading="(｡・`ω´･) 拼命加载中"></div>
-    <script type="text/javascript" src="/theme/js/canvas-nest.min.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function() {
-            function c() {
-                document.title = document[a] ? "标题被我吃掉了 (°∀°)ﾉ - " + d : d
-            }
-            var a, b, d = document.title;
-            "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
-            "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
-        });
+         // $(".navbar-fixed-top").headroom();
+         var myElement = document.querySelector(".navbar-fixed-top");
+			// 创建 Headroom 对象，将页面元素传递进去
+			var headroom  = new Headroom(myElement);
+			// 初始化
+			headroom.init(); 
     </script>
     <script type="text/javascript">onContentLoaded();</script>
   </body>
