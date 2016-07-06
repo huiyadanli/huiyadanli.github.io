@@ -5,22 +5,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://huiyadanli.github.io/</loc>
-<lastmod>2016-07-06T01:37:57-00:00</lastmod>
+<lastmod>2016-07-06T22:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://huiyadanli.github.io/archives.html</loc>
-<lastmod>2016-07-06T01:37:57-00:00</lastmod>
+<lastmod>2016-07-06T22:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://huiyadanli.github.io/categories.html</loc>
-<lastmod>2016-07-06T01:37:57-00:00</lastmod>
+<lastmod>2016-07-06T22:51:05-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://huiyadanli.github.io/life/blog-theme-test.html</loc>
+<lastmod>2016-07-06T18:47:00+08:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -61,7 +68,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://huiyadanli.github.io/life/index.html</loc>
-<lastmod>2015-11-23T22:24:00+08:06</lastmod>
+<lastmod>2016-07-06T18:47:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -117,7 +124,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://huiyadanli.github.io/tag/blog.html</loc>
-<lastmod>2015-11-23T22:24:00+08:06</lastmod>
+<lastmod>2016-07-06T18:47:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -132,6 +139,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://huiyadanli.github.io/tag/html.html</loc>
 <lastmod>2016-04-21T17:03:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://huiyadanli.github.io/tag/zhu-ti.html</loc>
+<lastmod>2016-07-06T18:47:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

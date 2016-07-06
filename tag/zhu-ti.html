@@ -3,13 +3,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在 GitHub Contributions上画像素画 - 一亩地</title>
+    <title>标签 主题 - 一亩地</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="/theme/css/hui.css" type="text/css" />
-
-    <link rel="canonical" href="http://huiyadanli.github.io/soft/GitHub-Contributions.html" />
     
     <script type="text/javascript">window.onload=function(){};</script>
     <!--[if lt IE 9]>
@@ -85,96 +83,44 @@
     
     <div id="body-content">
 <div class="col-md-8 col-md-offset-2">
-    <h1 id="content-heading">在 GitHub Contributions上画像素画</h1>
-</div>
-<div id="niu2-left-container" class="col-md-6 col-md-offset-2 with-right-border">
-    <div id="niu2-main-content">
-        <p>只需要用 <a href="https://github.com/IonicaBizau/github-contributions">gh-contributions</a> 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。
-</p>
-<h2 id="9e1bb0">使用说明</h2>
-<p>直接按照  <a href="https://github.com/IonicaBizau/github-contributions">gh-contributions</a> 作者说的做就可以了。</p>
-<p>我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。</p>
-<p>然后改用 ubuntu 本地安装   <a href="https://github.com/IonicaBizau/github-contributions">gh-contributions</a> </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span class="nv">$ </span>git clone https://github.com/IonicaBizau/github-contributions.git
-<span class="nv">$ </span><span class="nb">cd </span>github-contributions
-<span class="nv">$ </span>npm i
-<span class="nv">$ </span>npm start
-</pre></div>
-</td></tr></table>
-<p>但是在 <code>npm start</code> 这一步的时候报错</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre>&gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions
-&gt; node ./lib/server.js
 
-sh: 1: node: not found
-</pre></div>
-</td></tr></table>
-<p>一番搜索以后发现 <code>node</code> 命令被更名为  <code>nodejs</code> ，使用这条命令</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>nodejs lib/server.js
-</pre></div>
-</td></tr></table>
-<p>手动启动就可以使用了。（貌似安装 <code>nodejs-legacy</code> 就不会出现这个问题了）</p>
-<p>成功启动后，打开 <code>localhost:9000</code> 尽情的作画吧</p>
-<p><img alt="Contributions" src="/static/article/contributions_2.png"/></p>
-<p>画完后点击 <code>Generate repository from data</code> 就会自动生成一个 repo，上传就能看到效果了。</p>
-<p><img alt="Contributions" src="/static/article/contributions.png"/></p>
-<h2 id="1c1648">类似软件</h2>
-<ul>
-<li><a href="https://github.com/gelstudios/gitfiti">gitfiti</a>  这个是 Python 写的，没有用过</li>
-<li><a href="https://github.com/ben174/git-draw">Git Draw</a> 最近刚刚发现的，一个 Chrome 插件</li>
-</ul>
-    </div>
-    <div id="content-comments">
-<!-- 多说评论框 start -->
-<div class="ds-thread" data-thread-key="/soft/GitHub-Contributions.html" data-title="在 GitHub Contributions上画像素画" data-url="http://huiyadanli.github.io/soft/GitHub-Contributions.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    var duoshuoQuery = { short_name: 'huiyadanli' };
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end --></div>
+<h1 class="niu2-index-title">
+<i class="fa fa-tag"></i>主题
+</h1>
 
 </div>
-<div class="niu2-right-container col-md-2">
-    <div id="niu2-sidebar-meta" class="niu2-sidebar">
-        <div class="niu2-sidebar-label"><i class="fa fa-calendar"></i>发布时间:</div>
-        <div class="niu2-sidebar-value">2016-05-14 17:37</div>
-        <div class="niu2-sidebar-label"><i class="fa fa-pencil" style="font-size: 1.05em;"></i>最后修改:</div>
-        <div class="niu2-sidebar-value">2016-06-30 22:16</div>
-        <div class="niu2-sidebar-label"><i class="fa fa fa-briefcase"></i>分类:</div>
-        <div class="niu2-sidebar-value"><a href="http://huiyadanli.github.io/soft/index.html">软件</a></div>
-        <div class="niu2-sidebar-label"><i class="fa fa-tag"></i>标签:</div>
- 
-            <div class="niu2-sidebar-inter-value niu2-sidebar-tag"><a href="http://huiyadanli.github.io/tag/github.html">GitHub</a><sup>1</sup></div>
-    </div>
 
-    <div id="niu2-sidebar-toc" class="niu2-sidebar" data-status="closed">
-        <div class="niu2-sidebar-label">
-            <i id="niu2-sidebar-toc-ctrl" class="fa fa-list"></i>目录
+<div class="col-md-6 col-md-offset-2">
+    <div class="niu2-index-article">
+        <div class="niu2-index-article-title">
+            <span>
+                <a href="life/blog-theme-test.html">是时候该折腾一下 pelican 的主题了！</a>
+            </span>
         </div>
-        <ol id="niu2-sidebar-toc-list">
-            <li><a href="#content-heading">在 GitHub Contributions上画像素画</a></li>
-            <li><a href='#9e1bb0'>使用说明</a></li><li><a href='#1c1648'>类似软件</a></li>
-            <li><a href="#content-comments">评论</a></li>
-        </ol>
+<div class="niu2-meta-index">
+    <span class="niu2-meta-date-index">
+        <i class="fa fa-calendar"></i>2016-07-06
+    </span>
+    <span class="niu2-meta-category-index">
+        <i class="fa fa fa-coffee"></i><a href="http://huiyadanli.github.io/life/index.html">日常</a>
+    </span>
+    <span class="niu2-meta-tag-index">
+        <i class="fa fa-tag"></i>
+        <a href="http://huiyadanli.github.io/tag/zhu-ti.html">主题</a>
+        <a href="http://huiyadanli.github.io/tag/blog.html">blog</a>
+    </span>
+</div>        <div class="niu2-article-summary">
+            <p>最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。
+
+        </div>
     </div>
+
+
+
 </div>
     </div>
 
-    <div id="body-footer" class="col-md-6 col-md-offset-2">
+<div id="body-footer" class="col-md-8 col-md-offset-2">
 <div class="niu2-footer">
     <hr/>
 	<p>
@@ -201,7 +147,7 @@ sh: 1: node: not found
 	            <i class="fa fa fa-rss fa-lg"></i>
 	        </a>
 	</p>
-</div>    </div>
+</div></div>
 <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-80358493-1"]);_gaq.push(["_trackPageview"]);(function(){var b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();</script>    
     <div id="niu2-pygments" data-theme="monokai-hui"></div>
     
@@ -215,6 +161,6 @@ sh: 1: node: not found
     <script type="text/javascript">
 
     </script>
-    <script type="text/javascript">onContentLoaded();</script>
+    <script type="text/javascript"></script>
   </body>
 </html>

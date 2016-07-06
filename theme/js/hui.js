@@ -19,63 +19,131 @@
     window.gThemePath = scriptPath.substr(0, scriptPath.lastIndexOf('/js/'));
     
     // dynamically modify title
-jQuery(document).ready(function() {
-    function c() {
-        document.title = document[a] ? "标题被我吃掉了 (°∀°)ﾉ - " + d : d
-    }
-    var a, b, d = document.title;
-    "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
-    "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
-});
+    jQuery(document).ready(function() {
+        function c() {
+            document.title = document[a] ? "标题被我吃掉了 (°∀°)ﾉ - " + d : d
+        }
+        var a, b, d = document.title;
+        "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
+        "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
+    });
 
-// canvas special effects from http://evanyou.me/
-/*
-document.addEventListener('touchmove', function (e) {
-    e.preventDefault()
-})
-var c = document.getElementsByTagName('canvas')[0],
-    x = c.getContext('2d'),
-    pr = window.devicePixelRatio || 1,
-    w = window.innerWidth,
-    h = window.innerHeight,
-    f = 90,
-    q,
-    m = Math,
-    r = 0,
-    u = m.PI*2,
-    v = m.cos,
-    z = m.random
-c.width = w*pr
-c.height = h*pr
-x.scale(pr, pr)
-x.globalAlpha = 0.6
-function i(){
-    x.clearRect(0,0,w,h)
-    q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-    while(q[1].x<w+f) d(q[0], q[1])
-}
-function d(i,j){   
-    x.beginPath()
-    x.moveTo(i.x, i.y)
-    x.lineTo(j.x, j.y)
-    var k = j.x + (z()*2-0.25)*f,
-        n = y(j.y)
-    x.lineTo(k, n)
-    x.closePath()
-    r-=u/-50
-    x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-    x.fill()
-    q[0] = q[1]
-    q[1] = {x:k,y:n}
-}
-function y(p){
-    var t = p + (z()*2-1.1)*f
-    return (t>h||t<0) ? y(p) : t
-}
-document.onclick = i
-document.ontouchstart = i
-i()
-*/
+    // mouse click special effects
+    var click_cnt=0;
+    jQuery(document).ready(function($) {
+        $("html,body").click(function(e) {
+            var n=18;
+            //var $i=$("<b></b>").text("+"+n);
+            var $i;
+            click_cnt++;
+            if(click_cnt==10) {
+                $i=$("<b></b>").text("OωO");
+            } else if(click_cnt==20) {
+                $i=$("<b></b>").text("(๑•́ ∀ •̀๑)");
+            } else if(click_cnt==30) {
+                $i=$("<b></b>").text("(๑•́ ₃ •̀๑)");
+            } else if(click_cnt==40) {
+                $i=$("<b></b>").text("(๑•̀_•́๑)");
+            } else if(click_cnt==50) {
+                $i=$("<b></b>").text("（￣へ￣）");
+            } else if(click_cnt==60) {
+                $i=$("<b></b>").text("(╯°口°)╯(┴—┴");
+            } else if(click_cnt==70) {
+                $i=$("<b></b>").text("૮( ᵒ̌皿ᵒ̌ )ა");
+            } else if(click_cnt==80) {
+                $i=$("<b></b>").text("╮(｡>口<｡)╭");
+            } else if(click_cnt==90) {
+                $i=$("<b></b>").text("( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃");
+            } else if(click_cnt>=100 && click_cnt<=105) {
+                $i=$("<b></b>").text("(ꐦ°᷄д°᷅)");
+            } else {
+                $i=$("<i class='fa fa-heart'></i>");
+                n=Math.round(Math.random()*14+6)
+            }
+            var x=e.pageX,y=e.pageY;
+            $i.css({
+                "z-index":999,
+                "top":y-20,
+                "left":x,
+                "position":"absolute",
+                "color":"#E94F06",
+                "font-size":n,
+                "-moz-user-select": "none",
+                "-webkit-user-select": "none",
+                "-ms-user-select": "none"
+            });
+            $("body").append($i);
+            $i.animate(
+                {"top":y-180,"opacity":0},
+                1500,
+                function(){$i.remove();}
+            );
+            e.stopPropagation();
+        });
+    });
+
+    // headroom.js -> navbar
+    var myElement = document.querySelector(".navbar-fixed-top");
+         // 创建 Headroom 对象，将页面元素传递进去
+    var headroom  = new Headroom(myElement, {
+       "tolerance": 5,
+       "offset": 205,
+       "classes": {
+       "initial": "animated",
+       "pinned": "slideDown",
+       "unpinned": "slideUp"
+       }
+    });
+    headroom.init(); 
+
+    // canvas special effects from http://evanyou.me/
+    /*
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault()
+    })
+    var c = document.getElementsByTagName('canvas')[0],
+        x = c.getContext('2d'),
+        pr = window.devicePixelRatio || 1,
+        w = window.innerWidth,
+        h = window.innerHeight,
+        f = 90,
+        q,
+        m = Math,
+        r = 0,
+        u = m.PI*2,
+        v = m.cos,
+        z = m.random
+    c.width = w*pr
+    c.height = h*pr
+    x.scale(pr, pr)
+    x.globalAlpha = 0.6
+    function i(){
+        x.clearRect(0,0,w,h)
+        q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
+        while(q[1].x<w+f) d(q[0], q[1])
+    }
+    function d(i,j){   
+        x.beginPath()
+        x.moveTo(i.x, i.y)
+        x.lineTo(j.x, j.y)
+        var k = j.x + (z()*2-0.25)*f,
+            n = y(j.y)
+        x.lineTo(k, n)
+        x.closePath()
+        r-=u/-50
+        x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
+        x.fill()
+        q[0] = q[1]
+        q[1] = {x:k,y:n}
+    }
+    function y(p){
+        var t = p + (z()*2-1.1)*f
+        return (t>h||t<0) ? y(p) : t
+    }
+    document.onclick = i
+    document.ontouchstart = i
+    i()
+    */
 
 
 })();
