@@ -250,7 +250,32 @@ div.popover {
 /* fix navbar blik issue on chrome windows */
 .navbar {
     -webkit-backface-visibility: hidden;
+    min-height: 40px;
 }
+
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-brand {
+    height: 40px;
+    padding-top: 10px;
+}
+
+.navbar-toggle {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+/* hover pop dropdown menu */
+/*
+.navbar .nav > li .dropdown-menu {
+    margin: 0;
+}
+.navbar .nav > li:hover .dropdown-menu {
+    display: block;
+}
+*/
 
 /*
 #niu2-main-content {

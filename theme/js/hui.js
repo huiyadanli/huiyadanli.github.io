@@ -31,7 +31,7 @@
     // mouse click special effects
     var click_cnt=0;
     jQuery(document).ready(function($) {
-        $("html,body").click(function(e) {
+        $("html").click(function(e) {
             var n=18;
             //var $i=$("<b></b>").text("+"+n);
             var $i;
@@ -62,7 +62,7 @@
             }
             var x=e.pageX,y=e.pageY;
             $i.css({
-                "z-index":999,
+                "z-index":9999,
                 "top":y-20,
                 "left":x,
                 "position":"absolute",
@@ -78,7 +78,7 @@
                 1500,
                 function(){$i.remove();}
             );
-            e.stopPropagation();
+            //e.stopPropagation();
         });
     });
 
@@ -173,9 +173,9 @@ $(document).ready(function() {
 
 function onContentLoaded() {
     initPygments();
-    initHermitPlayer();
-    initLazyLoad();
-    initFootnote();
+    //initHermitPlayer();
+    //initLazyLoad();
+    //initFootnote();
     initHeaderAnchors();
     $(window).scroll(function() {
         toggleSidebarTocFixed();
