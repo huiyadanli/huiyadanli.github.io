@@ -494,24 +494,24 @@ img {
 
 #niu2-cse-header-box {
     position: absolute;
-    margin-top: 3.5px;
+    margin-top: 8px;
     margin-left: -172px;
 }
 
 #niu2-cse-search-input {
 	width: 150px;
-    height: 20px;
+    height: 25px;
     padding: 1px 3px;
 }
 
 #niu2-cse-ctrl-box {
     color: #999;
-    margin-top: 6px;
+    margin-top: 11px;
     cursor: pointer;
 }
 
 #niu2-cse-search-image {
-    margin: 2px 3px 0 5px;
+    font-size: 18px;
 }
 
 .niu2-clearfix {
@@ -751,7 +751,7 @@ h4:before, h5:before, h6:before {
 .niu2-index-date {
 	display: none;
 }
-
+/*
 #niu2-cse-wrapper {
     margin-right: 20px;
     padding-bottom: 10px;
@@ -781,12 +781,11 @@ h4:before, h5:before, h6:before {
 #niu2-cse-search-text {
     display: none;
 }
-
+*/
 .dropdown-toc a {
     color: #999;
 }
 
-}
 
 @media (max-height: 300px) {
 /* 2 levels at most */
