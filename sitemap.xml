@@ -5,27 +5,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://huiyadanli.github.io/</loc>
-<lastmod>2016-07-07T23:59:40-00:00</lastmod>
+<lastmod>2016-07-09T22:32:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://huiyadanli.github.io/archives.html</loc>
-<lastmod>2016-07-07T23:59:40-00:00</lastmod>
+<lastmod>2016-07-09T22:32:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://huiyadanli.github.io/categories.html</loc>
-<lastmod>2016-07-07T23:59:40-00:00</lastmod>
+<lastmod>2016-07-09T22:32:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://huiyadanli.github.io/life/blog-theme-test.html</loc>
+<loc>http://huiyadanli.github.io/life/blog-theme-edit.html</loc>
 <lastmod>2016-07-06T18:47:00+08:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
