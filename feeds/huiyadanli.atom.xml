@@ -233,7 +233,8 @@ callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp;amp; returntype =
 &lt;p&gt;跳转到那个页面，就可以得到登录的cookie，模拟登录完成。&lt;/p&gt;
 &lt;h2 id="a6e20d"&gt;C#实现&lt;/h2&gt;
 &lt;p&gt;直接看代码吧：
-&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</summary><category term="C#"></category><category term="模拟登录"></category></entry><entry><title>成功使用pelican在github上搭建了自己的博客</title><link href="http://huiyadanli.github.io/life/build-a-blog.html" rel="alternate"></link><updated>2015-11-23T22:24:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2015-11-23:life/build-a-blog.html</id><summary type="html">&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。
+&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</summary><category term="C#"></category><category term="模拟登录"></category></entry><entry><title>成功使用pelican在github上搭建了自己的博客</title><link href="http://huiyadanli.github.io/life/build-a-blog.html" rel="alternate"></link><updated>2015-11-23T22:24:00+08:00</updated><author><name>huiyadanli</name></author><id>tag:huiyadanli.github.io,2015-11-23:life/build-a-blog.html</id><summary type="html">&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐&lt;/p&gt;
+&lt;p&gt;然后...然后它被我遗忘在某个小角落...欠费致死。
 &lt;/p&gt;
 &lt;h3 id="63177c"&gt;未完成的新博客&lt;/h3&gt;
 &lt;hr/&gt;
