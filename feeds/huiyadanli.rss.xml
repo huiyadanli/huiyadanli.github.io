@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>http://huiyadanli.github.io/</link><description></description><atom:link href="http://huiyadanli.github.io/feeds/huiyadanli.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 06 Jul 2016 18:47:00 +0800</lastBuildDate><item><title>是时候该折腾一下 pelican 的主题了！</title><link>http://huiyadanli.github.io/life/blog-theme-edit.html</link><description>&lt;p&gt;最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>http://huiyadanli.github.io/</link><description></description><atom:link href="http://huiyadanli.github.io/feeds/huiyadanli.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 13 Aug 2016 17:53:00 +0800</lastBuildDate><item><title>动手建造一个自己的 Java 开发环境</title><link>http://huiyadanli.github.io/soft/build-java-devleopment.html</link><description>&lt;p&gt;做 Java 开发的时候懒得手动配置，于是乎网上下了个 MyEclipse 2015，但软件启动速度实在太慢，乱七八糟不需要的东西也很多，还是决定自己动手折腾一个 Eclipse。顺便把原先的相关软件都迁移到一个地方。
+&lt;/p&gt;
+&lt;h2 id="7a3c81"&gt;文件目录&lt;/h2&gt;
+&lt;p&gt;全部扔到了 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt; 文件夹下&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;├─.m2
+├─apache-maven-3.3.9
+├─apache-tomcat-7.0.70
+├─eclipse
+└─jdk
+   └─jdk1.8.0_25
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h2 id="ea9785"&gt;软件清单&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;JDK（1.8.0_25）&lt;a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Eclipse（我用的Mars版，最新版 Neon） &lt;a href="http://www.eclipse.org/downloads/"&gt;http://www.eclipse.org/downloads/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Maven（3.3.9） &lt;a href="http://maven.apache.org/download.cgi"&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tomcat（7.0.70） &lt;a href="http://tomcat.apache.org/download-70.cgi"&gt;http://tomcat.apache.org/download-70.cgi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="57187a"&gt;JDK 的安装&lt;/h2&gt;
+&lt;p&gt;我的JDK原先在C盘，现在移动到了D盘，所以要修改下环境变量。
+&lt;code&gt;JAVA_HOME&lt;/code&gt; 修改成：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;D:\Programing\Development\Java\jdk\jdk1.8.0_25
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; 内的相关变量保持不变：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;h2 id="16a1fa"&gt;Eclipse 的安装&lt;/h2&gt;
+&lt;p&gt;官网上下载下来的是一个在线安装器，而且还不是最新版本的( ╯-_-)╯┴—┴。&lt;/p&gt;
+&lt;p&gt;Update 以后选择 Eclipse IDE for Java Developers 安装。&lt;/p&gt;
+&lt;p&gt;安装目录选择 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt;
+&lt;img alt="eclipse_install" src="/static/article/eclipse_install.png"/&gt;&lt;/p&gt;
+&lt;p&gt;然后装上 web 开发的相关插件，打开 Help -&amp;gt; Install New Software&lt;/p&gt;
+&lt;p&gt;在work with 栏中输入 http://download.eclipse.org/releases/mars/  （mars 可以替换成相对应的版本，我用的 Mars 版） &lt;/p&gt;
+&lt;p&gt;选择 Web 那一块的插件，需要什么选什么。
+&lt;img alt="eclipse_install" src="/static/article/eclipse_install.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;貌似这么做和直接安装 Eclipse IDE for Java EE Developers 没啥区别&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id="248bb1"&gt;Maven 的安装&lt;/h2&gt;
+&lt;p&gt;下载并解压到 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt; 下，&lt;/p&gt;
+&lt;p&gt;然后配置环境变量 &lt;code&gt;MAVEN_HOME&lt;/code&gt;：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;D:\Programing\Development\Java\apache-maven-3.3.9
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; 内添加：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;%MAVEN_HOME%\bin;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;顺便修改一下 Maven 的配置文件 &lt;code&gt;\apache-maven-3.3.9\conf\settings.xml&lt;/code&gt;，&lt;/p&gt;
+&lt;p&gt;在里面添加或修改一条：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&amp;lt;localRepository&amp;gt;D:\Programing\Development\Java\.m2\repository&amp;lt;/localRepository&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;把仓库移动到 &lt;code&gt;D:\Programing\Development\Java\.m2\repository&lt;/code&gt; 下（原来默认是存放在C盘的）。&lt;/p&gt;
+&lt;p&gt;然后设置 Eclipse ：
+Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; Installation -&amp;gt; Add 添加刚刚下载并解压的 Maven 。
+&lt;img alt="eclipse_maven_settring_1" src="/static/article/eclipse_maven_settring_1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; User Settings 设置 Maven 配置文件
+&lt;img alt="eclipse_maven_settring_1" src="/static/article/eclipse_maven_settring_2.png"/&gt;&lt;/p&gt;
+&lt;h2 id="4ad674"&gt;Tomcat 的安装&lt;/h2&gt;
+&lt;p&gt;依旧是下载并解压到 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt; 下，&lt;/p&gt;
+&lt;p&gt;配置环境变量 &lt;code&gt;CATALINA_HOME&lt;/code&gt;：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;D:\Programing\Development\Java\apache-tomcat-7.0.70
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;Path&lt;/code&gt; 内添加：&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;%CATALINA_HOME%\bin;%CATALINA_HOME%\lib;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;接着安装 Tomcat 的服务，打开CMD，定位到 &lt;code&gt;D:\Programing\Development\Java\apache-tomcat-7.0.70\bin&lt;/code&gt; 下面运行 service.bat 。
+&lt;img alt="tomcat_install" src="/static/article/tomcat_install.png"/&gt;&lt;/p&gt;
+&lt;p&gt;提示安装成功后，可以运行 tomcat7w.exe 启动 Tomcat 。
+&lt;img alt="tomcat_run" src="/static/article/tomcat_run.png"/&gt;&lt;/p&gt;
+&lt;p&gt;启动后可以用浏览器打开 &lt;a href="http://localhost:8080/"&gt;http://localhost:8080/&lt;/a&gt; ，成功的话应该能看到一个 Tomcat 的页面。&lt;/p&gt;
+&lt;p&gt;然后设置 Eclipse ：
+在 Window -&amp;gt; Preference -&amp;gt; Server -&amp;gt; Runtime Environment 下，添加 Tomcat 。
+&lt;img alt="tomact_eclipse_setting_1" src="/static/article/tomact_eclipse_setting_1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;Web 项目 Run on Server 的时候选择 Tomcat 7 即可使用自己配置的 Tomcat 了。
+&lt;img alt="tomact_eclipse_setting_2" src="/static/article/tomact_eclipse_setting_2.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Sat, 13 Aug 2016 17:53:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-08-13:soft/build-java-devleopment.html</guid><category>Eclipse</category><category>Java</category></item><item><title>是时候该折腾一下 pelican 的主题了！</title><link>http://huiyadanli.github.io/life/blog-theme-edit.html</link><description>&lt;p&gt;最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。
 &lt;/p&gt;
 &lt;h2 id="d8cdc0"&gt;先听首歌吧&lt;/h2&gt;
 &lt;p&gt;尝试一下网易云音乐外链播放器&lt;/p&gt;
