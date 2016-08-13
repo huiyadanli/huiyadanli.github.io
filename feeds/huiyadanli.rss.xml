@@ -41,7 +41,7 @@
 &lt;p&gt;然后装上 web 开发的相关插件，打开 Help -&amp;gt; Install New Software&lt;/p&gt;
 &lt;p&gt;在work with 栏中输入 http://download.eclipse.org/releases/mars/  （mars 可以替换成相对应的版本，我用的 Mars 版） &lt;/p&gt;
 &lt;p&gt;选择 Web 那一块的插件，需要什么选什么。
-&lt;img alt="eclipse_install" src="/static/article/eclipse_install.png"/&gt;&lt;/p&gt;
+&lt;img alt="eclipse_web_install" src="/static/article/eclipse_web_install.png"/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;貌似这么做和直接安装 Eclipse IDE for Java EE Developers 没啥区别&lt;/strong&gt;。&lt;/p&gt;
 &lt;h2 id="248bb1"&gt;Maven 的安装&lt;/h2&gt;
 &lt;p&gt;下载并解压到 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt; 下，&lt;/p&gt;
@@ -317,8 +317,7 @@ callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp;amp; returntype =
 &lt;p&gt;跳转到那个页面，就可以得到登录的cookie，模拟登录完成。&lt;/p&gt;
 &lt;h2 id="a6e20d"&gt;C#实现&lt;/h2&gt;
 &lt;p&gt;直接看代码吧：
-&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐&lt;/p&gt;
-&lt;p&gt;然后...然后它被我遗忘在某个小角落...欠费致死。
+&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>http://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。
 &lt;/p&gt;
 &lt;h3 id="63177c"&gt;未完成的新博客&lt;/h3&gt;
 &lt;hr/&gt;
