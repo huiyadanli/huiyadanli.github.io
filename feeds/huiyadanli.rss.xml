@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>https://huiyadanli.github.io/</link><description></description><atom:link href="https://huiyadanli.github.io/feeds/huiyadanli.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 13 Aug 2016 17:53:00 +0800</lastBuildDate><item><title>动手建造一个自己的 Java 开发环境</title><link>https://huiyadanli.github.io/soft/build-java-devleopment.html</link><description>&lt;p&gt;做 Java 开发的时候懒得手动配置，于是乎网上下了个 MyEclipse 2015，但软件启动速度实在太慢，乱七八糟不需要的东西也很多，还是决定自己动手折腾一个 Eclipse。顺便把原先的相关软件都迁移到一个地方。
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>一亩地</title><link>//huiyadanli.github.io/</link><description></description><atom:link href="//huiyadanli.github.io/feeds/huiyadanli.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 13 Aug 2016 17:53:00 +0800</lastBuildDate><item><title>动手建造一个自己的 Java 开发环境</title><link>//huiyadanli.github.io/soft/build-java-devleopment.html</link><description>&lt;p&gt;做 Java 开发的时候懒得手动配置，于是乎网上下了个 MyEclipse 2015，但软件启动速度实在太慢，乱七八糟不需要的东西也很多，还是决定自己动手折腾一个 Eclipse。顺便把原先的相关软件都迁移到一个地方。
 &lt;/p&gt;
 &lt;h2 id="7a3c81"&gt;文件目录&lt;/h2&gt;
 &lt;p&gt;全部扔到了 &lt;code&gt;D:\Programing\Development\Java&lt;/code&gt; 文件夹下&lt;/p&gt;
@@ -83,7 +83,7 @@ Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; Installation -&amp;gt; Add
 在 Window -&amp;gt; Preference -&amp;gt; Server -&amp;gt; Runtime Environment 下，添加 Tomcat 。
 &lt;img alt="tomact_eclipse_setting_1" src="/static/article/tomact_eclipse_setting_1.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Web 项目 Run on Server 的时候选择 Tomcat 7 即可使用自己配置的 Tomcat 了。
-&lt;img alt="tomact_eclipse_setting_2" src="/static/article/tomact_eclipse_setting_2.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Sat, 13 Aug 2016 17:53:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-08-13:soft/build-java-devleopment.html</guid><category>Eclipse</category><category>Java</category></item><item><title>是时候该折腾一下 pelican 的主题了！</title><link>https://huiyadanli.github.io/life/blog-theme-edit.html</link><description>&lt;p&gt;最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。
+&lt;img alt="tomact_eclipse_setting_2" src="/static/article/tomact_eclipse_setting_2.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Sat, 13 Aug 2016 17:53:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-08-13:soft/build-java-devleopment.html</guid><category>Eclipse</category><category>Java</category></item><item><title>是时候该折腾一下 pelican 的主题了！</title><link>//huiyadanli.github.io/life/blog-theme-edit.html</link><description>&lt;p&gt;最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。
 &lt;/p&gt;
 &lt;h2 id="d8cdc0"&gt;先听首歌吧&lt;/h2&gt;
 &lt;p&gt;尝试一下网易云音乐外链播放器&lt;/p&gt;
@@ -122,7 +122,7 @@ Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; Installation -&amp;gt; Add
 &lt;h2 id="9415a8"&gt;最后&lt;/h2&gt;
 &lt;p&gt;喔，网站的修改参考了一些独立博客的样式，等我改造结束以后再统一列出吧。&lt;/p&gt;
 &lt;p&gt;我还发现了几个博客小圈子，V2EX，和知乎上也碰巧看到这些人（实在太巧...）。&lt;/p&gt;
-&lt;p&gt;还有，为什么我一个后端一直在做前端的东西，而且我还乐此不疲啊，【摔&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Wed, 06 Jul 2016 18:47:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-07-06:life/blog-theme-edit.html</guid><category>主题</category><category>blog</category></item><item><title>在 GitHub Contributions上画像素画</title><link>https://huiyadanli.github.io/soft/GitHub-Contributions.html</link><description>&lt;p&gt;只需要用 &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。
+&lt;p&gt;还有，为什么我一个后端一直在做前端的东西，而且我还乐此不疲啊，【摔&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Wed, 06 Jul 2016 18:47:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-07-06:life/blog-theme-edit.html</guid><category>主题</category><category>blog</category></item><item><title>在 GitHub Contributions上画像素画</title><link>//huiyadanli.github.io/soft/GitHub-Contributions.html</link><description>&lt;p&gt;只需要用 &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。
 &lt;/p&gt;
 &lt;h2 id="9e1bb0"&gt;使用说明&lt;/h2&gt;
 &lt;p&gt;直接按照  &lt;a href="https://github.com/IonicaBizau/github-contributions"&gt;gh-contributions&lt;/a&gt; 作者说的做就可以了。&lt;/p&gt;
@@ -160,7 +160,7 @@ sh: 1: node: not found
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/gelstudios/gitfiti"&gt;gitfiti&lt;/a&gt;  这个是 Python 写的，没有用过&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/ben174/git-draw"&gt;Git Draw&lt;/a&gt; 最近刚刚发现的，一个 Chrome 插件&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Sat, 14 May 2016 17:37:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-05-14:soft/GitHub-Contributions.html</guid><category>GitHub</category></item><item><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link>https://huiyadanli.github.io/code/WeiboMonitor.html</link><description>&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Sat, 14 May 2016 17:37:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-05-14:soft/GitHub-Contributions.html</guid><category>GitHub</category></item><item><title>C# 浪微博模拟页面解析，提取各条微博内容</title><link>//huiyadanli.github.io/code/WeiboMonitor.html</link><description>&lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。
 &lt;/p&gt;
 &lt;h2 id="add2db"&gt;提取页面&lt;/h2&gt;
 &lt;p&gt;下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。&lt;/p&gt;
@@ -258,7 +258,7 @@ sh: 1: node: not found
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h2 id="ede752"&gt;附赠&lt;/h2&gt;
 &lt;p&gt;以上东西的应用：&lt;a href="https://github.com/huiyadanli/WeiboMonitor"&gt;微博秒赞器&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>https://huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。
+&lt;p&gt;&lt;img alt="界面" src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png"/&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 21 Apr 2016 17:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-04-21:code/WeiboMonitor.html</guid><category>C#</category><category>Json</category><category>Javascript</category><category>HTML</category></item><item><title>C# 实现新浪微博模拟登录v1.4.18</title><link>//huiyadanli.github.io/code/sinaLogin.html</link><description>&lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。
 &lt;/p&gt;
 &lt;h2 id="e82624"&gt;模拟登录原理&lt;/h2&gt;
 &lt;p&gt;1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中&lt;code&gt;entry&lt;/code&gt; &lt;code&gt;callback&lt;/code&gt; &lt;code&gt;rsakt&lt;/code&gt; &lt;code&gt;client&lt;/code&gt;参数都是固定不变的，&lt;code&gt;su&lt;/code&gt;是经过Base64加密后的用户名，&lt;code&gt;checkpin&lt;/code&gt; =1时，会返回&lt;code&gt;showpin&lt;/code&gt;告诉你是否需要验证码，&lt;code&gt;_&lt;/code&gt;很明显是时间戳，没有这个参数也可以正常得到返回信息。&lt;/p&gt;
@@ -317,7 +317,7 @@ callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp;amp; returntype =
 &lt;p&gt;跳转到那个页面，就可以得到登录的cookie，模拟登录完成。&lt;/p&gt;
 &lt;h2 id="a6e20d"&gt;C#实现&lt;/h2&gt;
 &lt;p&gt;直接看代码吧：
-&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>https://huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。
+&lt;a href="https://github.com/huiyadanli/SinaLogin"&gt;https://github.com/huiyadanli/SinaLogin&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">huiyadanli</dc:creator><pubDate>Thu, 10 Mar 2016 23:03:00 +0800</pubDate><guid>tag:huiyadanli.github.io,2016-03-10:code/sinaLogin.html</guid><category>C#</category><category>模拟登录</category></item><item><title>成功使用pelican在github上搭建了自己的博客</title><link>//huiyadanli.github.io/life/build-a-blog.html</link><description>&lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后...然后它被我遗忘在某个小角落...欠费致死。
 &lt;/p&gt;
 &lt;h3 id="63177c"&gt;未完成的新博客&lt;/h3&gt;
 &lt;hr/&gt;
