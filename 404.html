@@ -14,6 +14,7 @@
         <script src="/theme/js/html5shiv.js"></script>
         <script src="/theme/js/respond.min.js"></script>
     <![endif]-->
+<link rel="stylesheet" type="text/css" href="/theme/css/loading.min.css">
   </head>
   <body> 
     <div id="body-header">
@@ -109,7 +110,8 @@
   var index = Math.round(Math.random() * 5)
   document.write('<img src="static/404/404_'+ index +'.gif">');
 </script> -->
-	<div id="loading">载入中...</div>
+	<div class="loader loader--circularSquare" style="margin-top: 100px; margin-bottom: 30px;"></div>
+	<div id="loading">404 Page Not Found<br/>原因搜寻中...</div>
 	<iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe> 
 </div>
 </div>
@@ -175,6 +177,7 @@
 		$("#i404").attr("src", "static/3D404/" + names[index]);
 
 		$("#i404").load(function(){
+			$(".loader").remove();
 			$("#loading").hide();
 			setIFrameSize();
 		});

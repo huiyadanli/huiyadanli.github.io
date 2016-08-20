@@ -6,6 +6,7 @@
 	<style type="text/css">
 		body {
 		  margin: 0px;
+      font-family:'Microsoft YaHei', sans-serif;
 		}
 		
     #world {
@@ -15,12 +16,28 @@
       height:100%;
       overflow:hidden;
     }
+    #instructions{
+      position:absolute;
+      width:100%;
+      top:50%;
+      margin: auto;
+      margin-top:70px;
+      color:#b75505;
+      font-size:1.2em;
+      text-transform: uppercase;
+      text-align : center;
+    }
+    .lightInstructions {
+      color:#b59b63;
+      font-size:1em;
+    }
 	</style>
 	<script src="three.min.js"></script>
 	<script src="TweenMax.min.js"></script>
 </head>
 <body>
 	<div id="world"></div>
+  <div id="instructions">404 Page Not Found<br/><span class="lightInstructions">谁把页面给吃了？</span></div>
 	<script src="cat.js"></script>
 	<script type="text/javascript">
 

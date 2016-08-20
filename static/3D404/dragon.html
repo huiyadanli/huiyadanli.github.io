@@ -6,6 +6,7 @@
 	<style type="text/css">
 		body {
 			margin: 0px;
+      font-family:'Microsoft YaHei', sans-serif;
 		}
 		
     #world {
@@ -21,7 +22,6 @@
       top:50%;
       margin: auto;
       margin-top:-220px;
-      font-family:'Open Sans', sans-serif;
       color:#481f26;
       font-size: 4em;
       text-transform: uppercase;
@@ -35,6 +35,29 @@
       -ms-user-select:none;
       user-select:none;
     }
+    #instructions{
+      position:absolute;
+      width:100%;
+      top:50%;
+      margin: auto;
+      margin-top:120px;
+      color:#fdde8c;
+      font-size:1.2em;
+      text-transform: uppercase;
+      text-align : center;
+      line-height : 1.5;
+      moz-user-select: -moz-none;
+      -moz-user-select: none;
+      -o-user-select:none;
+      -khtml-user-select:none;
+      -webkit-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+    }
+    .lightInstructions {
+      color:#f89a78;
+      font-size:.9em;
+    }
 	</style>
 	<script src="three.min.js"></script>
 	<script src="TweenMax.min.js"></script>
@@ -42,6 +65,7 @@
 </head>
 <body>
 	<div id="world"></div>
+  <div id="instructions">404 Page Not Found<br/><span class="lightInstructions">页面好像被烧成灰了</span></div>
   <div id="power">00</div>
 	<script type="text/javascript">
 //THREEJS RELATED VARIABLES 
