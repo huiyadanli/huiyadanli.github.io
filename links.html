@@ -3,11 +3,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404错误 页面未找到! - 一亩地</title>
+    <title>一亩地</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="/theme/css/hui.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/hover-min.css" type="text/css" />
     
     <script type="text/javascript">window.onload=function(){};</script>
     <!--[if lt IE 9]>
@@ -25,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="//huiyadanli.github.io">
+        <a class="navbar-brand" href="http://localhost:8000">
             <i class="fa fa-home"></i>一亩地
         </a>
     </div>
@@ -49,13 +50,13 @@
                 <i class="fa fa-folder-open"></i>分类<b class="caret"></b>
            </a>
            <ul class="dropdown-menu">
-               <li><a href="//huiyadanli.github.io/code/index.html">
+               <li><a href="http://localhost:8000/code/index.html">
                       <i class="fa fa-code"></i>代码
                       (2)</a></li>
-               <li><a href="//huiyadanli.github.io/life/index.html">
+               <li><a href="http://localhost:8000/life/index.html">
                       <i class="fa fa-coffee"></i>日常
                       (2)</a></li>
-               <li><a href="//huiyadanli.github.io/soft/index.html">
+               <li><a href="http://localhost:8000/soft/index.html">
                       <i class="fa fa-briefcase"></i>软件
                       (2)</a></li>
            </ul>
@@ -102,20 +103,20 @@
 </div>
 </div>    </div>
     
-    <div id="body-content">
-<div class="col-md-8 col-md-offset-2">
-<div class="niu2-404-info-bigger">
-<!--   <script type="text/javascript">
-  var index = Math.round(Math.random() * 5)
-  document.write('<img src="static/404/404_'+ index +'.gif">');
-</script> -->
-	<div id="loading">载入中...</div>
-	<iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe> 
-</div>
-</div>
+<div id="body-content">
+	<div class="col-md-8 col-md-offset-2">
+	    <h1 class="niu2-index-title" style="text-align: center;">友情链接</h1>
+	</div>
+
+	<div class="col-md-8 col-md-offset-2">
+
+	<a href="#" class="Wobble To Bottom Right">Sweep To Left</a>
 
 
-    </div>
+
+
+	</div>
+</div>
 
 <div id="body-footer" class="col-md-8 col-md-offset-2">
 <div class="niu2-footer">
@@ -129,7 +130,7 @@
 	<p>
 		©
 				2015-2016
-		<a class="niu2-footer-link" href="//huiyadanli.github.io">huiyadanli</a>
+		<a class="niu2-footer-link" href="http://localhost:8000">huiyadanli</a>
         / 			<a class="niu2-footer-link" href="/about.html" title="about me">关于</a>
         / 			<a class="niu2-footer-link" href="/agreement.html" title="terms, license and privacy etc.">使用协议</a>
     </p>
@@ -167,29 +168,6 @@
     <script type="text/javascript">
 
     </script>
-    <script type="text/javascript">// random use 3D page
-	var names = ['lion.html', 'cat.html', 'birds.html', 'dragon.html', 'fish.html'];
-	$(document).ready(function() {
-
-		var index = Math.round(Math.random() * (names.length - 1));
-		$("#i404").attr("src", "static/3D404/" + names[index]);
-
-		$("#i404").load(function(){
-			$("#loading").hide();
-			setIFrameSize();
-		});
-	});
-
-	$(window).resize(function() {
-		setIFrameSize();
-	});
-
-	function setIFrameSize() {
-		var w = $(".niu2-404-info-bigger").width();
-		var itop = parseInt($(".niu2-404-info-bigger").css("margin-top").replace("px",""));
-		var h = $(window).height() - $("#body-footer").height() - $(".navbar").height() - itop - 20;
-		$("#i404").css("width", w);
-		$("#i404").css("height", h);
-	}</script>
+    <script type="text/javascript"></script>
   </body>
 </html>
