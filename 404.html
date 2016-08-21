@@ -180,20 +180,20 @@
 		$("#i404").load(function(){
 			$(".loader").remove();
 			$("#loading").hide();
-			setIFrameSize();
+			setIFrameSize($("#i404"));
 		});
 	});
 
 	$(window).resize(function() {
-		setIFrameSize();
+		setIFrameSize($("#i404"));
 	});
 
-	function setIFrameSize() {
+	function setIFrameSize($i) {
 		var w = $(".niu2-404-info-bigger").width();
 		var itop = parseInt($(".niu2-404-info-bigger").css("margin-top").replace("px",""));
 		var h = $(window).height() - $("#body-footer").height() - $(".navbar").height() - itop - 20;
-		$("#i404").css("width", w);
-		$("#i404").css("height", h);
+		$i.css("width", w);
+		$i.css("height", h);
 	}</script>
   </body>
 </html>

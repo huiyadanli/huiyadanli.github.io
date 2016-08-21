@@ -124,7 +124,10 @@ jQuery(document).ready(function($) {
             // Fuzzy magic!
             $("p").css("color", "transparent");
             $("p").css("text-shadow", "#111 0 0 5px");
-        } else if(click_cnt>=100 && click_cnt<=105) {
+        } else if(click_cnt==100) {
+            $i=$("<b></b>").text("(ꐦ°᷄д°᷅)");
+            $("div").addClass("shake-hard shake-constant");
+        } else if(click_cnt>100 && click_cnt<=105) {
             $i=$("<b></b>").text("(ꐦ°᷄д°᷅)");
         } else {
             $i=$("<i class='fa fa-heart'></i>");
