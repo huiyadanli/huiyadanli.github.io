@@ -111,8 +111,12 @@
   var index = Math.round(Math.random() * 5)
   document.write('<img src="static/404/404_'+ index +'.gif">');
 </script> -->
-	<div class="loader loader--circularSquare" style="margin-top: 100px; margin-bottom: 30px;"></div>
-	<div id="loading">404 Page Not Found<br/>原因搜寻中...</div>
+	<div id="loading" style="height: 280px;padding-top: 80px">
+		<div class="loader loader--circularSquare"></div>
+	</div>
+	<div id="loadingText" style="margin-top: 20px;margin-bottom: 20px">
+		404 Page Not Found<br/>原因搜寻中...
+	</div>
 	<iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe> 
 </div>
 </div>
@@ -178,8 +182,8 @@
 		$("#i404").attr("src", "/static/3D404/" + names[index]);
 
 		$("#i404").load(function(){
-			$(".loader").remove();
-			$("#loading").hide();
+			$("#loading").remove();
+			$("#loadingText").hide();
 			setIFrameSize($("#i404"));
 		});
 	});
@@ -191,7 +195,7 @@
 	function setIFrameSize($i) {
 		var w = $(".niu2-404-info-bigger").width();
 		var itop = parseInt($(".niu2-404-info-bigger").css("margin-top").replace("px",""));
-		var h = $(window).height() - $("#body-footer").height() - $(".navbar").height() - itop - 20;
+		var h = $(window).height() - $("#body-footer").height() - $(".navbar").height() - itop - 10;
 		$i.css("width", w);
 		$i.css("height", h);
 	}</script>

@@ -94,11 +94,11 @@ Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; Installation -&amp;gt; Add
 &lt;ul&gt;
 &lt;li&gt;底部相关信息修改为居中；&lt;/li&gt;
 &lt;li&gt;导航条内容移到中间，修改了粗细，加入&lt;strong&gt;下拉隐藏&lt;/strong&gt;的效果（headroom.js）；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;鼠标点击页面时的特效&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;鼠标点击页面时的特效&lt;/strong&gt;（增加彩蛋）；&lt;/li&gt;
 &lt;li&gt;多说样式的修改，embed.js 本地化（然后鼠标悬浮显示多说信息的框框不见了(´இ皿இ｀)）；&lt;/li&gt;
 &lt;li&gt;页面非选中状态时标题的变化（标题被我吃掉了 (°∀°)ﾉ）；&lt;/li&gt;
 &lt;li&gt;代码高亮显示样式的修改（monokai），增加行号；&lt;/li&gt;
-&lt;li&gt;404 页面样式的修改。&lt;/li&gt;
+&lt;li&gt;404 页面样式的修改（二次修改后偷用了&lt;a href="https://codepen.io/Yakudoo/#"&gt;Karim Maaloul&lt;/a&gt;的3D动画，真的好萌）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="01f7db"&gt;多少眼也看不出来的&lt;/h3&gt;
 &lt;ul&gt;
@@ -115,7 +115,7 @@ Window -&amp;gt; Preference -&amp;gt; Maven -&amp;gt; Installation -&amp;gt; Add
 &lt;li&gt;主页文章简介显示样式的修改；&lt;/li&gt;
 &lt;li&gt;增加关于页面，使用协议页面；&lt;/li&gt;
 &lt;li&gt;多说增加颜文字表情栏；&lt;/li&gt;
-&lt;li&gt;~~google 搜索的替换，使用 tipue_search 插件，直接用 js 搜索页面；~~&lt;/li&gt;
+&lt;li&gt;google 搜索的替换，使用 tipue_search 插件，直接用 js 搜索页面；&lt;/li&gt;
 &lt;li&gt;无聊小挂件的添加；&lt;/li&gt;
 &lt;li&gt;也许还会有更多小细节的修改，只为了让我的网站更有趣些。&lt;/li&gt;
 &lt;/ul&gt;
