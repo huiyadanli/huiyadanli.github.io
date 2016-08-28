@@ -746,10 +746,45 @@ h4:before, h5:before, h6:before {
     color: #fff;
 }
 
+/* herat beat animation */
+@-webkit-keyframes heartb {
+    0% {
+        -webkit-transform:scale(1)
+    }
+    50% {
+        -webkit-transform:scale(.8)
+    }
+    to {
+        -webkit-transform:scale(1)
+    }
+}
+@keyframes heartb {
+    0% {
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+    50% {
+        -webkit-transform:scale(.8);
+        transform:scale(.8)
+    }
+    to {
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+#footer-heart {
+    font-size: 13px;
+    color: #E94F06;
+    -webkit-animation:heartb 1.33s ease-in-out infinite;
+    animation:heartb 1.33s ease-in-out infinite
+}
+
+
 @media (max-width: 767px) {
 
 .dropdown-toc > .dropdown-menu > li > a {
     padding: 5px 10px 5px 10px !important;
+}
 }
 
 .niu2-index-date {
@@ -798,4 +833,5 @@ h4:before, h5:before, h6:before {
 }
 
 }
+
 
