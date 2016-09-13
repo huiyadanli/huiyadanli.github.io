@@ -170,9 +170,13 @@
     <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//cdn.bootcss.com/headroom/0.9.3/headroom.min.js"></script>
     <script type="text/javascript" src="/theme/js/hui.js"></script>
+    <script type="text/javascript" src="/theme/js/activate-power-mode.js"></script>
+
 
     <script type="text/javascript">
-
+        POWERMODE.colorful = true; // make power mode colorful
+        POWERMODE.shake = false;
+        document.body.addEventListener('input', POWERMODE);
     </script>
     <script type="text/javascript">// random use 3D page
 	var names = ['lion.html', 'cat.html', 'birds.html', 'dragon.html', 'fish.html'];
@@ -182,9 +186,9 @@
 		$("#i404").attr("src", "/static/3D404/" + names[index]);
 
 		$("#i404").load(function(){
-			$("#loading").remove();
-			$("#loadingText").hide();
-			setIFrameSize($("#i404"));
+			$("#loading").hide(1000);
+			$("#loadingText").hide(1000);
+			setTimeout("setIFrameSize($('#i404'))",1000);
 		});
 	});
 
