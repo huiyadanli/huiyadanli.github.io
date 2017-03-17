@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Live2D SampleApp1</title>
+        </meta>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=1.0, maximum-scale=4.0">
+        </meta>
+
+        <style>
+            html, body {
+                oveflow: hidden;
+                height: 100%;
+            }
+            
+            body{
+                margin:0px ;
+                padding:0px ;
+            }
+            
+            #glcanvas {
+                /*
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                */
+                background-size: 150%;
+                background-position: 50% 50%;
+                background-image: url(assets/image/back_class_normal.png);
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+        <p>
+            <button id="btnChange">Change Model</button>
+
+            <button id="btnRelease">Release Model</button>
+
+            
+        </p>
+
+        <p>
+            <button id="btnRandomExpression">Random Expression</button>
+            <button id="btnLoadExpressions">Load Expressions</button>
+        </p>
+        <div id="expressions"></div>
+            
+
+        <p>
+            <select id="motionName">
+                <option value=""></option>
+                <option value="idle">idle</option>
+                <option value="tap_body">tap_body</option>
+                <option value="flick_head">flick_head</option>
+                <option value="pinch_in">pinch_in</option>
+                <option value="pinch_out">pinch_out</option>
+                <option value="shake">shake</option>
+            </select>
+            <input id="motionNum" value="0"></input>
+            <button id="btnStartMotion">Start Motion</button>
+        </p>
+
+        <p>
+            <button id="btnPlaySound">Play Sound</button>
+        </p>
+
+        <p>
+            <button id="btnZoomIn">Zoom In</button>
+            <button id="btnZoomOut">Zoom Out</button>
+        </p>
+
+        <div>
+            <canvas id="glcanvas" width="400" height="600" style="border:dashed 1px #CCC">
+            </canvas>
+        </div>
+
+        <!-- Live2D Library -->
+        <script src="lib/live2d.min.js"></script>
+
+        <!-- Live2D Framework -->
+        <script src="src/Live2DFramework.js"></script>
+        <script src="src/MatrixStack.js"></script>
+        <script src="src/ModelSettingJson.js"></script>
+        <script src="src/PlatformManager.js"></script>
+        <script src="src/LAppDefine.js"></script>
+        <script src="src/LAppModel.js"></script>
+        <script src="src/LAppLive2DManager.js"></script>
+        <script src="src/Live2DHelper.js"></script>
+
+        <!-- User's Script -->
+        <script type="text/javascript">
+            var live2DHelper = new Live2DHelper({canvas: 'glcanvas'});
+
+            window.onload = function() {
+                var path = "assets/models/asuna/asuna_01/asuna_01.model.json";
+                live2DHelper.loadModel(path, function(){
+                    live2DHelper.startTurnHead();
+                    document.getElementById("glcanvas").addEventListener("mousemove", followPointer, false);
+                });
+            };
+
+            function followPointer(e) {
+                live2DHelper.followPointer(e);
+            }
+
+            var modelNum = 1;
+            document.getElementById("btnChange").onclick = function(){
+                modelNum = modelNum % 3 + 1;
+                console.log(modelNum);
+                live2DHelper.releaseAllModel();
+                if(modelNum >= 10) {
+                    live2DHelper.changeModel("assets/models/asuna/asuna_"+modelNum+"/asuna_"+modelNum+".model.json", function(){
+                        live2DHelper.startTurnHead();
+                        document.getElementById("glcanvas").addEventListener("mousemove", followPointer, false);
+                    });
+                } else {
+                    live2DHelper.changeModel("assets/models/asuna/asuna_0"+modelNum+"/asuna_0"+modelNum+".model.json", function(){
+                        live2DHelper.startTurnHead();
+                        document.getElementById("glcanvas").addEventListener("mousemove", followPointer, false);
+                    });
+                }
+            }
+
+            document.getElementById("btnRelease").onclick = function(){
+                live2DHelper.releaseModel();
+            }
+
+            document.getElementById("btnRandomExpression").onclick = function(){
+                live2DHelper.setRandomExpression();
+            }
+
+            document.getElementById("btnLoadExpressions").onclick = function(){
+                 document.getElementById("expressions").innerHTML = '';
+                for (var name in live2DHelper.gerExpressions()) {
+                    var button = document.createElement("input");
+                    button.setAttribute("type","button");
+                    button.setAttribute("value",name);
+                    button.setAttribute("id",name);
+                    document.getElementById("expressions").appendChild(button);
+                }
+                for (var name in live2DHelper.gerExpressions()) {
+                    (function(name){
+                        document.getElementById(name).onclick = function(){
+                            live2DHelper.setExpression(name);
+                        };
+                    })(name);
+                }
+            }
+
+            document.getElementById("btnStartMotion").onclick = function(){
+                var  motionName = document.getElementById("motionName");
+                var i1 = motionName.selectedIndex;
+                var  motionNum = document.getElementById("motionNum");
+                live2DHelper.startMotion(motionName.options[i1].value, motionNum.value);
+            }
+
+            document.getElementById("btnPlaySound").onclick = function(){
+                live2DHelper.playSoundAJAX("/assets/sound/1.mp3");
+                //live2DHelper.playSound("/assets/sound/1.mp3");
+            }
+
+            document.getElementById("btnZoomIn").onclick = function(){
+                live2DHelper.modelScaling(1.1);
+            }
+
+            document.getElementById("btnZoomOut").onclick = function(){
+                live2DHelper.modelScaling(0.9);
+            }
+        </script>
+    </body>
+</html>

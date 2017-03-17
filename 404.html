@@ -1,207 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404错误 页面未找到! - 一亩地</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/hui.css" type="text/css" />
-    <link rel="stylesheet" href="/theme/css/csshake-hard.min.css" type="text/css" />
-    
-    <script type="text/javascript">window.onload=function(){};</script>
-    <!--[if lt IE 9]>
-        <script src="/theme/js/html5shiv.js"></script>
-        <script src="/theme/js/respond.min.js"></script>
-    <![endif]-->
-<link rel="stylesheet" type="text/css" href="/theme/css/loading.min.css">
-  </head>
-  <body> 
-    <div id="body-header">
-<div class="navbar navbar-default navbar-fixed-top">
-<div class="col-md-8 col-md-offset-2">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="//huiyadanli.github.io">
-            <i class="fa fa-home"></i>一亩地
-        </a>
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="shortcut icon" href="/images/favicon/404.ico" type="image/x-icon">
+  <title>无法找到该页面 - 壹亩地</title>
+  <link rel="stylesheet" href="/css/animate.min.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+  <link rel="stylesheet" href="/src/css/materialize.css">
+  <link rel="stylesheet" href="/src/css/block.css">
+  <link rel="stylesheet" href="/src/css/highlight.css">
+  <style type="text/css">
+    #loadingText {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="row no-margin">
+  <div class="col s12 m6 offset-m3" style="text-align: center;">
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
     </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav">
-            <li><a href="/about.html" title="about me">
-                <i class="fa fa-exclamation-circle"></i>关于</a>
-            </li>
-            <li><a href="/projects.html" title="projects">
-                <i class="fa fa-rocket"></i>作品</a>
-            </li>
-            <li><a href="/tag/" title="tags">
-                <i class="fa fa-tags"></i>标签</a>
-            </li>
-            <li><a href="/links.html" title="links">
-                <i class="fa fa-link"></i>友链</a>
-            </li>
-        <!-- category dropdown list -->
-        <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-folder-open"></i>分类<b class="caret"></b>
-           </a>
-           <ul class="dropdown-menu">
-               <li><a href="//huiyadanli.github.io/code/index.html">
-                      <i class="fa fa-code"></i>代码
-                      (3)</a></li>
-               <li><a href="//huiyadanli.github.io/life/index.html">
-                      <i class="fa fa-coffee"></i>日常
-                      (2)</a></li>
-               <li><a href="//huiyadanli.github.io/soft/index.html">
-                      <i class="fa fa-briefcase"></i>软件
-                      (2)</a></li>
-           </ul>
-        </li>
-        <!--  self defined dropdown list -->
-        <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="fa fa-archive"></i>存档<b class="caret"></b>
-           </a>
-           <ul class="dropdown-menu">
-               <li><a href="/archives.html" title="archives order by publish time">
-                 <i class="fa fa-calendar"></i>存档 (按发布时间)</a>
-               </li>
-               <li><a href="/archives_updatedate.html" title="archives order by modify time">
-                 <i class="fa fa-pencil"></i>存档 (按修改时间)</a>
-               </li>
-           </ul>
-        </li>
-        </ul>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+    </div>
+    <div class="menu-item">
+      <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
+      <ul id='dropdown-categories' class='dropdown-content'>
         
-        <!-- right nav bar -->
-        <ul class="nav navbar-nav navbar-right">
-        <!-- google custom search -->
-        <li>
-        <div id="niu2-cse-wrapper">
-            <div id="niu2-cse-header-box" class="navbar-form">
-                <form action="//cse.google.com/cse">
-                    <input type="hidden" name="cx" value="014818977980224173519:_6-um3fgsq0" />
-                    <input type="hidden" name="ie" value="UTF-8" />
-                    <div class="form-group">
-                        <input id="niu2-cse-search-input" class="niu2-cse-header form-control" 
-                            type="text" name="q" 
-                            placeholder="按回车开始搜索 ..."/>
-                    </div>
-                </form>
-           </div>
-           <div id="niu2-cse-ctrl-box" class="navbar-nav">
-            <i id="niu2-cse-search-image" class="fa fa-search navbar-nav"></i><span id="niu2-cse-search-text"></span>
-           </div>
-       </div>
-       </li>
-       </ul>
-    </nav>
-</div>
-</div>    </div>
-    
-    <div id="body-content">
-<div class="col-md-8 col-md-offset-2">
-<div class="niu2-404-info-bigger">
-<!--   <script type="text/javascript">
-  var index = Math.round(Math.random() * 5)
-  document.write('<img src="static/404/404_'+ index +'.gif">');
-</script> -->
-	<div id="loading" style="height: 280px;padding-top: 80px">
-		<div class="loader loader--circularSquare"></div>
-	</div>
-	<div id="loadingText" style="margin-top: 20px;margin-bottom: 20px">
-		404 Page Not Found<br/>原因搜寻中...
-	</div>
-	<iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe> 
-</div>
-</div>
-
-
+        <li><a href="/categories/日常/">日常</a></li>
+        
+        <li><a href="/categories/软件/">软件</a></li>
+        
+        <li><a href="/categories/代码/">代码</a></li>
+        
+        <li><a href="/categories/研究/">研究</a></li>
+        
+      </ul>
     </div>
+    <div class="menu-item">
+      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+    </div>
+    <div class="menu-item" style="margin-top: 0px">
+      <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
+    </div>
+  </div>
+</div>
+</header>
 
-<div id="body-footer" class="col-md-8 col-md-offset-2">
-<div class="niu2-footer">
-    <hr/>
-	<p>
-		Powered by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>, 
-        <a href="https://github.com/mawenbao/niu-x2-sidebar" target="_blank">Theme</a>
-		by <a href="//blog.atime.me" target="_blank">Ma Wenbao</a>, Made with <!-- <span class="footer-heart" style="color: #E94F06; font-size: 18px;">♥</span> --><i id="footer-heart" class="fa fa-heart"></i> by 
-		<a href="//huiyadanli.github.io">huiyadanli</a>.
-	</p>
-	<p>
-		©
-				2015-2016
-		<a class="niu2-footer-link" href="//huiyadanli.github.io">huiyadanli</a>
-        / 			<a class="niu2-footer-link" href="/about.html" title="about me">关于</a>
-        / 			<a class="niu2-footer-link" href="/agreement.html" title="terms, license and privacy etc.">使用协议</a>
-    </p>
-    <p class="niu2-icons">
-	        <a class="niu2-footer-icon" href="mailto: huiyadanli@126.com" title="my email address" target="_blank">
-	            <i class="fa fa fa-envelope-o fa-lg"></i>
-	        </a>
-	        <a class="niu2-footer-icon" href="https://github.com/huiyadanli" title="my github page" target="_blank">
-	            <i class="fa fa fa-github-alt fa-lg"></i>
-	        </a>
-	        <a class="niu2-footer-icon" href="/feed.xml" title="subscribe my blog" target="_blank">
-	            <i class="fa fa fa-rss fa-lg"></i>
-	        </a>
-	</p>
-</div></div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<div class="content">
+  <!-- post -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="post card">
+        <!-- loading -->
+        <div class="progress" style="margin: 0px">
+            <div class="indeterminate"></div>
+        </div>
+        <div id="loadingText">
+          404 Page Not Found<br/>原因搜寻中...
+        </div>
+        <!-- 3d 404 -->
+        <iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe>
+      </div>
+    </div>
+  </div>
 
-  ga('create', 'UA-80358493-1', 'auto');
-  ga('send', 'pageview');
 
-</script>    
-    <div id="niu2-pygments" data-theme="monokai-hui"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-line" style="visibility:hidden;">
+  <div class="container grey-text text-darken-1">
+    &copy;  2013 - 
+    2017
+    Powerd by 
+    <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
+    <div class="grey-text text-darken-1 right">
+      <a class="modal-trigger" href="#modal-keybinding-panel">
+        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
+      </a>
+      Made with 
+      <i class="material-icons heart-beat" style="font-size: 13px; position: relative; top: 1px;">favorite</i> 
+      by huiyadanli
+    </div>
+  </div>
+</div>
+
+<!-- Keybinding Panel Modal -->
+<div id="modal-keybinding-panel" class="modal">
+  <div class="modal-content">
+    <center><h2>快捷键说明</h2></center>
+    <dl>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
+    </dl>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect btn-flat">关闭</a>
+  </div>
+</div>
+</footer>
+
+
+  
+    <script src="/js/jquery-2.1.3.min.js"></script>
+  
+    <script src="/src/js/materialize.js"></script>
+  
+    <script src="/src/js/block.js"></script>
+  
+    <script src="/js/mousetrap.min.js"></script>
+  
+
+
+
+<script type="text/javascript">
+  // random use 3D page
+  var names = ['lion.html', 'cat.html', 'birds.html', 'dragon.html', 'fish.html'];
+  var $i = $("#i404");
+  $(function(){
+    // iframe
+    var index = Math.round(Math.random() * (names.length - 1));
+    $i.attr("src", "/i/3D404/" + names[index]);
+    var h = $(window).height() - $(".footer").height() - $(".post").offset().top - 80;
+    $(".post").css("height", h);
+    setFooterPosition();
+    // text
     
-    <canvas id="bg-hui"></canvas>
 
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdn.bootcss.com/headroom/0.9.3/headroom.min.js"></script>
-    <script type="text/javascript" src="/theme/js/hui.js"></script>
-    <script type="text/javascript" src="/theme/js/activate-power-mode.js"></script>
+    $("#i404").load(function(){
+      $("#loadingText").hide(1000);
+      $(".progress").hide(1000);
+      setTimeout("setIFrameSize()",1000);
+    });
+  });
 
+  function setIFrameSize() {
+    $i.css("width", "100%");
+    $i.css("height", "100%");
+    setFooterPosition();
+  }
+</script>
 
-    <script type="text/javascript">
-        POWERMODE.colorful = true; // make power mode colorful
-        POWERMODE.shake = false;
-        document.body.addEventListener('input', POWERMODE);
-    </script>
-    <script type="text/javascript">// random use 3D page
-	var names = ['lion.html', 'cat.html', 'birds.html', 'dragon.html', 'fish.html'];
-	$(document).ready(function() {
-
-		var index = Math.round(Math.random() * (names.length - 1));
-		$("#i404").attr("src", "/static/3D404/" + names[index]);
-
-		$("#i404").load(function(){
-			$("#loading").hide(1000);
-			$("#loadingText").hide(1000);
-			setTimeout("setIFrameSize($('#i404'))",1000);
-		});
-	});
-
-	$(window).resize(function() {
-		setIFrameSize($("#i404"));
-	});
-
-	function setIFrameSize($i) {
-		var w = $(".niu2-404-info-bigger").width();
-		var itop = parseInt($(".niu2-404-info-bigger").css("margin-top").replace("px",""));
-		var h = $(window).height() - $("#body-footer").height() - $(".navbar").height() - itop - 10;
-		$i.css("width", w);
-		$i.css("height", h);
-	}</script>
-  </body>
+</body>
 </html>

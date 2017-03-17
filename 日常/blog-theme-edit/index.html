@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>是时候该折腾一下 pelican 的主题了！ - 壹亩地</title>
+  
+    
+      <link rel="stylesheet" href="/css/block.min.css">
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="http://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    
+      <link rel="stylesheet" href="/css/highlight.min.css">
+    
+      <link rel="stylesheet" href="/css/animate.min.css">
+    
+  
+</head>
+<body>
+
+<header class="header">
+  <div class="row no-margin">
+  <div class="col s12 m6 offset-m3" style="text-align: center;">
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+    </div>
+    <div class="menu-item">
+      <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
+      <ul id='dropdown-categories' class='dropdown-content'>
+        
+        <li><a href="/categories/日常/">日常</a></li>
+        
+        <li><a href="/categories/软件/">软件</a></li>
+        
+        <li><a href="/categories/代码/">代码</a></li>
+        
+        <li><a href="/categories/研究/">研究</a></li>
+        
+      </ul>
+    </div>
+    <div class="menu-item">
+      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+    </div>
+    <div class="menu-item" style="margin-top: 0px">
+      <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="content">
+  
+  <!-- TOC -->
+  <div class="row post-toc">
+    <div class="col s12 m2 offset-m10 l2 offset-l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="center-align">文章目录</span>
+          <span id="btn-list-close" class="right"><i class="material-icons">close</i></span>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先听首歌吧"><span class="toc-number">1.</span> <span class="toc-text">先听首歌吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改记录"><span class="toc-number">2.</span> <span class="toc-text">修改记录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一眼能看出来的"><span class="toc-number">2.1.</span> <span class="toc-text">一眼能看出来的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多少眼也看不出来的"><span class="toc-number">2.2.</span> <span class="toc-text">多少眼也看不出来的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我还想做什么"><span class="toc-number">3.</span> <span class="toc-text">我还想做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- post -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      
+
+<div class="post card">
+  <div class="card-image">
+    <img src="/images/banner/undefined.jpg">
+    <a class="card-title" href="/日常/blog-theme-edit/" >是时候该折腾一下 pelican 的主题了！</a>
+  </div>
+  <div class="card-content">
+    <div class="post-item">
+      <span class="post-create-date">2016-07-06</span>
+      
+      <span class="meta-separator">/</span>
+      <span class="post-update-date">2016-11-20</span>
+      
+      <div class="right">
+        
+        <span class="">分类：</span>
+        
+        <a class="post-category" href="/categories/日常/">日常</a>
+        
+        
+      </div>
+    </div>
+    
+      <p>最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。<br><a id="more"></a></p>
+<h2 id="先听首歌吧"><a href="#先听首歌吧" class="headerlink" title="先听首歌吧"></a>先听首歌吧</h2><p>尝试一下网易云音乐外链播放器</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29771569&auto=0&height=66"></iframe>
+
+<h2 id="修改记录"><a href="#修改记录" class="headerlink" title="修改记录"></a>修改记录</h2><p>相比 NIUX2 修改了哪些地方呢？请作者原谅我把原来简洁的主题改成这样…</p>
+<h3 id="一眼能看出来的"><a href="#一眼能看出来的" class="headerlink" title="一眼能看出来的"></a>一眼能看出来的</h3><ul>
+<li>底部相关信息修改为居中；</li>
+<li>导航条内容移到中间，修改了粗细，加入<strong>下拉隐藏</strong>的效果（headroom.js）；</li>
+<li><strong>鼠标点击页面时的特效</strong>（增加彩蛋）；</li>
+<li>多说样式的修改，embed.js 本地化（然后鼠标悬浮显示多说信息的框框不见了(´இ皿இ｀)）；</li>
+<li>页面非选中状态时标题的变化（标题被我吃掉了 (°∀°)ﾉ）；</li>
+<li>代码高亮显示样式的修改（monokai），增加行号；</li>
+<li>404 页面样式的修改（二次修改后偷用了<a href="https://codepen.io/Yakudoo/#" target="_blank" rel="external">Karim Maaloul</a>的3D动画，真的好萌）。</li>
+</ul>
+<h3 id="多少眼也看不出来的"><a href="#多少眼也看不出来的" class="headerlink" title="多少眼也看不出来的"></a>多少眼也看不出来的</h3><ul>
+<li>删除原 CSS 中部分重复代码；</li>
+<li>模板页中绝对路径修改为相对路径；</li>
+<li>废弃 <code>NIUX2_LIB_*</code> 参数，新增 <code>NIUX2_LIB_FONTAWESOME</code> <code>NIUX2_LIB_JQUERY</code> <code>NIUX2_LIB_BOOTSTRAP_CSS</code> <code>NIUX2_LIB_BOOTSTRAP_JS</code> <code>NIUX2_LIB_HEADEOOM_JS</code> 参数，其实我就是把这些参数每个独立出来了，方便修改为大网站提供的CDN地址；</li>
+<li>Google Analytics 替换为新版 js ；</li>
+<li>summary 插件改成最新版的了。</li>
+<li>放弃使用原作者写的音乐播放器插件，直接用外链了。</li>
+</ul>
+<h2 id="我还想做什么"><a href="#我还想做什么" class="headerlink" title="我还想做什么"></a>我还想做什么</h2><ul>
+<li>主页 banner 的添加；</li>
+<li>主页文章简介显示样式的修改；</li>
+<li>增加关于页面，使用协议页面；</li>
+<li>多说增加颜文字表情栏；</li>
+<li>google 搜索的替换，使用 tipue_search 插件，直接用 js 搜索页面；</li>
+<li>无聊小挂件的添加；</li>
+<li>也许还会有更多小细节的修改，只为了让我的网站更有趣些。</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>喔，网站的修改参考了一些独立博客的样式，等我改造结束以后再统一列出吧。</p>
+<p>我还发现了几个博客小圈子，V2EX，和知乎上也碰巧看到这些人（实在太巧…）。</p>
+<p>还有，为什么我一个后端一直在做前端的东西，而且我还乐此不疲啊，【摔</p>
+
+    
+  </div>
+  
+</div>
+
+
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+    
+  <div class="block-pagination">
+  
+    <a class="left btn-floating grey" rel="prev" href="/软件/build-java-devleopment/"><i class="material-icons">chevron_left</i></a>
+  
+  
+    <a class="right btn-floating grey" rel="next" href="/软件/github-contributions/"><i class="material-icons">chevron_right</i></a>
+  
+  </div>
+
+
+    </div>
+  </div>
+  <!-- action button -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a id="btn-list" class="btn-floating blue"><i class="material-icons">list</i></a></li>
+      <li><a id="btn-to-top" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-line" style="visibility:hidden;">
+  <div class="container grey-text text-darken-1">
+    &copy;  2013 - 
+    2017
+    Powerd by 
+    <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
+    <div class="grey-text text-darken-1 right">
+      <a class="modal-trigger" href="#modal-keybinding-panel">
+        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
+      </a>
+      Made with 
+      <i class="material-icons heart-beat" style="font-size: 13px; position: relative; top: 1px;">favorite</i> 
+      by huiyadanli
+    </div>
+  </div>
+</div>
+
+<!-- Keybinding Panel Modal -->
+<div id="modal-keybinding-panel" class="modal">
+  <div class="modal-content">
+    <center><h2>快捷键说明</h2></center>
+    <dl>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
+    </dl>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect btn-flat">关闭</a>
+  </div>
+</div>
+</footer>
+
+
+  
+    <script src="/js/jquery-2.1.3.min.js"></script>
+  
+    <script src="/js/materialize.min.js"></script>
+  
+    <script src="/js/block.min.js"></script>
+  
+    <script src="/js/mousetrap.min.js"></script>
+  
+
+
+
+<script type="text/javascript">
+  $(function(){
+    if($("ol.toc").children().length > 5) {
+      $(".post-toc").show();
+    }
+    $(window).scroll(function () {
+      var scrollTop = $(window).scrollTop();
+      var offset = 155 - scrollTop;
+      if(offset >= 10) {
+        $(".post-toc").css("top", offset);
+      } else {
+        $(".post-toc").css("top", 10);
+      }
+    });
+  });
+
+  $("#btn-list").click(function(){
+    var $toc = $(".post-toc");
+    if($toc.find(".toc").length == 0) {
+      Materialize.toast("本文没有目录", 1500);
+      return;
+    }
+    if($toc.css("display") == "none") {
+      $toc.show();
+      $toc.addClass('animated fadeInRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeInRight');
+      },1000)
+    } else {
+      $toc.addClass('animated fadeOutRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeOutRight');
+        $toc.hide();
+      },1000)
+      
+    }
+  });
+
+  $("#btn-list-close").click(function(){
+    var $toc = $(".post-toc");
+    $toc.addClass('animated fadeOutRight');
+    setTimeout(function(){
+      $toc.removeClass('animated fadeOutRight');
+      $toc.hide();
+    },1000)
+  });
+
+  $("#btn-to-top").click(function(){
+    goToTop();
+  });
+</script>
+
+</body>
+</html>

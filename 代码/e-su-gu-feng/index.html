@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>恶俗古风生成器 web 版 - 壹亩地</title>
+  
+    
+      <link rel="stylesheet" href="/css/block.min.css">
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="http://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    
+      <link rel="stylesheet" href="/css/highlight.min.css">
+    
+      <link rel="stylesheet" href="/css/animate.min.css">
+    
+  
+</head>
+<body>
+
+<header class="header">
+  <div class="row no-margin">
+  <div class="col s12 m6 offset-m3" style="text-align: center;">
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+    </div>
+    <div class="menu-item">
+      <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
+      <ul id='dropdown-categories' class='dropdown-content'>
+        
+        <li><a href="/categories/日常/">日常</a></li>
+        
+        <li><a href="/categories/软件/">软件</a></li>
+        
+        <li><a href="/categories/代码/">代码</a></li>
+        
+        <li><a href="/categories/研究/">研究</a></li>
+        
+      </ul>
+    </div>
+    <div class="menu-item">
+      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+    </div>
+    <div class="menu-item" style="margin-top: 0px">
+      <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="content">
+  
+  <!-- TOC -->
+  <div class="row post-toc">
+    <div class="col s12 m2 offset-m10 l2 offset-l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="center-align">文章目录</span>
+          <span id="btn-list-close" class="right"><i class="material-icons">close</i></span>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- post -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      
+
+<div class="post card">
+  <div class="card-image">
+    <img src="/images/banner/undefined.jpg">
+    <a class="card-title" href="/代码/e-su-gu-feng/" >恶俗古风生成器 web 版</a>
+  </div>
+  <div class="card-content">
+    <div class="post-item">
+      <span class="post-create-date">2016-09-07</span>
+      
+      <span class="meta-separator">/</span>
+      <span class="post-update-date">2017-01-25</span>
+      
+      <div class="right">
+        
+        <span class="">分类：</span>
+        
+        <a class="post-category" href="/categories/代码/">代码</a>
+        
+        
+      </div>
+    </div>
+    
+      <p>无意间看到一个生成古风句子东东，感觉生成的东西挺好玩的，于是乎我也撸了一个。<br><a id="more"></a><br>我所看到的加强版本 <a href="https://livc.io/162" target="_blank" rel="external">https://livc.io/162</a></p>
+<p>跟着撸了一个：<a href="http://huiyadanli.github.io/i/es.html" target="_blank" rel="external">传送门</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> two_chars_words = <span class="string">"朱砂 天下 杀伐 人家 韶华 风华 繁华 血染 墨染 白衣 素衣 嫁衣 倾城 孤城 空城 旧城 旧人 伊人 心疼 春风 古琴 无情 迷离 奈何 断弦 焚尽 散乱 陌路 乱世 笑靥 浅笑 明眸 轻叹 烟火 一生 三生 浮生 桃花 梨花 落花 烟花 离殇 情殇 爱殇 剑殇 灼伤 仓皇 匆忙 陌上 清商 焚香 墨香 微凉 断肠 痴狂 凄凉 黄梁 未央 成双 无恙 虚妄 凝霜 洛阳 长安 江南 忘川 千年 纸伞 烟雨 回眸 公子 红尘 红颜 红衣 红豆 红线 青丝 青史 青冢 白首 白骨 黄土 黄泉 碧落 紫陌 浅唱 寂灭 无声 邂逅 流年 落寂 叙述 唯爱 晨曦 回忆 错落 迷茫 恬静 默诺 余音 情殇 背殇 落幕 黯然 拾忆 独寂 透彻 水影 浅陌 无垠 似水 流年 深音 铭记 迷遇 暖光 蘩藜 尘宵 磬音 黯伤 醉生 沉静 寂冷 白发"</span>.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> four_chars_words = <span class="string">"情深缘浅 情深不寿 莫失莫忘 阴阳相隔 如花美眷 似水流年 眉目如画 曲终人散 繁华落尽 不诉离殇 一世长安 半世烟尘 落梅似雪 冷月花魂 平湖秋月 蝶恋忆回 秋水伊人 断桥残雪 风动铃心 伊人已逝 望断秋水 似水流年 如花美眷 落晚芳菲 沧山映水 上善若水 匠心独运 倾国倾城 天香国色 浑然一体 如梦如幻 风华绝代 繁华落尽 寂寞如烟 独坐如莲 清风有情 明月可鉴 落花有情 流水可懂 流星有情 星空可睹 红颜有梦 陌上花开 弦断花落 似水流年 物是人非 昔云楚楚 紫燕悠悠 在水一方 雪殇若兮 燕笑语兮 清风扶柳 夕颜若雪 笑若扶风 凭兰秋思 素兮饶眉 雨夜聆风 月舞神殇 似水流年 此去经年 烟雨平生 宛如红袖 飞泉鸣玉 曾经沧海 谁堪共语 古道西风 流荆默望 往事如烟 静水流深 相濡以沫 笑靥如花 花开堪折 浮生若梦 情非得已 思绪万千 豆寇年华 地老天荒 曲终人散 沧海桑田 柒指流年 灯火阑珊 与子偕老 过眼云烟 生如夏花 尘埃落定 彼岸流年 莫矢莫忘"</span>.split(<span class="string">" "</span>);</div><div class="line"><span class="keyword">var</span> sentence_model = <span class="string">"xx，xx，xx了xx。 xxxx，xxxx，不过是一场xxxx。 你说xxxx，我说xxxx，最后不过xxxx。 xx，xx，许我一场xxxx。 一x一x一xx，半x半x半xx。 你说xxxxxxxx，后来xxxxxxxx。 xxxx，xxxx，终不敌xxxx。 xx，xxxx，xx，xxxx。 用我xxxx，换你xxxx。"</span>.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line"><span class="comment">// random number</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getR</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * num);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// generator sentence</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getS</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> len1 = sentence_model.length;</div><div class="line">	<span class="keyword">var</span> len2 = two_chars_words.length;</div><div class="line">	<span class="keyword">var</span> len3 = four_chars_words.length;</div><div class="line">	<span class="keyword">var</span> model = sentence_model[getR(len1 - <span class="number">1</span>)];</div><div class="line">	<span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"xxxx"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		model = replaceS(model, four_chars_words[getR(len3 - <span class="number">1</span>)]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"xx"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		model = replaceS(model, two_chars_words[getR(len2 - <span class="number">1</span>)]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"x"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		<span class="keyword">var</span> one_chars_words = two_chars_words[getR(len2 - <span class="number">1</span>)].charAt(getR(<span class="number">1</span>));</div><div class="line">		model = replaceS(model, one_chars_words);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> model;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceS</span>(<span class="params">model, term</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> m = model.split(<span class="string">""</span>); <span class="comment">// string -&gt; array</span></div><div class="line">	<span class="keyword">var</span> t = term.split(<span class="string">""</span>);</div><div class="line">	<span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; m.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(m[i] == <span class="string">"x"</span>) &#123;</div><div class="line">			x++;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			x = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(x == t.length) &#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; t.length; j++) &#123;</div><div class="line">				m[i - j] = t[t.length - <span class="number">1</span> - j];</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> m.join(<span class="string">""</span>); <span class="comment">//array -&gt; string</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addS</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> $s = $(<span class="string">"#sentence"</span>);</div><div class="line">	$s.html($s.html() + <span class="string">"&lt;p&gt;"</span> + getS() + <span class="string">"&lt;\p&gt;"</span>);</div><div class="line">	<span class="keyword">var</span> h = $(<span class="built_in">document</span>).height()-$(<span class="built_in">window</span>).height();</div><div class="line">	$(<span class="built_in">document</span>).scrollTop(h);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	setInterval(<span class="string">"addS()"</span>,<span class="number">1000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>字符串替换自己手写了一下。。不是效率最好的写法，我真是懒得思考了。。。</p>
+
+    
+  </div>
+  
+</div>
+
+
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+    
+  <div class="block-pagination">
+  
+  
+    <a class="right btn-floating grey" rel="next" href="/软件/build-java-devleopment/"><i class="material-icons">chevron_right</i></a>
+  
+  </div>
+
+
+    </div>
+  </div>
+  <!-- action button -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a id="btn-list" class="btn-floating blue"><i class="material-icons">list</i></a></li>
+      <li><a id="btn-to-top" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-line" style="visibility:hidden;">
+  <div class="container grey-text text-darken-1">
+    &copy;  2013 - 
+    2017
+    Powerd by 
+    <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
+    <div class="grey-text text-darken-1 right">
+      <a class="modal-trigger" href="#modal-keybinding-panel">
+        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
+      </a>
+      Made with 
+      <i class="material-icons heart-beat" style="font-size: 13px; position: relative; top: 1px;">favorite</i> 
+      by huiyadanli
+    </div>
+  </div>
+</div>
+
+<!-- Keybinding Panel Modal -->
+<div id="modal-keybinding-panel" class="modal">
+  <div class="modal-content">
+    <center><h2>快捷键说明</h2></center>
+    <dl>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
+    </dl>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect btn-flat">关闭</a>
+  </div>
+</div>
+</footer>
+
+
+  
+    <script src="/js/jquery-2.1.3.min.js"></script>
+  
+    <script src="/js/materialize.min.js"></script>
+  
+    <script src="/js/block.min.js"></script>
+  
+    <script src="/js/mousetrap.min.js"></script>
+  
+
+
+
+<script type="text/javascript">
+  $(function(){
+    if($("ol.toc").children().length > 5) {
+      $(".post-toc").show();
+    }
+    $(window).scroll(function () {
+      var scrollTop = $(window).scrollTop();
+      var offset = 155 - scrollTop;
+      if(offset >= 10) {
+        $(".post-toc").css("top", offset);
+      } else {
+        $(".post-toc").css("top", 10);
+      }
+    });
+  });
+
+  $("#btn-list").click(function(){
+    var $toc = $(".post-toc");
+    if($toc.find(".toc").length == 0) {
+      Materialize.toast("本文没有目录", 1500);
+      return;
+    }
+    if($toc.css("display") == "none") {
+      $toc.show();
+      $toc.addClass('animated fadeInRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeInRight');
+      },1000)
+    } else {
+      $toc.addClass('animated fadeOutRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeOutRight');
+        $toc.hide();
+      },1000)
+      
+    }
+  });
+
+  $("#btn-list-close").click(function(){
+    var $toc = $(".post-toc");
+    $toc.addClass('animated fadeOutRight');
+    setTimeout(function(){
+      $toc.removeClass('animated fadeOutRight');
+      $toc.hide();
+    },1000)
+  });
+
+  $("#btn-to-top").click(function(){
+    goToTop();
+  });
+</script>
+
+</body>
+</html>

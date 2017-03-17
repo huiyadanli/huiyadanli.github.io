@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <link id="favicon" rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>把文件藏在图片里(VB程序+源码+原理) - 壹亩地</title>
+  
+    
+      <link rel="stylesheet" href="/css/block.min.css">
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="http://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    
+      <link rel="stylesheet" href="/css/highlight.min.css">
+    
+      <link rel="stylesheet" href="/css/animate.min.css">
+    
+  
+</head>
+<body>
+
+<header class="header">
+  <div class="row no-margin">
+  <div class="col s12 m6 offset-m3" style="text-align: center;">
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+    </div>
+    <div class="menu-item">
+      <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
+      <ul id='dropdown-categories' class='dropdown-content'>
+        
+        <li><a href="/categories/日常/">日常</a></li>
+        
+        <li><a href="/categories/软件/">软件</a></li>
+        
+        <li><a href="/categories/代码/">代码</a></li>
+        
+        <li><a href="/categories/研究/">研究</a></li>
+        
+      </ul>
+    </div>
+    <div class="menu-item">
+      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+    </div>
+    <div class="menu-item">
+      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+    </div>
+    <div class="menu-item" style="margin-top: 0px">
+      <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="content">
+  
+  <!-- TOC -->
+  <div class="row post-toc">
+    <div class="col s12 m2 offset-m10 l2 offset-l9">
+      <div class="card">
+        <div class="card-content">
+          <span class="center-align">文章目录</span>
+          <span id="btn-list-close" class="right"><i class="material-icons">close</i></span>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- post -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      
+
+<div class="post card">
+  <div class="card-image">
+    <img src="/images/banner/undefined.jpg">
+    <a class="card-title" href="/代码/hide-file-in-picture/" >把文件藏在图片里(VB程序+源码+原理)</a>
+  </div>
+  <div class="card-content">
+    <div class="post-item">
+      <span class="post-create-date">2013-07-10</span>
+      
+      <span class="meta-separator">/</span>
+      <span class="post-update-date">2017-03-17</span>
+      
+      <div class="right">
+        
+        <span class="">分类：</span>
+        
+        <a class="post-category" href="/categories/代码/">代码</a>
+        
+        
+      </div>
+    </div>
+    
+      <p>初学VB时写的一个小程序…没什么技术含量…捣腾了一下午出来了…<br>主要是利用命令提示符中的一个copy命令,软件的作用只是生成含有这个命令的一个BAT文件并运行…<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy /b &quot;D:/1.jpg&quot; + &quot;D:/2.rar&quot; &quot;D:/3.jpg&quot;</div></pre></td></tr></table></figure></p>
+<p><code>D:/1.jpg</code>是图片的存放路径；把要藏的文件压缩成<code>2.rar</code>，<code>D:/2.rar</code>是此文件的存放路径；<br><code>D:/3.jpg</code>是生成路径。</p>
+<p>详细方法：<a href="http://www.xdowns.com/article/170/Article_742.html" target="_blank" rel="external">传送门</a></p>
+<p>软件图示：<br><img src="/images/article/hide-file-in-picture.jpg" alt="图种生成器"></p>
+<p>源码：<br><figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Command3_Click()</div><div class="line">    <span class="keyword">If</span> Dir(Text1.<span class="keyword">Text</span>) &lt;&gt; “” = <span class="literal">True</span> <span class="keyword">Then</span></div><div class="line">          <span class="keyword">If</span> Dir(Text2.<span class="keyword">Text</span>) &lt;&gt; “” = <span class="literal">True</span> <span class="keyword">Then</span></div><div class="line">         Open “c.bat” <span class="keyword">For</span> Output <span class="keyword">As</span> <span class="meta">#3</span></div><div class="line">          Print <span class="meta">#3, “Copy/b “; Chr(34) &amp; Text1.Text &amp; Chr(34); ” + “; Chr(34) &amp; Text2.Text &amp; Chr(34); ” #xa0;”; “Output.jpg”</span></div><div class="line">          Close <span class="meta">#3</span></div><div class="line">          Shell (“c.bat”)</div><div class="line">          R = MsgBox(“藏好了,输出文件为OutPut.jpg,存放在本程序所在文件夹,按确定打开文件夹.”, vbYesNo, “完成”)</div><div class="line">             <span class="keyword">If</span> R = vbYes <span class="keyword">Then</span></div><div class="line">                 Shell “explorer.exe ” &amp; App.Path</div><div class="line">             <span class="keyword">Else</span></div><div class="line">             <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line">          <span class="keyword">Else</span></div><div class="line">          R2 = MsgBox(“请输入正确要藏的文件路径!”, , “错误”)</div><div class="line">          <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line">      <span class="keyword">Else</span></div><div class="line">      R1 = MsgBox(“请输入正确JPG图片文件路径!”, , “错误”)</div><div class="line">      <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure></p>
+
+    
+  </div>
+  
+</div>
+
+
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+    
+  <div class="block-pagination">
+  
+    <a class="left btn-floating grey" rel="prev" href="/代码/message-bomber/"><i class="material-icons">chevron_left</i></a>
+  
+  
+  </div>
+
+
+    </div>
+  </div>
+  <!-- action button -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a id="btn-list" class="btn-floating blue"><i class="material-icons">list</i></a></li>
+      <li><a id="btn-to-top" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-line" style="visibility:hidden;">
+  <div class="container grey-text text-darken-1">
+    &copy;  2013 - 
+    2017
+    Powerd by 
+    <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
+    <div class="grey-text text-darken-1 right">
+      <a class="modal-trigger" href="#modal-keybinding-panel">
+        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
+      </a>
+      Made with 
+      <i class="material-icons heart-beat" style="font-size: 13px; position: relative; top: 1px;">favorite</i> 
+      by huiyadanli
+    </div>
+  </div>
+</div>
+
+<!-- Keybinding Panel Modal -->
+<div id="modal-keybinding-panel" class="modal">
+  <div class="modal-content">
+    <center><h2>快捷键说明</h2></center>
+    <dl>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
+      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
+    </dl>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect btn-flat">关闭</a>
+  </div>
+</div>
+</footer>
+
+
+  
+    <script src="/js/jquery-2.1.3.min.js"></script>
+  
+    <script src="/js/materialize.min.js"></script>
+  
+    <script src="/js/block.min.js"></script>
+  
+    <script src="/js/mousetrap.min.js"></script>
+  
+
+
+
+<script type="text/javascript">
+  $(function(){
+    if($("ol.toc").children().length > 5) {
+      $(".post-toc").show();
+    }
+    $(window).scroll(function () {
+      var scrollTop = $(window).scrollTop();
+      var offset = 155 - scrollTop;
+      if(offset >= 10) {
+        $(".post-toc").css("top", offset);
+      } else {
+        $(".post-toc").css("top", 10);
+      }
+    });
+  });
+
+  $("#btn-list").click(function(){
+    var $toc = $(".post-toc");
+    if($toc.find(".toc").length == 0) {
+      Materialize.toast("本文没有目录", 1500);
+      return;
+    }
+    if($toc.css("display") == "none") {
+      $toc.show();
+      $toc.addClass('animated fadeInRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeInRight');
+      },1000)
+    } else {
+      $toc.addClass('animated fadeOutRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeOutRight');
+        $toc.hide();
+      },1000)
+      
+    }
+  });
+
+  $("#btn-list-close").click(function(){
+    var $toc = $(".post-toc");
+    $toc.addClass('animated fadeOutRight');
+    setTimeout(function(){
+      $toc.removeClass('animated fadeOutRight');
+      $toc.hide();
+    },1000)
+  });
+
+  $("#btn-to-top").click(function(){
+    goToTop();
+  });
+</script>
+
+</body>
+</html>
