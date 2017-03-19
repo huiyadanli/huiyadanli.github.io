@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>壹亩地</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://huiyadanli.github.io/"/>
+  <updated>2017-01-25T08:32:26.771Z</updated>
+  <id>http://huiyadanli.github.io/</id>
+  
+  <author>
+    <name>huiyadanli</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>恶俗古风生成器 web 版</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/e-su-gu-feng/"/>
+    <id>http://huiyadanli.github.io/代码/e-su-gu-feng/</id>
+    <published>2016-09-07T15:17:00.000Z</published>
+    <updated>2017-01-25T08:32:26.771Z</updated>
+    
+    <content type="html"><![CDATA[<p>无意间看到一个生成古风句子东东，感觉生成的东西挺好玩的，于是乎我也撸了一个。<br><a id="more"></a><br>我所看到的加强版本 <a href="https://livc.io/162" target="_blank" rel="external">https://livc.io/162</a></p>
+<p>跟着撸了一个：<a href="http://huiyadanli.github.io/i/es.html" target="_blank" rel="external">传送门</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> two_chars_words = <span class="string">"朱砂 天下 杀伐 人家 韶华 风华 繁华 血染 墨染 白衣 素衣 嫁衣 倾城 孤城 空城 旧城 旧人 伊人 心疼 春风 古琴 无情 迷离 奈何 断弦 焚尽 散乱 陌路 乱世 笑靥 浅笑 明眸 轻叹 烟火 一生 三生 浮生 桃花 梨花 落花 烟花 离殇 情殇 爱殇 剑殇 灼伤 仓皇 匆忙 陌上 清商 焚香 墨香 微凉 断肠 痴狂 凄凉 黄梁 未央 成双 无恙 虚妄 凝霜 洛阳 长安 江南 忘川 千年 纸伞 烟雨 回眸 公子 红尘 红颜 红衣 红豆 红线 青丝 青史 青冢 白首 白骨 黄土 黄泉 碧落 紫陌 浅唱 寂灭 无声 邂逅 流年 落寂 叙述 唯爱 晨曦 回忆 错落 迷茫 恬静 默诺 余音 情殇 背殇 落幕 黯然 拾忆 独寂 透彻 水影 浅陌 无垠 似水 流年 深音 铭记 迷遇 暖光 蘩藜 尘宵 磬音 黯伤 醉生 沉静 寂冷 白发"</span>.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> four_chars_words = <span class="string">"情深缘浅 情深不寿 莫失莫忘 阴阳相隔 如花美眷 似水流年 眉目如画 曲终人散 繁华落尽 不诉离殇 一世长安 半世烟尘 落梅似雪 冷月花魂 平湖秋月 蝶恋忆回 秋水伊人 断桥残雪 风动铃心 伊人已逝 望断秋水 似水流年 如花美眷 落晚芳菲 沧山映水 上善若水 匠心独运 倾国倾城 天香国色 浑然一体 如梦如幻 风华绝代 繁华落尽 寂寞如烟 独坐如莲 清风有情 明月可鉴 落花有情 流水可懂 流星有情 星空可睹 红颜有梦 陌上花开 弦断花落 似水流年 物是人非 昔云楚楚 紫燕悠悠 在水一方 雪殇若兮 燕笑语兮 清风扶柳 夕颜若雪 笑若扶风 凭兰秋思 素兮饶眉 雨夜聆风 月舞神殇 似水流年 此去经年 烟雨平生 宛如红袖 飞泉鸣玉 曾经沧海 谁堪共语 古道西风 流荆默望 往事如烟 静水流深 相濡以沫 笑靥如花 花开堪折 浮生若梦 情非得已 思绪万千 豆寇年华 地老天荒 曲终人散 沧海桑田 柒指流年 灯火阑珊 与子偕老 过眼云烟 生如夏花 尘埃落定 彼岸流年 莫矢莫忘"</span>.split(<span class="string">" "</span>);</div><div class="line"><span class="keyword">var</span> sentence_model = <span class="string">"xx，xx，xx了xx。 xxxx，xxxx，不过是一场xxxx。 你说xxxx，我说xxxx，最后不过xxxx。 xx，xx，许我一场xxxx。 一x一x一xx，半x半x半xx。 你说xxxxxxxx，后来xxxxxxxx。 xxxx，xxxx，终不敌xxxx。 xx，xxxx，xx，xxxx。 用我xxxx，换你xxxx。"</span>.split(<span class="string">" "</span>);</div><div class="line"></div><div class="line"><span class="comment">// random number</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getR</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random() * num);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// generator sentence</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getS</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> len1 = sentence_model.length;</div><div class="line">	<span class="keyword">var</span> len2 = two_chars_words.length;</div><div class="line">	<span class="keyword">var</span> len3 = four_chars_words.length;</div><div class="line">	<span class="keyword">var</span> model = sentence_model[getR(len1 - <span class="number">1</span>)];</div><div class="line">	<span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"xxxx"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		model = replaceS(model, four_chars_words[getR(len3 - <span class="number">1</span>)]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"xx"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		model = replaceS(model, two_chars_words[getR(len2 - <span class="number">1</span>)]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">while</span>(model.indexOf(<span class="string">"x"</span>) != <span class="number">-1</span>) &#123;</div><div class="line">		<span class="keyword">var</span> one_chars_words = two_chars_words[getR(len2 - <span class="number">1</span>)].charAt(getR(<span class="number">1</span>));</div><div class="line">		model = replaceS(model, one_chars_words);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> model;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceS</span>(<span class="params">model, term</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> m = model.split(<span class="string">""</span>); <span class="comment">// string -&gt; array</span></div><div class="line">	<span class="keyword">var</span> t = term.split(<span class="string">""</span>);</div><div class="line">	<span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; m.length; i++) &#123;</div><div class="line">		<span class="keyword">if</span>(m[i] == <span class="string">"x"</span>) &#123;</div><div class="line">			x++;</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			x = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(x == t.length) &#123;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; t.length; j++) &#123;</div><div class="line">				m[i - j] = t[t.length - <span class="number">1</span> - j];</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> m.join(<span class="string">""</span>); <span class="comment">//array -&gt; string</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addS</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> $s = $(<span class="string">"#sentence"</span>);</div><div class="line">	$s.html($s.html() + <span class="string">"&lt;p&gt;"</span> + getS() + <span class="string">"&lt;\p&gt;"</span>);</div><div class="line">	<span class="keyword">var</span> h = $(<span class="built_in">document</span>).height()-$(<span class="built_in">window</span>).height();</div><div class="line">	$(<span class="built_in">document</span>).scrollTop(h);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	setInterval(<span class="string">"addS()"</span>,<span class="number">1000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>字符串替换自己手写了一下。。不是效率最好的写法，我真是懒得思考了。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;无意间看到一个生成古风句子东东，感觉生成的东西挺好玩的，于是乎我也撸了一个。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
+    
+      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动手建造一个自己的 Java 开发环境</title>
+    <link href="http://huiyadanli.github.io/%E8%BD%AF%E4%BB%B6/build-java-devleopment/"/>
+    <id>http://huiyadanli.github.io/软件/build-java-devleopment/</id>
+    <published>2016-08-13T09:53:00.000Z</published>
+    <updated>2016-12-18T07:40:54.949Z</updated>
+    
+    <content type="html"><![CDATA[<p>做 Java 开发的时候懒得手动配置，于是乎网上下了个 MyEclipse 2015，但软件启动速度实在太慢，乱七八糟不需要的东西也很多，还是决定自己动手折腾一个 Eclipse。顺便把原先的相关软件都迁移到一个地方。<br><a id="more"></a></p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>全部扔到了 <code>D:\Programing\Development\Java</code> 文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">├─.m2</div><div class="line">├─apache-maven-3.3.9</div><div class="line">├─apache-tomcat-7.0.70</div><div class="line">├─eclipse</div><div class="line">└─jdk</div><div class="line">   └─jdk1.8.0_25</div></pre></td></tr></table></figure></p>
+<h2 id="软件清单"><a href="#软件清单" class="headerlink" title="软件清单"></a>软件清单</h2><ul>
+<li>JDK（1.8.0_25）<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
+<li>Eclipse（我用的Mars版，最新版 Neon） <a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">http://www.eclipse.org/downloads/</a></li>
+<li>Maven（3.3.9） <a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></li>
+<li>Tomcat（7.0.70） <a href="http://tomcat.apache.org/download-70.cgi" target="_blank" rel="external">http://tomcat.apache.org/download-70.cgi</a></li>
+</ul>
+<h2 id="JDK-的安装"><a href="#JDK-的安装" class="headerlink" title="JDK 的安装"></a>JDK 的安装</h2><p>我的JDK原先在C盘，现在移动到了D盘，所以要修改下环境变量。<br><code>JAVA_HOME</code> 修改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\Programing\Development\Java\jdk\jdk1.8.0_25</div></pre></td></tr></table></figure></p>
+<p><code>Path</code> 内的相关变量保持不变：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</div></pre></td></tr></table></figure></p>
+<h2 id="Eclipse-的安装"><a href="#Eclipse-的安装" class="headerlink" title="Eclipse 的安装"></a>Eclipse 的安装</h2><p>官网上下载下来的是一个在线安装器，而且还不是最新版本的( ╯-_-)╯┴—┴。</p>
+<p>Update 以后选择 Eclipse IDE for Java Developers 安装。</p>
+<p>安装目录选择 <code>D:\Programing\Development\Java</code><br><img src="/images/article/eclipse_install.png" alt="eclipse_install"></p>
+<p>然后装上 web 开发的相关插件，打开 Help -&gt; Install New Software</p>
+<p>在work with 栏中输入 <a href="http://download.eclipse.org/releases/mars/" target="_blank" rel="external">http://download.eclipse.org/releases/mars/</a>  （mars 可以替换成相对应的版本，我用的 Mars 版） </p>
+<p>选择 Web 那一块的插件，需要什么选什么。<br><img src="/images/article/eclipse_web_install.png" alt="eclipse_web_install"></p>
+<p><strong>貌似这么做和直接安装 Eclipse IDE for Java EE Developers 没啥区别</strong>。</p>
+<h2 id="Maven-的安装"><a href="#Maven-的安装" class="headerlink" title="Maven 的安装"></a>Maven 的安装</h2><p>下载并解压到 <code>D:\Programing\Development\Java</code> 下，</p>
+<p>然后配置环境变量 <code>MAVEN_HOME</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\Programing\Development\Java\apache-maven-3.3.9</div></pre></td></tr></table></figure></p>
+<p><code>Path</code> 内添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%MAVEN_HOME%\bin;</div></pre></td></tr></table></figure></p>
+<p>顺便修改一下 Maven 的配置文件 <code>\apache-maven-3.3.9\conf\settings.xml</code>，</p>
+<p>在里面添加或修改一条：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;localRepository&gt;D:\Programing\Development\Java\.m2\repository&lt;/localRepository&gt;</div></pre></td></tr></table></figure></p>
+<p>把仓库移动到 <code>D:\Programing\Development\Java\.m2\repository</code> 下（原来默认是存放在C盘的）。</p>
+<p>然后设置 Eclipse ：<br>Window -&gt; Preference -&gt; Maven -&gt; Installation -&gt; Add 添加刚刚下载并解压的 Maven 。<br><img src="/images/article/eclipse_maven_settring_1.png" alt="eclipse_maven_settring_1"></p>
+<p>Window -&gt; Preference -&gt; Maven -&gt; User Settings 设置 Maven 配置文件<br><img src="/images/article/eclipse_maven_settring_2.png" alt="eclipse_maven_settring_1"></p>
+<h2 id="Tomcat-的安装"><a href="#Tomcat-的安装" class="headerlink" title="Tomcat 的安装"></a>Tomcat 的安装</h2><p>依旧是下载并解压到 <code>D:\Programing\Development\Java</code> 下，</p>
+<p>配置环境变量 <code>CATALINA_HOME</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D:\Programing\Development\Java\apache-tomcat-7.0.70</div></pre></td></tr></table></figure></p>
+<p><code>Path</code> 内添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%CATALINA_HOME%\bin;%CATALINA_HOME%\lib;</div></pre></td></tr></table></figure></p>
+<p>接着安装 Tomcat 的服务，打开CMD，定位到 <code>D:\Programing\Development\Java\apache-tomcat-7.0.70\bin</code> 下面运行 service.bat 。<br><img src="/images/article/tomcat_install.png" alt="tomcat_install"></p>
+<p>提示安装成功后，可以运行 tomcat7w.exe 启动 Tomcat 。<br><img src="/images/article/tomcat_run.png" alt="tomcat_run"></p>
+<p>启动后可以用浏览器打开 <a href="http://localhost:8080/" target="_blank" rel="external">http://localhost:8080/</a> ，成功的话应该能看到一个 Tomcat 的页面。</p>
+<p>然后设置 Eclipse ：<br>在 Window -&gt; Preference -&gt; Server -&gt; Runtime Environment 下，添加 Tomcat 。<br><img src="/images/article/tomact_eclipse_setting_1.png" alt="tomact_eclipse_setting_1"></p>
+<p>Web 项目 Run on Server 的时候选择 Tomcat 7 即可使用自己配置的 Tomcat 了。<br><img src="/images/article/tomact_eclipse_setting_2.png" alt="tomact_eclipse_setting_2"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;做 Java 开发的时候懒得手动配置，于是乎网上下了个 MyEclipse 2015，但软件启动速度实在太慢，乱七八糟不需要的东西也很多，还是决定自己动手折腾一个 Eclipse。顺便把原先的相关软件都迁移到一个地方。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="软件" scheme="http://huiyadanli.github.io/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+      <category term="Eclipse" scheme="http://huiyadanli.github.io/tags/Eclipse/"/>
+    
+      <category term="Java" scheme="http://huiyadanli.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>是时候该折腾一下 pelican 的主题了！</title>
+    <link href="http://huiyadanli.github.io/%E6%97%A5%E5%B8%B8/blog-theme-edit/"/>
+    <id>http://huiyadanli.github.io/日常/blog-theme-edit/</id>
+    <published>2016-07-06T10:47:00.000Z</published>
+    <updated>2016-11-20T08:26:12.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。<br><a id="more"></a></p>
+<h2 id="先听首歌吧"><a href="#先听首歌吧" class="headerlink" title="先听首歌吧"></a>先听首歌吧</h2><p>尝试一下网易云音乐外链播放器</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=29771569&auto=0&height=66"></iframe>
+
+<h2 id="修改记录"><a href="#修改记录" class="headerlink" title="修改记录"></a>修改记录</h2><p>相比 NIUX2 修改了哪些地方呢？请作者原谅我把原来简洁的主题改成这样…</p>
+<h3 id="一眼能看出来的"><a href="#一眼能看出来的" class="headerlink" title="一眼能看出来的"></a>一眼能看出来的</h3><ul>
+<li>底部相关信息修改为居中；</li>
+<li>导航条内容移到中间，修改了粗细，加入<strong>下拉隐藏</strong>的效果（headroom.js）；</li>
+<li><strong>鼠标点击页面时的特效</strong>（增加彩蛋）；</li>
+<li>多说样式的修改，embed.js 本地化（然后鼠标悬浮显示多说信息的框框不见了(´இ皿இ｀)）；</li>
+<li>页面非选中状态时标题的变化（标题被我吃掉了 (°∀°)ﾉ）；</li>
+<li>代码高亮显示样式的修改（monokai），增加行号；</li>
+<li>404 页面样式的修改（二次修改后偷用了<a href="https://codepen.io/Yakudoo/#" target="_blank" rel="external">Karim Maaloul</a>的3D动画，真的好萌）。</li>
+</ul>
+<h3 id="多少眼也看不出来的"><a href="#多少眼也看不出来的" class="headerlink" title="多少眼也看不出来的"></a>多少眼也看不出来的</h3><ul>
+<li>删除原 CSS 中部分重复代码；</li>
+<li>模板页中绝对路径修改为相对路径；</li>
+<li>废弃 <code>NIUX2_LIB_*</code> 参数，新增 <code>NIUX2_LIB_FONTAWESOME</code> <code>NIUX2_LIB_JQUERY</code> <code>NIUX2_LIB_BOOTSTRAP_CSS</code> <code>NIUX2_LIB_BOOTSTRAP_JS</code> <code>NIUX2_LIB_HEADEOOM_JS</code> 参数，其实我就是把这些参数每个独立出来了，方便修改为大网站提供的CDN地址；</li>
+<li>Google Analytics 替换为新版 js ；</li>
+<li>summary 插件改成最新版的了。</li>
+<li>放弃使用原作者写的音乐播放器插件，直接用外链了。</li>
+</ul>
+<h2 id="我还想做什么"><a href="#我还想做什么" class="headerlink" title="我还想做什么"></a>我还想做什么</h2><ul>
+<li>主页 banner 的添加；</li>
+<li>主页文章简介显示样式的修改；</li>
+<li>增加关于页面，使用协议页面；</li>
+<li>多说增加颜文字表情栏；</li>
+<li>google 搜索的替换，使用 tipue_search 插件，直接用 js 搜索页面；</li>
+<li>无聊小挂件的添加；</li>
+<li>也许还会有更多小细节的修改，只为了让我的网站更有趣些。</li>
+</ul>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>喔，网站的修改参考了一些独立博客的样式，等我改造结束以后再统一列出吧。</p>
+<p>我还发现了几个博客小圈子，V2EX，和知乎上也碰巧看到这些人（实在太巧…）。</p>
+<p>还有，为什么我一个后端一直在做前端的东西，而且我还乐此不疲啊，【摔</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="主题" scheme="http://huiyadanli.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在GitHub Contributions上画像素画</title>
+    <link href="http://huiyadanli.github.io/%E8%BD%AF%E4%BB%B6/github-contributions/"/>
+    <id>http://huiyadanli.github.io/软件/github-contributions/</id>
+    <published>2016-05-14T09:37:00.000Z</published>
+    <updated>2016-12-18T07:41:01.549Z</updated>
+    
+    <content type="html"><![CDATA[<p>只需要用 <a href="https://github.com/IonicaBizau/github-contributions" target="_blank" rel="external">gh-contributions</a> 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。<br><a id="more"></a></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>直接按照  <a href="https://github.com/IonicaBizau/github-contributions" target="_blank" rel="external">gh-contributions</a> 作者说的做就可以了。</p>
+<p>我在 windows 下使用的时候出乱码提示，不懂 node-js ，所以也没找到原因所在。</p>
+<p>然后改用 ubuntu 本地安装   <a href="https://github.com/IonicaBizau/github-contributions" target="_blank" rel="external">gh-contributions</a> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/IonicaBizau/github-contributions.git</div><div class="line">$ <span class="built_in">cd</span> github-contributions</div><div class="line">$ npm i</div><div class="line">$ npm start</div></pre></td></tr></table></figure>
+<p>但是在 <code>npm start</code> 这一步的时候报错</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; gh-contributions@3.0.1 start /home/huiyadanli/soft/github-contributions</div><div class="line">&gt; node ./lib/server.js</div><div class="line"></div><div class="line">sh: 1: node: not found</div></pre></td></tr></table></figure>
+<p>一番搜索以后发现 <code>node</code> 命令被更名为  <code>nodejs</code> ，使用这条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nodejs lib/server.js</div></pre></td></tr></table></figure>
+<p>手动启动就可以使用了。（貌似安装 <code>nodejs-legacy</code> 就不会出现这个问题了）</p>
+<p>成功启动后，打开 <code>localhost:9000</code> 尽情的作画吧</p>
+<p><img src="/images/article/contributions_2.png" alt="Contributions"></p>
+<p>画完后点击 <code>Generate repository from data</code> 就会自动生成一个 repo，上传就能看到效果了。</p>
+<p><img src="/images/article/contributions.png" alt="Contributions"></p>
+<h2 id="类似软件"><a href="#类似软件" class="headerlink" title="类似软件"></a>类似软件</h2><ul>
+<li><a href="https://github.com/gelstudios/gitfiti" target="_blank" rel="external">gitfiti</a>  这个是 Python 写的，没有用过</li>
+<li><a href="https://github.com/ben174/git-draw" target="_blank" rel="external">Git Draw</a> 最近刚刚发现的，一个 Chrome 插件</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;只需要用 &lt;a href=&quot;https://github.com/IonicaBizau/github-contributions&quot;&gt;gh-contributions&lt;/a&gt; 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="软件" scheme="http://huiyadanli.github.io/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+      <category term="GitHub" scheme="http://huiyadanli.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 浪微博模拟页面解析，提取各条微博内容</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/weibo-monitor/"/>
+    <id>http://huiyadanli.github.io/代码/weibo-monitor/</id>
+    <published>2016-04-21T09:03:00.000Z</published>
+    <updated>2016-12-18T07:41:01.596Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文主要是通过解析页面来提取各条微博的内容和相关信息。<br><a id="more"></a></p>
+<h2 id="提取页面"><a href="#提取页面" class="headerlink" title="提取页面"></a>提取页面</h2><p>下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。</p>
+<p><img src="/images/article/weibo_js.png" alt="js"></p>
+<p>这种页面加载模式导致不能直接使用HTML解析器去提取各条微博，使用正则表达式提取的话，工作量又太大。</p>
+<p>Ctrl + F 微博正文可以找出各条微博内容都在 <code>&lt;script&gt;FM.view({&quot;ns&quot;:&quot;pl.content.homeFeed.index&quot;</code> 开头的那一行 js 中，这段字符串就是要操作的对象。</p>
+<p>观察过后发现 FM.view() 内使用的 Json 格式，果断尝试使用 <a href="http://www.newtonsoft.com/json" target="_blank" rel="external">Newtonsoft.Json</a> 对其中的数据进行反序列化。</p>
+<p>先写一个对应其格式的类，格式可以用 <a href="http://json.cn/" target="_blank" rel="external">在线解析器</a>  查看</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line"><span class="comment"><span class="doctag">///</span> 用于Json解析</span></div><div class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ViewJson</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> ns &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> domid &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span>[] css &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> js &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> html &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后直接使用 <a href="http://www.newtonsoft.com/json" target="_blank" rel="external">Newtonsoft.Json</a> 提供的 <code>JsonConvert.DeserializeObject&lt;T&gt;()</code> 方法反序列化 Json 数据。<code>viewJson.html</code> 就是我需要的内容（各条微博的信息都在里面）</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//取出&lt;script&gt;标签内的Json数据</span></div><div class="line"><span class="keyword">string</span> jsonStr = jsStr.Replace(<span class="string">"&lt;script&gt;FM.view("</span>, <span class="string">""</span>).Replace(<span class="string">")&lt;/script&gt;"</span>, <span class="string">""</span>);</div><div class="line"> <span class="comment">//使用 Newtonsoft.Json 反序列化</span></div><div class="line">ViewJson viewJson = JsonConvert.DeserializeObject&lt;ViewJson&gt;(jsonStr);</div></pre></td></tr></table></figure>
+<h2 id="页面解析"><a href="#页面解析" class="headerlink" title="页面解析"></a>页面解析</h2><p>C# 解析 HTML 当选 <a href="http://htmlagilitypack.codeplex.com/" target="_blank" rel="external">HtmlAgilityPack</a></p>
+<p>找到顶层节点然后使用 <a href="http://www.w3school.com.cn/xpath/" target="_blank" rel="external">XPath</a> 得到自己所需要的数据，这是个体力活，直接给出代码。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 HtmlAgilityPack 解析HTML</span></div><div class="line">HtmlDocument doc = <span class="keyword">new</span> HtmlDocument();</div><div class="line"><span class="comment">// 载入刚刚得到的 viewJson.html</span></div><div class="line">doc.LoadHtml(viewJson.html);</div><div class="line">HtmlNode topNode = doc.DocumentNode.ChildNodes[<span class="number">1</span>];</div><div class="line"><span class="comment">// 我自己定义的 WeiboFeed 类，用于存放微博</span></div><div class="line">List&lt;WeiboFeed&gt; wbFeedList = <span class="keyword">new</span> List&lt;WeiboFeed&gt;();</div><div class="line"></div><div class="line"><span class="keyword">foreach</span> (HtmlNode feedListItem <span class="keyword">in</span> topNode.ChildNodes)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (feedListItem.Attributes.Contains(<span class="string">"action-type"</span>) &amp;&amp; feedListItem.Attributes[<span class="string">"action-type"</span>].Value == <span class="string">"feed_list_item"</span>)</div><div class="line">    &#123;</div><div class="line">    	<span class="comment">// 微博 mid</span></div><div class="line">        <span class="keyword">string</span> mid = feedListItem.Attributes[<span class="string">"mid"</span>].Value;</div><div class="line">        <span class="comment">// 发送该微博的用户的昵称</span></div><div class="line">        <span class="keyword">string</span> username = feedListItem.SelectSingleNode(<span class="string">"div[1]/div[@class='WB_detail']/div[1]/a[1]"</span>).InnerHtml;</div><div class="line">        <span class="comment">// 发送时间</span></div><div class="line">        <span class="keyword">string</span> time = feedListItem.SelectSingleNode(<span class="string">"div[1]/div[@class='WB_detail']/div[2]/a[1]"</span>).Attributes[<span class="string">"title"</span>].Value;</div><div class="line">        <span class="comment">// 微博正文内容</span></div><div class="line">        <span class="keyword">string</span> content = feedListItem.SelectSingleNode(<span class="string">"div[1]/div[@class='WB_detail']/div[3]"</span>).InnerHtml;</div><div class="line"></div><div class="line">        WeiboFeed wbFeedTmp = <span class="keyword">new</span> WeiboFeed(<span class="keyword">this</span>, mid, username, time, content);</div><div class="line">        wbFeedList.Add(wbFeedTmp);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="附赠"><a href="#附赠" class="headerlink" title="附赠"></a>附赠</h2><p>以上东西的应用：<a href="https://github.com/huiyadanli/WeiboMonitor" target="_blank" rel="external">微博秒赞器</a></p>
+<p><img src="https://raw.githubusercontent.com/huiyadanli/WeiboMonitor/master/image/screenshot0.png" alt="界面"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要是通过解析页面来提取各条微博的内容和相关信息。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
+    
+      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
+    
+      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
+    
+      <category term="Json" scheme="http://huiyadanli.github.io/tags/Json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# 实现新浪微博模拟登录v1.4.18</title>
+    <link href="http://huiyadanli.github.io/%E7%A0%94%E7%A9%B6/sina-login/"/>
+    <id>http://huiyadanli.github.io/研究/sina-login/</id>
+    <published>2016-03-10T15:03:00.000Z</published>
+    <updated>2016-11-20T08:26:07.074Z</updated>
+    
+    <content type="html"><![CDATA[<p>14年暑假写的东西，今天试用了一下发现居然还能用。<br><a id="more"></a></p>
+<h2 id="模拟登录原理"><a href="#模拟登录原理" class="headerlink" title="模拟登录原理"></a>模拟登录原理</h2><p>1.输入用户名时，发送如下GET请求，返回一大堆登录所需要的参数。其中<code>entry</code> <code>callback</code> <code>rsakt</code>  <code>client</code>参数都是固定不变的，<code>su</code>是经过Base64加密后的用户名，<code>checkpin</code> =1时，会返回<code>showpin</code>告诉你是否需要验证码，<code>_</code>很明显是时间戳，没有这个参数也可以正常得到返回信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://login.sina.com.cn/sso/prelogin.php?entry=weibo&amp;callback=sinaSSOController.preloginCallBack&amp;su=aHVpeWFkYW5saSU0MDEyNi5jb20%3D&amp;rsakt=mod&amp;checkpin=1&amp;client=ssologin.js(v1.4.18)&amp;_=1457524967315</div></pre></td></tr></table></figure>
+<p>返回信息如下，后面会用到 <code>servertime</code> <code>nonce</code> <code>pcid</code> <code>pubkey</code> <code>rsakv</code> 这几个参数，其中<code>pubkey</code> <code>rsakv</code>的值是固定的（1年多都没变）。<br>还有一个<code>showpin</code>上面已经说到了，告诉你是否需要验证码，此处的值为0是不需要的，频繁登录时会需要验证码。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> sinaSSOController.preloginCallBack(&#123;</div><div class="line"> 	"retcode": 0,</div><div class="line"> 	"servertime": 1457525116,</div><div class="line"> 	"pcid": "ja-69837828b9f065232d6ea4a3130fe2cdbd47",</div><div class="line"> 	"nonce": "7R4XFC",</div><div class="line"> 	"pubkey": "EB2A38568661887FA180BDDB5CABD5F21C7BFD59C090CB2D245A87AC253062</div><div class="line">882729293E5506350508E7F9AA3BB77F4333231490F915F6D63C55FE2F08A49B353F</div><div class="line">444AD3993CACC02DB784ABBB8E42A9B1BBFFFB38BE18D78E87A0E41B9B8F73A928EE0CCEE1F6</div><div class="line">739884B9777E4FE9E88A1BBE495927AC4A799B3181D6442443",</div><div class="line"> 	"rsakv": "1330428213",</div><div class="line"> 	"is_openlock": 0,</div><div class="line"> 	"showpin": 0,</div><div class="line"> 	"exectime": 12</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<p>2.自己构造以下数据POST到<a href="http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18" target="_blank" rel="external">http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18</a>)<br>其中<code>su</code>依旧是Base64加密后的用户名，<code>servertime</code> <code>nonce</code> <code>rsakv</code> 字段的值就是刚刚GET得到的值，<code>sp</code>是经过RSA2加密后的密码。其余的值都可以保持不变。<br>这里有一个登录的难点就是RSA2加密，其实加密的方法就在ssologin.js中，直接用C#调用那段RSA2加密的js即可。详细方法：<a href="http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html" target="_blank" rel="external">http://www.cnblogs.com/coding1016/archive/2013/03/25/2980310.html</a></p>
+<p>！如果上面一步的返回值<code>showpin</code>=1，则需要GET  <a href="http://login.sina.com.cn/cgi/pin.php?p=`pcid`" target="_blank" rel="external">http://login.sina.com.cn/cgi/pin.php?p=`pcid`</a> 来得到验证码图片（<code>pcid</code> 也来自上一步哟），然后在下面的POST数据中加上<code>pcid</code> <code>door</code> 两个字段，<code>door</code>的值就是验证码的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">entry = weibo &amp; gateway = 1 &amp; from = &amp; savestate = 7 &amp; useticket = 1 &amp; pagerefer = &amp; </div><div class="line">vsnf = 1 &amp; su = aHVpeWFkYW5saSU0MDEyNi5jb20 % 3D &amp; service = miniblog &amp; </div><div class="line">servertime = 1457525116 &amp; nonce = 7R4XFC &amp; pwencode = rsa2 &amp; rsakv = 1330428213 &amp; </div><div class="line">sp = `加密后的密码` &amp; sr = 1745 * 982 &amp; encoding = UTF - 8 &amp; prelt = 78 &amp; url = http % 3A % 2F % 2F</div><div class="line">www.weibo.com % 2Fajaxlogin.php % 3Fframelogin % 3D1 % 26</div><div class="line">callback % 3Dparent.sinaSSOController.feedBackUrlCallBack &amp; returntype = META</div></pre></td></tr></table></figure></p>
+<p>POST以后会返回一个页面，location.replace 后面就是下一步要跳转的页面，其中还有个retcode参数告诉你登录的结果（0-登录成功，2070-验证码错误，4049-验证码为空，101密码错误）</p>
+<p>跳转到那个页面，就可以得到登录的cookie，模拟登录完成。</p>
+<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C#实现"></a>C#实现</h2><p>直接看代码吧：<br><a href="https://github.com/huiyadanli/SinaLogin" target="_blank" rel="external">https://github.com/huiyadanli/SinaLogin</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;14年暑假写的东西，今天试用了一下发现居然还能用。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="研究" scheme="http://huiyadanli.github.io/categories/%E7%A0%94%E7%A9%B6/"/>
+    
+    
+      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
+    
+      <category term="模拟登录" scheme="http://huiyadanli.github.io/tags/%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>成功使用pelican在github上搭建了自己的博客</title>
+    <link href="http://huiyadanli.github.io/%E6%97%A5%E5%B8%B8/build-a-blog/"/>
+    <id>http://huiyadanli.github.io/日常/build-a-blog/</id>
+    <published>2015-11-23T14:24:00.000Z</published>
+    <updated>2016-11-20T08:26:15.897Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后…然后它被我遗忘在某个小角落…欠费致死。<br><a id="more"></a></p>
+<h3 id="未完成的新博客"><a href="#未完成的新博客" class="headerlink" title="未完成的新博客"></a>未完成的新博客</h3><hr>
+<p>是什么原因让我又来搞了个博客来糟蹋呢？</p>
+<ol>
+<li>让我那些散落在硬盘角落里的东西重见天日。</li>
+<li>顺便折腾下Python，还有提升我那半吊子的前端能力。</li>
+<li>提升逼格！（这才是主要原因吧 (╯°Д°)╯︵ ┻━┻ ）</li>
+</ol>
+<p>我用了些什么东西来建造博客？</p>
+<ul>
+<li>主机：<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>  （贱笑）</li>
+<li>域名：打算在Godaddy买个，名字叫什么真的好纠结呢。</li>
+<li>使用<a href="https://github.com/getpelican/pelican" target="_blank" rel="external">Pelican</a>生成的静态博客，并加装了<a href="http://blog.atime.me/" target="_blank" rel="external">Ma Wenbao</a>的<a href="https://github.com/mawenbao/niu-x2-sidebar/tree/master" target="_blank" rel="external">Niu-X2</a>主题。</li>
+</ul>
+<p>容我再折腾折腾。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后…然后它被我遗忘在某个小角落…欠费致死。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
+    
+      <category term="pelican" scheme="http://huiyadanli.github.io/tags/pelican/"/>
+    
+      <category term="python" scheme="http://huiyadanli.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ消息轰炸机(附源码)</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/message-bomber/"/>
+    <id>http://huiyadanli.github.io/代码/message-bomber/</id>
+    <published>2013-08-15T06:54:00.000Z</published>
+    <updated>2017-03-17T06:56:20.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习VB的成果。<br><a id="more"></a></p>
+<h2 id="软件界面"><a href="#软件界面" class="headerlink" title="软件界面"></a>软件界面</h2><p><img src="/images/article/message-bomber.png" alt="QQ消息轰炸机"></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>自带3个 喷人宝典 (网上搜来的),支持按行导入导出 TXT文本文档；</li>
+<li>两种轰炸模式:单文本轰炸 与 列表轰炸；</li>
+<li>可设定攻击时间间隔,不宜过短；</li>
+<li>不止是 QQ聊天 中可以用到,任何按 enter键 发送信息的工具都可以用。</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>切换到聊天窗口后使用快捷键操作 ( F10 开始 | F11 停止 )</p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p><a href="http://pan.baidu.com/share/link?shareid=1259976557&amp;uk=4211565466" target="_blank" rel="external">软件下载</a><br><a href="http://pan.baidu.com/share/link?shareid=1257559935&amp;uk=4211565466" target="_blank" rel="external">源码下载</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习VB的成果。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="VB" scheme="http://huiyadanli.github.io/tags/VB/"/>
+    
+      <category term="消息轰炸" scheme="http://huiyadanli.github.io/tags/%E6%B6%88%E6%81%AF%E8%BD%B0%E7%82%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>把文件藏在图片里(VB程序+源码+原理)</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/hide-file-in-picture/"/>
+    <id>http://huiyadanli.github.io/代码/hide-file-in-picture/</id>
+    <published>2013-07-10T08:18:00.000Z</published>
+    <updated>2017-03-17T06:57:08.235Z</updated>
+    
+    <content type="html"><![CDATA[<p>初学VB时写的一个小程序…没什么技术含量…捣腾了一下午出来了…<br>主要是利用命令提示符中的一个copy命令,软件的作用只是生成含有这个命令的一个BAT文件并运行…<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy /b &quot;D:/1.jpg&quot; + &quot;D:/2.rar&quot; &quot;D:/3.jpg&quot;</div></pre></td></tr></table></figure></p>
+<p><code>D:/1.jpg</code>是图片的存放路径；把要藏的文件压缩成<code>2.rar</code>，<code>D:/2.rar</code>是此文件的存放路径；<br><code>D:/3.jpg</code>是生成路径。</p>
+<p>详细方法：<a href="http://www.xdowns.com/article/170/Article_742.html" target="_blank" rel="external">传送门</a></p>
+<p>软件图示：<br><img src="/images/article/hide-file-in-picture.jpg" alt="图种生成器"></p>
+<p>源码：<br><figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Command3_Click()</div><div class="line">    <span class="keyword">If</span> Dir(Text1.<span class="keyword">Text</span>) &lt;&gt; “” = <span class="literal">True</span> <span class="keyword">Then</span></div><div class="line">          <span class="keyword">If</span> Dir(Text2.<span class="keyword">Text</span>) &lt;&gt; “” = <span class="literal">True</span> <span class="keyword">Then</span></div><div class="line">         Open “c.bat” <span class="keyword">For</span> Output <span class="keyword">As</span> <span class="meta">#3</span></div><div class="line">          Print <span class="meta">#3, “Copy/b “; Chr(34) &amp; Text1.Text &amp; Chr(34); ” + “; Chr(34) &amp; Text2.Text &amp; Chr(34); ” #xa0;”; “Output.jpg”</span></div><div class="line">          Close <span class="meta">#3</span></div><div class="line">          Shell (“c.bat”)</div><div class="line">          R = MsgBox(“藏好了,输出文件为OutPut.jpg,存放在本程序所在文件夹,按确定打开文件夹.”, vbYesNo, “完成”)</div><div class="line">             <span class="keyword">If</span> R = vbYes <span class="keyword">Then</span></div><div class="line">                 Shell “explorer.exe ” &amp; App.Path</div><div class="line">             <span class="keyword">Else</span></div><div class="line">             <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line">          <span class="keyword">Else</span></div><div class="line">          R2 = MsgBox(“请输入正确要藏的文件路径!”, , “错误”)</div><div class="line">          <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line">      <span class="keyword">Else</span></div><div class="line">      R1 = MsgBox(“请输入正确JPG图片文件路径!”, , “错误”)</div><div class="line">      <span class="keyword">End</span> <span class="keyword">If</span></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;初学VB时写的一个小程序…没什么技术含量…捣腾了一下午出来了…&lt;br&gt;主要是利用命令提示符中的一个copy命令,软件的作用只是生成含有这个命令的一个BAT文件并运行…&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="VB" scheme="http://huiyadanli.github.io/tags/VB/"/>
+    
+      <category term="隐藏" scheme="http://huiyadanli.github.io/tags/%E9%9A%90%E8%97%8F/"/>
+    
+  </entry>
+  
+</feed>
