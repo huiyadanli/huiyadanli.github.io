@@ -9,7 +9,7 @@
  * --------------------------------------------------
  */
 var BlockConfig = {
-  SITE_URL : "localhost",
+  SITE_URLS : ["localhost", "127.0.0.1", "huiyadanli.github.io", "huiyadanli.coding.me"],
 
   BANNER_START_NUM : 1,
   BANNER_END_NUM : 20
@@ -213,7 +213,15 @@ function initHeaderImage() {
   var arr = getRandomArr(BlockConfig.BANNER_START_NUM, BlockConfig.BANNER_END_NUM);
   var i = 0;
   $(".post .card-image img").each(function(){
-    $(this).attr("src", "/images/banner/" + arr[i] + ".jpg");
+    var imgUrl = "/images/banner/" + arr[i] + ".jpg";
+    var thisRef = $(this);
+    $.ajax({    
+      type:"GET",    
+      url: imgUrl,
+      success: function(data){    
+        thisRef.attr("src", imgUrl);
+      }
+    });
     i++;
   });
 }
@@ -239,7 +247,14 @@ function notification() {
     });
   }
   // say good night
-  if(document.referrer.indexOf(BlockConfig.SITE_URL) < 0) {
+  var isMySite = false;
+  for(x in BlockConfig.SITE_URLS) {
+    if(document.referrer.indexOf(BlockConfig.SITE_URLS[x]) >= 0) {
+      isMySite = true;
+      break;
+    }
+  }
+  if(!isMySite) {
     var hour = today.getHours();
     if(hour == 0) {
       Materialize.toast("这么晚了还不睡吗？", 3000);
@@ -398,6 +413,13 @@ function fun() {
       //e.stopPropagation();
     });
   }
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  function c() {
+      document.title = document[a] ? "标题被我吃掉了 (°∀°)ﾉ - " + d : d
+  }
+  var a, b, d = document.title;
+  "undefined" != typeof document.hidden ? (a = "hidden", b = "visibilitychange") : "undefined" != typeof document.mozHidden ? (a = "mozHidden", b = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (a = "webkitHidden", b = "webkitvisibilitychange");
+  "undefined" == typeof document.addEventListener && "undefined" == typeof document[a] || document.addEventListener(b, c, !1)
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
 
