@@ -60,13 +60,14 @@ kbd {
 #glcanvas {
   position: fixed;
   bottom: 0px;
+  left: 0px;
 }
 
 /**
  * header
  */
 .header {
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .no-margin {
@@ -90,6 +91,20 @@ kbd {
 }
 
 /**
+ * sticky-footer wrapper
+ */
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px; 
+}
+
+.wrapper::after {
+    content: "";
+    display: block;
+    height: 50px;
+}
+
+/**
  * footer
  */
 .footer-line {
@@ -97,7 +112,6 @@ kbd {
   overflow: hidden;
   height: 50px;
   line-height: 50px;
-  margin-top: 50px;
   /*color: rgba(255, 255, 255, 0.8);*/
   background-color: rgba(51, 51, 51, 0.08);
   top: 0px;
@@ -187,6 +201,7 @@ kbd {
 
 .card-content img {
   /*cursor: pointer;*/
+  max-width: 100%;
 }
 
 
@@ -245,6 +260,8 @@ kbd {
 
 .block-pagination {
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .block-pagination .prev {

@@ -31,10 +31,12 @@ var live2DHelper;
  */
 $(function(){
   // init
+  initPageScript();
   initFavicon();
   initMenu();
   initMousetrap();
   initHeaderImage();
+  initContentImage();
   initModal();
 
   // something fun
@@ -45,28 +47,91 @@ $(function(){
   notification();
   modal();
 
-  // css fix
-  fixStylesheets();
-
-  // css animate plugins
-  $.fn.extend({
-      animateCss: function (animationName) {
-          var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-          this.addClass('animated ' + animationName).one(animationEnd, function() {
-              $(this).removeClass('animated ' + animationName);
-          });
-      }
-  });
+  // pjax
+  initPjax();
 });
 
 /**
- * fix image width and init image box
+ * page script
  */
-function fixStylesheets() {
-  // image box init
-  setImageWidth();
-  $(".card-content img").materialbox();
+function initPageScript() {
+  initTocInPostPage();
+  initSearchInTagPage();
+}
 
+function initTocInPostPage() {
+  var $toc = $(".post-toc");
+  if($toc.length > 0) {
+    if($("ol.toc").children().length > 5) {
+      $toc.show();
+    }
+    $(window).scroll(function () {
+      var scrollTop = $(window).scrollTop();
+      var offset = 155 - scrollTop;
+      if(offset >= 10) {
+        $toc.css("top", offset);
+      } else {
+        $toc.css("top", 10);
+      }
+    });
+    $("#btn-list").click(function(){
+      if($toc.find(".toc").length == 0) {
+        Materialize.toast("本文没有目录", 1500);
+        return;
+      }
+      if($toc.css("display") == "none") {
+        $toc.show();
+        $toc.addClass('animated fadeInRight');
+        setTimeout(function(){
+          $toc.removeClass('animated fadeInRight');
+        },1000)
+      } else {
+        $toc.addClass('animated fadeOutRight');
+        setTimeout(function(){
+          $toc.removeClass('animated fadeOutRight');
+          $toc.hide();
+        },1000)
+        
+      }
+    });
+
+    $("#btn-list-close").click(function(){
+      var $toc = $toc;
+      $toc.addClass('animated fadeOutRight');
+      setTimeout(function(){
+        $toc.removeClass('animated fadeOutRight');
+        $toc.hide();
+      },1000)
+    });
+
+    $("#btn-to-top").click(function(){
+      goToTop();
+    });
+  }
+}
+
+function initSearchInTagPage() {
+  var $input = $("#search");
+  if($input.length > 0) {
+    var $a = $(".tag-cloud a");
+    $input.on("keyup blur", function(){
+      $a.each(function(){
+        if($(this).text().toLowerCase().indexOf($input.val().toLowerCase()) > -1) {
+          //$(this).css("visibility", "visible");
+          $(this).css("display", "");
+        } else {
+          //$(this).css("visibility", "hidden");
+          $(this).css("display", "none");
+        }
+      });
+    });
+  }
+}
+
+/**
+ * fix stylesheets
+ */
+/*function fixStylesheets() {
   // footer should on bottom
   var defereds = [];
   $(".card-image img").each(function() {
@@ -84,28 +149,14 @@ function fixStylesheets() {
   
 
   $(window).resize(function() {
-    setImageWidth();
     setFooterPosition();
   });
-}
-
-/**
- * calculate article image width
- */
-function setImageWidth() {
-  $(".card-content img").each(function(){
-    $(this).removeAttr("width");
-    var width = $(".post .card-content").width();
-    if($(this).width() > width) {
-      $(this).attr("width",width);
-    }
-  });
-}
+}*/
 
 /**
  * calculate footer position
  */
-function setFooterPosition() {
+/*function setFooterPosition() {
   var $footer = $(".footer-line");
   var margin_top = parseFloat($footer.css("margin-top").replace("px",""));
   var offset = $(window).height() - $footer.offset().top - $footer.height();
@@ -119,7 +170,7 @@ function setFooterPosition() {
       $footer.addClass("animated fadeIn");
     }
   }
-}
+}*/
 
 
 /**
@@ -136,11 +187,15 @@ function initFavicon() {
     "/images/favicon/mario.ico",
     "/images/favicon/book.ico"
   ];
-  for(var i=0; i<pathnames.length; i++){
+  var i = 0;
+  for(i = 0; i < pathnames.length; i++){
     if(window.location.pathname == encodeURI(pathnames[i])) {
       $("#favicon").attr("href", favicons[i]);
       break;
     }
+  }
+  if(i == pathnames.length) {
+    $("#favicon").attr("href", "/favicon.ico");
   }
 }
 
@@ -148,6 +203,10 @@ function initFavicon() {
  * menu init
  */
 function initMenu() {
+  // revert style
+  $("#menu-categories").html("分类");
+  $("#menu-categories").addClass("grey darken-2");
+
   $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 0,
@@ -226,11 +285,58 @@ function initHeaderImage() {
   });
 }
 
+function initContentImage() {
+  $(".card-content img").materialbox();
+}
+
 function initModal() {
   $('.modal-trigger').leanModal({
     starting_top: '10%',
     ending_top: '30%'
   });
+}
+
+/**
+ * pjax init
+ */
+function initPjax() {
+  
+  addPjaxAttr();
+  // pjax
+  $(document).pjax('a[data-pjax]', '.content', { fragment: '.content', timeout: 10000 });
+  $(document).on({
+    'pjax:click': function () {
+      // $('.content').removeClass('animated fadeInRight').addClass('animated fadeOutRight');
+      $('.content').fadeOut(500);
+      NProgress.start();
+    },
+    'pjax:start': function () {
+
+    },
+    'pjax:end': function () {
+      // $('.content').removeClass('animated fadeOutRight').addClass('animated fadeInRight');
+      $('.content').fadeIn(500);
+      NProgress.done();
+
+      addPjaxAttr();
+      // init
+      initPageScript();
+      initFavicon();
+      initMenu();
+      initHeaderImage();
+      initContentImage();
+      initModal();
+    },
+    'pjax:popstate': function () {
+
+    }
+  });
+}
+
+function addPjaxAttr() {
+  // pagination link
+  $(".page-number").attr("data-pjax", "");
+  $(".extend").attr("data-pjax", "");
 }
 
 /**
@@ -302,6 +408,10 @@ function loadModel() {
   live2DHelper.loadModel(path, function(){
     live2DHelper.startTurnHead();
     followMouse();
+
+    if(!$("#glcanvas").hasClass("animated")) {
+      $("#glcanvas").addClass("animated fadeIn");
+    }
     //seeMenu();
   });
 }
@@ -327,7 +437,7 @@ function followMouse() {
     }
   });
   // click
-  // $(window).click(function(e){
+  // $(".wrapper").click(function(e){
   //   if(live2DHelper != null) {
   //     live2DHelper.followPointer(e);
   //   }

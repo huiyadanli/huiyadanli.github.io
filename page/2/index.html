@@ -20,48 +20,51 @@
     
       <link rel="stylesheet" href="/css/animate.min.css">
     
+      <link rel="stylesheet" href="/css/nprogress.min.css">
+    
   
 </head>
 <body>
 
-<header class="header">
-  <div class="row no-margin">
+<div class="wrapper">
+  <header class="header">
+    <div class="row no-margin">
   <div class="col s12 l6 offset-l3" style="text-align: center;">
     <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
+      <a data-pjax class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
     </div>
     <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+      <a data-pjax class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
     </div>
     <div class="menu-item">
       <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
       <ul id='dropdown-categories' class='dropdown-content'>
         
-        <li><a href="/categories/日常/">日常</a></li>
+        <li><a data-pjax href="/categories/日常/">日常</a></li>
         
-        <li><a href="/categories/软件/">软件</a></li>
+        <li><a data-pjax href="/categories/代码/">代码</a></li>
         
-        <li><a href="/categories/代码/">代码</a></li>
+        <li><a data-pjax href="/categories/软件/">软件</a></li>
         
-        <li><a href="/categories/研究/">研究</a></li>
+        <li><a data-pjax href="/categories/研究/">研究</a></li>
         
       </ul>
     </div>
     <div class="menu-item">
-      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+      <a data-pjax id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
     </div>
     <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+      <a data-pjax class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
     </div>
     <div class="menu-item" style="margin-top: 0px">
       <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
     </div>
   </div>
 </div>
-</header>
+  </header>
 
-<div class="content">
-  
+  <div class="content">
+    
   <div class="row">
     <div class="col s12 l6 offset-l3">
       
@@ -70,7 +73,7 @@
 <div class="post card">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
-    <a class="card-title" href="/研究/sina-login/" >C# 实现新浪微博模拟登录v1.4.18</a>
+    <a data-pjax class="card-title" href="/研究/sina-login/" >C# 实现新浪微博模拟登录v1.4.18</a>
   </div>
   <div class="card-content">
     <div class="post-item">
@@ -83,7 +86,7 @@
         
         <span class="">分类：</span>
         
-        <a class="post-category" href="/categories/研究/">研究</a>
+        <a data-pjax class="post-category" href="/categories/研究/">研究</a>
         
         
       </div>
@@ -99,15 +102,15 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/C/" rel="tag">C#</a>
+        <a data-pjax class="tag-link" href="/tags/C/" rel="tag">C#</a>
       </li>
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/模拟登录/" rel="tag">模拟登录</a>
+        <a data-pjax class="tag-link" href="/tags/模拟登录/" rel="tag">模拟登录</a>
       </li>
     
     </ul>
-    <a class="right read-more" href="/研究/sina-login/">阅读全文...</a>
+    <a data-pjax class="right read-more" href="/研究/sina-login/">阅读全文...</a>
   </div>
   
 </div>
@@ -119,7 +122,7 @@
 <div class="post card">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
-    <a class="card-title" href="/日常/build-a-blog/" >成功使用pelican在github上搭建了自己的博客</a>
+    <a data-pjax class="card-title" href="/日常/build-a-blog/" >成功使用pelican在github上搭建了自己的博客</a>
   </div>
   <div class="card-content">
     <div class="post-item">
@@ -132,7 +135,7 @@
         
         <span class="">分类：</span>
         
-        <a class="post-category" href="/categories/日常/">日常</a>
+        <a data-pjax class="post-category" href="/categories/日常/">日常</a>
         
         
       </div>
@@ -148,19 +151,19 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/blog/" rel="tag">blog</a>
+        <a data-pjax class="tag-link" href="/tags/blog/" rel="tag">blog</a>
       </li>
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/pelican/" rel="tag">pelican</a>
+        <a data-pjax class="tag-link" href="/tags/pelican/" rel="tag">pelican</a>
       </li>
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/python/" rel="tag">python</a>
+        <a data-pjax class="tag-link" href="/tags/python/" rel="tag">python</a>
       </li>
     
     </ul>
-    <a class="right read-more" href="/日常/build-a-blog/">阅读全文...</a>
+    <a data-pjax class="right read-more" href="/日常/build-a-blog/">阅读全文...</a>
   </div>
   
 </div>
@@ -172,7 +175,7 @@
 <div class="post card">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
-    <a class="card-title" href="/代码/message-bomber/" >QQ消息轰炸机(附源码)</a>
+    <a data-pjax class="card-title" href="/代码/message-bomber/" >QQ消息轰炸机(附源码)</a>
   </div>
   <div class="card-content">
     <div class="post-item">
@@ -185,7 +188,7 @@
         
         <span class="">分类：</span>
         
-        <a class="post-category" href="/categories/代码/">代码</a>
+        <a data-pjax class="post-category" href="/categories/代码/">代码</a>
         
         
       </div>
@@ -201,15 +204,15 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/VB/" rel="tag">VB</a>
+        <a data-pjax class="tag-link" href="/tags/VB/" rel="tag">VB</a>
       </li>
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/消息轰炸/" rel="tag">消息轰炸</a>
+        <a data-pjax class="tag-link" href="/tags/消息轰炸/" rel="tag">消息轰炸</a>
       </li>
     
     </ul>
-    <a class="right read-more" href="/代码/message-bomber/">阅读全文...</a>
+    <a data-pjax class="right read-more" href="/代码/message-bomber/">阅读全文...</a>
   </div>
   
 </div>
@@ -221,7 +224,7 @@
 <div class="post card">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
-    <a class="card-title" href="/代码/hide-file-in-picture/" >把文件藏在图片里(VB程序+源码+原理)</a>
+    <a data-pjax class="card-title" href="/代码/hide-file-in-picture/" >把文件藏在图片里(VB程序+源码+原理)</a>
   </div>
   <div class="card-content">
     <div class="post-item">
@@ -234,7 +237,7 @@
         
         <span class="">分类：</span>
         
-        <a class="post-category" href="/categories/代码/">代码</a>
+        <a data-pjax class="post-category" href="/categories/代码/">代码</a>
         
         
       </div>
@@ -250,15 +253,15 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/VB/" rel="tag">VB</a>
+        <a data-pjax class="tag-link" href="/tags/VB/" rel="tag">VB</a>
       </li>
     
       <li class="tags-list-item">
-        <a class="tag-link" href="/tags/隐藏/" rel="tag">隐藏</a>
+        <a data-pjax class="tag-link" href="/tags/隐藏/" rel="tag">隐藏</a>
       </li>
     
     </ul>
-    <a class="right read-more" href="/代码/hide-file-in-picture/">阅读全文...</a>
+    <a data-pjax class="right read-more" href="/代码/hide-file-in-picture/">阅读全文...</a>
   </div>
   
 </div>
@@ -277,12 +280,12 @@
 
     </div>
   </div>
-  <canvas id="glcanvas" width="300" height="600"></canvas>
 
+  </div>
 </div>
 
 <footer class="footer">
-  <div class="footer-line" style="visibility:hidden;">
+  <div class="footer-line">
   <div class="container grey-text text-darken-1">
     &copy;  2013 - 
     2017
@@ -319,6 +322,8 @@
 </div>
 </footer>
 
+<canvas id="glcanvas" width="300" height="600"></canvas>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -344,7 +349,11 @@
   
     <script src="/js/block.min.js"></script>
   
-    <script src="/js/mousetrap.min.js"></script>
+    <script src="//cdn.bootcss.com/mousetrap/1.6.1/mousetrap.min.js"></script>
+  
+    <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+  
+    <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   
 
 
