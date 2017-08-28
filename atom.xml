@@ -231,13 +231,13 @@
       <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
     
     
-      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
-    
-      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
-    
       <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
     
       <category term="Json" scheme="http://huiyadanli.github.io/tags/Json/"/>
+    
+      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
+    
+      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
     
   </entry>
   

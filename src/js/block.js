@@ -96,7 +96,6 @@ function initTocInPostPage() {
     });
 
     $("#btn-list-close").click(function(){
-      var $toc = $toc;
       $toc.addClass('animated fadeOutRight');
       setTimeout(function(){
         $toc.removeClass('animated fadeOutRight');
@@ -118,10 +117,10 @@ function initSearchInTagPage() {
       $a.each(function(){
         if($(this).text().toLowerCase().indexOf($input.val().toLowerCase()) > -1) {
           //$(this).css("visibility", "visible");
-          $(this).css("display", "");
+          $(this).show();
         } else {
           //$(this).css("visibility", "hidden");
-          $(this).css("display", "none");
+          $(this).hide();
         }
       });
     });
@@ -300,6 +299,10 @@ function initModal() {
  * pjax init
  */
 function initPjax() {
+
+  if($.pjax == null) {
+    return;
+  }
   
   addPjaxAttr();
   // pjax
@@ -335,8 +338,16 @@ function initPjax() {
 
 function addPjaxAttr() {
   // pagination link
-  $(".page-number").attr("data-pjax", "");
-  $(".extend").attr("data-pjax", "");
+  var $objs = [
+    $(".page-number"),
+    $(".extend"),
+    $(".tag-cloud a")
+  ];
+  for (var i = 0; i < $objs.length; i++) {
+    if($objs[i] != null) {
+      $objs[i].attr("data-pjax", "");
+    }
+  }
 }
 
 /**

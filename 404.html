@@ -20,65 +20,65 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="row no-margin">
-  <div class="col s12 l6 offset-l3" style="text-align: center;">
-    <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
-    </div>
-    <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
-    </div>
-    <div class="menu-item">
-      <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
-      <ul id='dropdown-categories' class='dropdown-content'>
-        
-        <li><a href="/categories/日常/">日常</a></li>
-        
-        <li><a href="/categories/软件/">软件</a></li>
-        
-        <li><a href="/categories/代码/">代码</a></li>
-        
-        <li><a href="/categories/研究/">研究</a></li>
-        
-      </ul>
-    </div>
-    <div class="menu-item">
-      <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
-    </div>
-    <div class="menu-item">
-      <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
-    </div>
-    <div class="menu-item" style="margin-top: 0px">
-      <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
-    </div>
-  </div>
-</div>
-</header>
-
-<div class="content">
-  <!-- post -->
-  <div class="row">
-    <div class="col s12 l10 offset-l1">
-      <div class="post card">
-        <!-- loading -->
-        <div class="progress" style="margin: 0px">
-            <div class="indeterminate"></div>
-        </div>
-        <div id="loadingText">
-          404 Page Not Found<br/>原因搜寻中...
-        </div>
-        <!-- 3d 404 -->
-        <iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe>
+<div class="wrapper">
+  <header class="header">
+    <div class="row no-margin">
+    <div class="col s12 l6 offset-l3" style="text-align: center;">
+      <div class="menu-item">
+        <a class="waves-effect waves-light btn grey darken-2" href="/" title="主页" style="width: auto; padding: 0 1.8em"><i class="material-icons">home</i></a>
+      </div>
+      <div class="menu-item">
+        <a class="waves-effect waves-light btn grey darken-2" href="/archives" title="归档">归档</a>
+      </div>
+      <div class="menu-item">
+        <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
+        <ul id='dropdown-categories' class='dropdown-content'>
+          
+          <li><a href="/categories/日常/">日常</a></li>
+          
+          <li><a href="/categories/软件/">软件</a></li>
+          
+          <li><a href="/categories/代码/">代码</a></li>
+          
+          <li><a href="/categories/研究/">研究</a></li>
+          
+        </ul>
+      </div>
+      <div class="menu-item">
+        <a id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+      </div>
+      <div class="menu-item">
+        <a class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
+      </div>
+      <div class="menu-item" style="margin-top: 0px">
+        <a id="btnSearchPanel" class="btn-floating btn-large waves-effect waves-light blue-grey" title="搜索"><i class="material-icons">search</i></a>
       </div>
     </div>
   </div>
+  </header>
 
-
+  <div class="content">
+    <!-- post -->
+    <div class="row">
+      <div class="col s12 l10 offset-l1">
+        <div class="post card">
+          <!-- loading -->
+          <div class="progress" style="margin: 0px">
+              <div class="indeterminate"></div>
+          </div>
+          <div id="loadingText">
+            404 Page Not Found<br/>原因搜寻中...
+          </div>
+          <!-- 3d 404 -->
+          <iframe id="i404" src="" width="1" height="1" frameborder="no"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer class="footer">
-  <div class="footer-line" style="visibility:hidden;">
+  <div class="footer-line">
   <div class="container grey-text text-darken-1">
     &copy;  2013 - 
     2017
@@ -143,10 +143,8 @@
     $i.attr("src", "/i/3D404/" + names[index]);
     var h = $(window).height() - $(".footer").height() - $(".post").offset().top - 80;
     $(".post").css("height", h);
-    setFooterPosition();
-    // text
-    
 
+    // text
     $("#i404").load(function(){
       $("#loadingText").fadeOut(1000);
       $(".progress").fadeOut(1000);
@@ -157,7 +155,6 @@
   function setIFrameSize() {
     $i.css("width", "100%");
     $i.css("height", "100%");
-    setFooterPosition();
   }
 </script>
 
