@@ -233,18 +233,14 @@ function initMenu() {
 function initMousetrap() {
   // next post
   Mousetrap.bind('right', function() {
-    var $next = $(".block-pagination a[rel='next']").attr("href");
-    if($next != null) {
-      window.location.href = $next;
-    }
+    var $next = $(".block-pagination a[rel='next']");
+    $next.trigger('click');
   });
 
   // prev post
   Mousetrap.bind('left', function() {
-    var $prev = $(".block-pagination a[rel='prev']").attr("href");
-    if($prev != null) {
-      window.location.href = $prev;
-    }
+    var $prev = $(".block-pagination a[rel='prev']");
+    $prev.trigger('click');
   });
 
   // go to top
