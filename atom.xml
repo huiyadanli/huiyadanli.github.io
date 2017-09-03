@@ -152,9 +152,9 @@
       <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
-    
       <category term="主题" scheme="http://huiyadanli.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
     
   </entry>
   
@@ -231,11 +231,11 @@
       <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
     
     
-      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
-    
       <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
     
       <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
+    
+      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
     
       <category term="Json" scheme="http://huiyadanli.github.io/tags/Json/"/>
     
@@ -308,9 +308,9 @@
       <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="pelican" scheme="http://huiyadanli.github.io/tags/pelican/"/>
-    
       <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
+    
+      <category term="pelican" scheme="http://huiyadanli.github.io/tags/pelican/"/>
     
       <category term="python" scheme="http://huiyadanli.github.io/tags/python/"/>
     

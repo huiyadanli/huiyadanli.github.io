@@ -30,7 +30,9 @@ var live2DHelper;
  * --------------------------------------------------
  */
 $(function(){
+
   // init
+  initNProgress();
   initPageScript();
   initFavicon();
   initMenu();
@@ -49,6 +51,8 @@ $(function(){
 
   // pjax
   initPjax();
+
+
 });
 
 /**
@@ -126,6 +130,14 @@ function initSearchInTagPage() {
     });
   }
 }
+
+function initNProgress() {
+  NProgress.start();
+  $(document).ajaxStop(function(){
+    NProgress.done();
+  });
+}
+
 
 /**
  * fix stylesheets
@@ -306,6 +318,7 @@ function initPjax() {
   $(document).on({
     'pjax:click': function () {
       // $('.content').removeClass('animated fadeInRight').addClass('animated fadeOutRight');
+      //goToTop();
       $('.content').fadeOut(500);
       NProgress.start();
     },
@@ -315,7 +328,6 @@ function initPjax() {
     'pjax:end': function () {
       // $('.content').removeClass('animated fadeOutRight').addClass('animated fadeInRight');
       $('.content').fadeIn(500);
-      NProgress.done();
 
       addPjaxAttr();
       // init
@@ -410,9 +422,11 @@ function initLive2D() {
 
 function loadModel() {
   live2DHelper = new Live2DHelper({canvas: 'glcanvas'});
-  var n = getRandomNum(2, 4);
-  var path = "/live2d/asuna/asuna_0" + n + "/asuna_0" + n + ".model.json";
+  var arr = ["02", "06", "12", "29"];
+  arr = shuffle(arr);
+  var path = "/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
   live2DHelper.loadModel(path, function(){
+    live2DHelper.startMotion("", "0");
     live2DHelper.startTurnHead();
     followMouse();
 
@@ -439,8 +453,9 @@ function followMouse() {
     }
   })
   .mousemove(function(e){
-    if(live2DHelper != null && isMouseDown) {
+    if(live2DHelper != null) {
       live2DHelper.followPointer(e);
+      //console.log("---"  + e.pageX + "   " + e.pageY)
     }
   });
   // click
@@ -452,9 +467,22 @@ function followMouse() {
 }
 
 function seeMenu() {
-  $(".menu-item").mousemove(function(e){
+  var $canvas = $("#glcanvas");
+  var a = $canvas.width();
+  var b = $canvas.height();
+  var c = $(window).width();
+  var d = $(window).height();
+  console.log(a + " " + c + " " + b + " " + d)
+  $("a[data-pjax]").mousemove(function(e){
     if(live2DHelper != null) {
-      live2DHelper.viewPointer(e.pageX, e.pageY);
+      //live2DHelper.followPointer(e);
+      // live2DHelper.viewPointer(parseInt(e.pageX * a / c), parseInt(e.pageY * b / d));
+      // console.log(parseInt(e.pageX * a / c)+ "   " + parseInt(e.pageY * b / d))
+    }
+  })
+  .mouseout(function(e){
+    if(live2DHelper != null) {
+      live2DHelper.viewPointer(0, 0);
     }
   });
 }
