@@ -257,12 +257,24 @@ function initMousetrap() {
 
   // go to top
   Mousetrap.bind('g g', function() {
-      goToTop();
+    goToTop();
   });
 
   // go to Bottom
   Mousetrap.bind('G', function() {
-      goToBottom();
+    goToBottom();
+  });
+
+  // i am sorry (url hash game)
+  Mousetrap.bind('s', function() {
+    // off pjax
+    $(document).off('click', 'a[data-pjax]');
+    // $(".wrapper").slideUp();
+    // load url hash game
+    $.getScript("/js/iamsorry.min.js")
+    .done(function() {
+      setCurrentFun('shark');
+    });
   });
 
   // // konami code!
