@@ -12,7 +12,7 @@ var BlockConfig = {
   SITE_URLS : ["localhost", "127.0.0.1", "huiyadanli.github.io", "huiyadanli.coding.me"],
 
   BANNER_START_NUM : 1,
-  BANNER_END_NUM : 20
+  BANNER_END_NUM : 22
 };
 /**
  * --------------------------------------------------
@@ -51,8 +51,6 @@ $(function(){
 
   // pjax
   initPjax();
-
-
 });
 
 /**
@@ -267,6 +265,7 @@ function initMousetrap() {
 
   // i am sorry (url hash game)
   Mousetrap.bind('s', function() {
+    Mousetrap.unbind('s');
     // off pjax
     $(document).off('click', 'a[data-pjax]');
     // $(".wrapper").slideUp();
@@ -384,14 +383,7 @@ function notification() {
     });
   }
   // say good night
-  var isMySite = false;
-  for(x in BlockConfig.SITE_URLS) {
-    if(document.referrer.indexOf(BlockConfig.SITE_URLS[x]) >= 0) {
-      isMySite = true;
-      break;
-    }
-  }
-  if(!isMySite) {
+  if(!isMySite(document.referrer)) {
     var hour = today.getHours();
     if(hour == 0) {
       Materialize.toast("这么晚了还不睡吗？", 3000);
@@ -434,13 +426,22 @@ function initLive2D() {
 
 function loadModel() {
   live2DHelper = new Live2DHelper({canvas: 'glcanvas'});
-  var arr = ["02", "06", "12", "29"];
+  var arr = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "33", "34", "35", "36", "37", "38", "39", "40", "41", "43", "44", "45", "46", "47", "48", "49", "50", "52", "53", "54"];
   arr = shuffle(arr);
-  var path = "/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
+  var path = "/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".edit.model.json";
+  console.log("[Live2D] 主电源连接完毕...");
   live2DHelper.loadModel(path, function(){
-    live2DHelper.startMotion("", "0");
+    console.log("[Live2D] 交互界面连接...");
+    live2DHelper.startMotion("", "3");
     live2DHelper.startTurnHead();
     followMouse();
+    console.log("[Live2D] 思考形态以中文作为基准，进行思维连接...");
+    welcome();
+    saySomething();
+   
+    // console.log("[Live2D] 同步率为 1000.0000%%");
+    // console.log("[Live2D] 第一锁定器解除...");
+    // console.log("[Live2D] 第二锁定器解除...");
 
     if(!$("#glcanvas").hasClass("animated")) {
       $("#glcanvas").addClass("animated fadeIn");
@@ -499,6 +500,139 @@ function seeMenu() {
   });
 }
 
+function welcome() {
+  // 应该把表情和动作都放在这里
+  var text;
+  if(document.referrer !== ''){
+    var referrer = document.createElement('a');
+    referrer.href = document.referrer;
+    text = '你好! 来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友';
+    var domain = referrer.hostname.split('.')[1];
+    if (domain == 'baidu') {
+        text = '你好! 来自 百度搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&wd=')[1].split('&')[0] + '</span> 找到的我吗？';
+    }else if (domain == 'so') {
+        text = '你好! 来自 360搜索 的朋友<br>你是搜索 <span style="color:#0099cc;">' + referrer.search.split('&q=')[1].split('&')[0] + '</span> 找到的我吗？';
+    }else if (domain == 'google') {
+        text = '你好! 来自 谷歌搜索 的朋友<br>欢迎阅读 <span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+    }
+  } else {
+    if (isMySite(window.location.href)) { //如果是主页
+      var now = (new Date()).getHours();
+      if (now > 23 || now <= 5) {
+          text = '早点睡觉，才能有更好的精神去迎接新的一天';
+      } else if (now > 5 && now <= 7) {
+          text = '早上好！一日之计在于晨，美好的一天就要开始了';
+      } else if (now > 7 && now <= 11) {
+          text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+      } else if (now > 11 && now <= 14) {
+          text = '中午了，工作了一个上午，现在是午餐时间！';
+      } else if (now > 14 && now <= 17) {
+          text = '午后很容易犯困呢，今天的运动目标完成了吗？';
+      } else if (now > 17 && now <= 19) {
+          text = '傍晚了！窗外夕阳的景色很美丽呢。';
+      } else if (now > 19 && now <= 21) {
+          text = '晚上好，今天过得怎么样？';
+      } else if (now > 21 && now <= 23) {
+          text = '已经这么晚了呀，早点休息吧，晚安~';
+      } else {
+          text = '嗨~';
+      }
+    } else {
+      text = '欢迎阅读<span style="color:#0099cc;">『' + document.title.split(' - ')[0] + '』</span>';
+    }
+  }
+  // 记录进入次数
+  var objCount = JSON.parse(window.localStorage.getItem('enterCount'));
+  var cnt = 0;
+  var now = Date.parse(new Date());
+  if(objCount != null && objCount.expired + objCount.date > now) {
+    cnt = objCount.count;
+    objCount.count = cnt + 1;
+    if(cnt >= 5) {
+      text = '你在 <span style="color:#0099cc;">'+ (now - objCount.date) / 1000 +'s</span> 内刷新了这么多次，是想看我换装吗';
+    }
+  } else {
+    objCount = {};
+    objCount.count = 0;
+    objCount.expired = 60 * 1000; // 过期时间 ms
+    objCount.date = now;
+  }
+  window.localStorage.setItem('enterCount',JSON.stringify(objCount));
+  
+
+  showMessage(text, 6000);
+}
+
+function saySomething() {
+  // var re = /x/;
+  // console.log(re);
+  // re.toString = function() {
+  //     showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+  //     return '';
+  // };
+  
+  var once = true;
+  $(document).on('copy', function (){
+      showMessage('你都复制了些什么呀，转载要记得加上出处哦', 5000);
+      if(once) {
+        live2DHelper.startMotion("", "11");
+        once = false;
+      }
+  });
+  
+  $.ajax({
+    cache: true,
+    url: "/live2d/live2d-tips.json",
+    dataType: "json",
+    success: function (result){
+      console.log("[Live2D] 连接没有异常");
+      $.each(result.mouseover, function (index, tips){
+        $(document).on("mouseover", tips.selector, function (){
+          if(!isEmpty(tips.expression) && live2DHelper != null){
+            live2DHelper.setExpression(tips.expression);
+          }
+          var text = tips.text;
+          if(!isEmpty(text)) {
+            if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
+            text = text.render({text: $(this).text()});
+            showMessage(text, 3000);
+          }
+        });
+      });
+      $.each(result.click, function (index, tips){
+        $(document).on("click", tips.selector, function (){
+          if(!isEmpty(tips.expression) && live2DHelper != null){
+            live2DHelper.setExpression(tips.expression);
+          }
+          var text = tips.text;
+          if(!isEmpty(text)) {
+            if(Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1)-1];
+            text = text.render({text: $(this).text()});
+            showMessage(text, 3000);
+          }
+        });
+      });
+      console.log("[Live2D] 初次见面，我是结城明日奈。");
+    },
+    error: function(){
+      console.log("%c[Live2D] 思维连接出现异常", "color:red");
+    }
+  });
+}
+
+function showMessage(text, timeout){
+  if(Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1)-1];
+  $('.live2d-tips').stop();
+  $('.live2d-tips').html(text).fadeTo(200, 1);
+  if (timeout === null) timeout = 5000;
+  hideMessage(timeout);
+}
+function hideMessage(timeout){
+  $('.live2d-tips').stop().css('opacity',1);
+  if (timeout === null) timeout = 5000;
+  $('.live2d-tips').delay(timeout).fadeTo(200, 0);
+}
+
 /**
  * --------------------------------------------------
  *                 special effects
@@ -507,7 +641,8 @@ function seeMenu() {
 function fun() {
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // console ~
-  console.log("(。﹏。) 不要这么看人家，人家害羞\nCopyright © 2013-2017 Made with ♥ by huiyadanli");
+  console.log("%c(。﹏。) 不要这么看人家，人家害羞\nCopyright © 2013-2017 Made with ♥ by huiyadanli","text-shadow: -2px 0 rgba(0, 255, 255, .5), 2px 0 rgba(255, 0, 0, .5)");
+  console.log("------------------------------------------------\n");
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // what the fuking Valentine's Day
   // enable it at 14th every month!
@@ -652,3 +787,46 @@ function goToBottom() {
     'scrollTop':$(document).height()
   },500);
 }
+
+function isEmpty(obj) {
+  if(typeof obj == "undefined" || obj == null || obj == ""){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isMySite(url) {
+  var res = false;
+  for(x in BlockConfig.SITE_URLS) {
+    if(url.indexOf(BlockConfig.SITE_URLS[x]) >= 0) {
+      res = true;
+      break;
+    }
+  }
+  return res;
+}
+/**
+ * 简单的模板渲染
+ */
+function render(template, context) {
+  var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+  return template.replace(tokenReg, function (word, slash1, token, slash2) {
+      if (slash1 || slash2) {  
+          return word.replace('\\', '');
+      }
+      var variables = token.replace(/\s/g, '').split('.');
+      var currentObject = context;
+      var i, length, variable;
+
+      for (i = 0, length = variables.length; i < length; ++i) {
+          variable = variables[i];
+          currentObject = currentObject[variable];
+          if (currentObject === undefined || currentObject === null) return '';
+      }
+      return currentObject;
+  });
+}
+String.prototype.render = function (context) {
+  return render(this, context);
+};

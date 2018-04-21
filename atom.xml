@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huiyadanli.github.io/"/>
-  <updated>2017-01-25T08:32:26.771Z</updated>
+  <updated>2017-01-25T08:32:26.772Z</updated>
   <id>http://huiyadanli.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/e-su-gu-feng/"/>
     <id>http://huiyadanli.github.io/代码/e-su-gu-feng/</id>
     <published>2016-09-07T15:17:00.000Z</published>
-    <updated>2017-01-25T08:32:26.771Z</updated>
+    <updated>2017-01-25T08:32:26.772Z</updated>
     
     <content type="html"><![CDATA[<p>无意间看到一个生成古风句子东东，感觉生成的东西挺好玩的，于是乎我也撸了一个。<br><a id="more"></a><br>我所看到的加强版本 <a href="https://livc.io/162" target="_blank" rel="external">https://livc.io/162</a></p>
 <p>跟着撸了一个：<a href="http://huiyadanli.github.io/i/es.html">传送门</a></p>
@@ -105,7 +105,7 @@
     <link href="http://huiyadanli.github.io/%E6%97%A5%E5%B8%B8/blog-theme-edit/"/>
     <id>http://huiyadanli.github.io/日常/blog-theme-edit/</id>
     <published>2016-07-06T10:47:00.000Z</published>
-    <updated>2016-11-20T08:26:12.297Z</updated>
+    <updated>2016-11-20T08:26:12.298Z</updated>
     
     <content type="html"><![CDATA[<p>最近一直在 NIUX2 的基础上折腾博客的主题，新主题的名字已经想好了，就叫 NIUX2魔改版 (´・ω・)ﾉ。<br><a id="more"></a></p>
 <h2 id="先听首歌吧"><a href="#先听首歌吧" class="headerlink" title="先听首歌吧"></a>先听首歌吧</h2><p>尝试一下网易云音乐外链播放器</p>
@@ -152,9 +152,9 @@
       <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
-    
       <category term="主题" scheme="http://huiyadanli.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+      <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
     
   </entry>
   
@@ -163,7 +163,7 @@
     <link href="http://huiyadanli.github.io/%E8%BD%AF%E4%BB%B6/github-contributions/"/>
     <id>http://huiyadanli.github.io/软件/github-contributions/</id>
     <published>2016-05-14T09:37:00.000Z</published>
-    <updated>2016-12-18T07:41:01.549Z</updated>
+    <updated>2016-12-18T07:41:01.550Z</updated>
     
     <content type="html"><![CDATA[<p>只需要用 <a href="https://github.com/IonicaBizau/github-contributions" target="_blank" rel="external">gh-contributions</a> 设置好要画的图案，然后它就能生成一个 repo ，上传这个 repo 就能看到效果了。<br><a id="more"></a></p>
 <h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>直接按照  <a href="https://github.com/IonicaBizau/github-contributions" target="_blank" rel="external">gh-contributions</a> 作者说的做就可以了。</p>
@@ -203,7 +203,7 @@
     <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/weibo-monitor/"/>
     <id>http://huiyadanli.github.io/代码/weibo-monitor/</id>
     <published>2016-04-21T09:03:00.000Z</published>
-    <updated>2016-12-18T07:41:01.596Z</updated>
+    <updated>2016-12-18T07:41:01.597Z</updated>
     
     <content type="html"><![CDATA[<p>本文主要是通过解析页面来提取各条微博的内容和相关信息。<br><a id="more"></a></p>
 <h2 id="提取页面"><a href="#提取页面" class="headerlink" title="提取页面"></a>提取页面</h2><p>下面是一个微博页面的源码段，微博页面采用 BigPipe 网页加载模式，使用 FM.view() 对页面分块加载，让你能更快的看到内容。</p>
@@ -231,11 +231,11 @@
       <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
     
     
-      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
-    
       <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
     
       <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
+    
+      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
     
       <category term="Json" scheme="http://huiyadanli.github.io/tags/Json/"/>
     
@@ -280,7 +280,7 @@
     <link href="http://huiyadanli.github.io/%E6%97%A5%E5%B8%B8/build-a-blog/"/>
     <id>http://huiyadanli.github.io/日常/build-a-blog/</id>
     <published>2015-11-23T14:24:00.000Z</published>
-    <updated>2016-11-20T08:26:15.897Z</updated>
+    <updated>2016-11-20T08:26:15.898Z</updated>
     
     <content type="html"><![CDATA[<p>很久很久以前（3年前），我在BAE上用WordPress搭建过一个blog，上传过几个自己写着玩的软件，顺带一些软件推荐，然后…然后它被我遗忘在某个小角落…欠费致死。<br><a id="more"></a></p>
 <h3 id="未完成的新博客"><a href="#未完成的新博客" class="headerlink" title="未完成的新博客"></a>未完成的新博客</h3><hr>
@@ -308,9 +308,9 @@
       <category term="日常" scheme="http://huiyadanli.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="pelican" scheme="http://huiyadanli.github.io/tags/pelican/"/>
-    
       <category term="blog" scheme="http://huiyadanli.github.io/tags/blog/"/>
+    
+      <category term="pelican" scheme="http://huiyadanli.github.io/tags/pelican/"/>
     
       <category term="python" scheme="http://huiyadanli.github.io/tags/python/"/>
     
@@ -355,7 +355,7 @@
     <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/hide-file-in-picture/"/>
     <id>http://huiyadanli.github.io/代码/hide-file-in-picture/</id>
     <published>2013-07-10T08:18:00.000Z</published>
-    <updated>2017-03-17T06:57:08.235Z</updated>
+    <updated>2017-03-17T06:57:08.236Z</updated>
     
     <content type="html"><![CDATA[<p>初学VB时写的一个小程序…没什么技术含量…捣腾了一下午出来了…<br>主要是利用命令提示符中的一个copy命令,软件的作用只是生成含有这个命令的一个BAT文件并运行…<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy /b &quot;D:/1.jpg&quot; + &quot;D:/2.rar&quot; &quot;D:/3.jpg&quot;</div></pre></td></tr></table></figure></p>
 <p><code>D:/1.jpg</code>是图片的存放路径；把要藏的文件压缩成<code>2.rar</code>，<code>D:/2.rar</code>是此文件的存放路径；<br><code>D:/3.jpg</code>是生成路径。</p>

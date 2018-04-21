@@ -44,9 +44,9 @@
         
         <li><a data-pjax href="/categories/软件/">软件</a></li>
         
-        <li><a data-pjax href="/categories/研究/">研究</a></li>
-        
         <li><a data-pjax href="/categories/代码/">代码</a></li>
+        
+        <li><a data-pjax href="/categories/研究/">研究</a></li>
         
       </ul>
     </div>
@@ -70,7 +70,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/代码/e-su-gu-feng/" >恶俗古风生成器 web 版</a>
@@ -119,7 +119,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/软件/build-java-devleopment/" >动手建造一个自己的 Java 开发环境</a>
@@ -168,7 +168,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/日常/blog-theme-edit/" >是时候该折腾一下 pelican 的主题了！</a>
@@ -200,11 +200,11 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a data-pjax class="tag-link" href="/tags/blog/" rel="tag">blog</a>
+        <a data-pjax class="tag-link" href="/tags/主题/" rel="tag">主题</a>
       </li>
     
       <li class="tags-list-item">
-        <a data-pjax class="tag-link" href="/tags/主题/" rel="tag">主题</a>
+        <a data-pjax class="tag-link" href="/tags/blog/" rel="tag">blog</a>
       </li>
     
     </ul>
@@ -217,7 +217,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/软件/github-contributions/" >在GitHub Contributions上画像素画</a>
@@ -262,7 +262,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/代码/weibo-monitor/" >C# 浪微博模拟页面解析，提取各条微博内容</a>
@@ -294,15 +294,15 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a data-pjax class="tag-link" href="/tags/C/" rel="tag">C#</a>
-      </li>
-    
-      <li class="tags-list-item">
         <a data-pjax class="tag-link" href="/tags/Javascript/" rel="tag">Javascript</a>
       </li>
     
       <li class="tags-list-item">
         <a data-pjax class="tag-link" href="/tags/HTML/" rel="tag">HTML</a>
+      </li>
+    
+      <li class="tags-list-item">
+        <a data-pjax class="tag-link" href="/tags/C/" rel="tag">C#</a>
       </li>
     
       <li class="tags-list-item">
@@ -342,7 +342,7 @@
     <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
     <div class="grey-text text-darken-1 right">
       <a href="/atom.xml">
-        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
+        <i id="rss-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
       </a>
       <a class="modal-trigger" href="#modal-keybinding-panel">
         <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
@@ -361,7 +361,7 @@
     <dl>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
-      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>g</kbd>&nbsp;<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
       <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
     </dl>
   </div>
@@ -371,7 +371,10 @@
 </div>
 </footer>
 
-<canvas id="glcanvas" width="300" height="600"></canvas>
+<div class="live2d">
+  <div class="live2d-tips"></div>
+  <canvas id="glcanvas" width="330" height="600"></canvas>
+</div>
 
 
 <script>

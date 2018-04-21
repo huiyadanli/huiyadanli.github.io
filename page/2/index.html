@@ -44,9 +44,9 @@
         
         <li><a data-pjax href="/categories/软件/">软件</a></li>
         
-        <li><a data-pjax href="/categories/研究/">研究</a></li>
-        
         <li><a data-pjax href="/categories/代码/">代码</a></li>
+        
+        <li><a data-pjax href="/categories/研究/">研究</a></li>
         
       </ul>
     </div>
@@ -70,7 +70,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/研究/sina-login/" >C# 实现新浪微博模拟登录v1.4.18</a>
@@ -119,7 +119,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/日常/build-a-blog/" >成功使用pelican在github上搭建了自己的博客</a>
@@ -151,11 +151,11 @@
     <ul class="tags-list">
     
       <li class="tags-list-item">
-        <a data-pjax class="tag-link" href="/tags/pelican/" rel="tag">pelican</a>
+        <a data-pjax class="tag-link" href="/tags/blog/" rel="tag">blog</a>
       </li>
     
       <li class="tags-list-item">
-        <a data-pjax class="tag-link" href="/tags/blog/" rel="tag">blog</a>
+        <a data-pjax class="tag-link" href="/tags/pelican/" rel="tag">pelican</a>
       </li>
     
       <li class="tags-list-item">
@@ -172,7 +172,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/代码/message-bomber/" >QQ消息轰炸机(附源码)</a>
@@ -221,7 +221,7 @@
       
         
 
-<div class="post card">
+<div class="post card hoverable">
   <div class="card-image">
     <img src="/images/banner/undefined.jpg">
     <a data-pjax class="card-title" href="/代码/hide-file-in-picture/" >把文件藏在图片里(VB程序+源码+原理)</a>
@@ -293,7 +293,7 @@
     <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
     <div class="grey-text text-darken-1 right">
       <a href="/atom.xml">
-        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
+        <i id="rss-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
       </a>
       <a class="modal-trigger" href="#modal-keybinding-panel">
         <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
@@ -312,7 +312,7 @@
     <dl>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
-      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>g</kbd>&nbsp;<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
       <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
     </dl>
   </div>
@@ -322,7 +322,10 @@
 </div>
 </footer>
 
-<canvas id="glcanvas" width="300" height="600"></canvas>
+<div class="live2d">
+  <div class="live2d-tips"></div>
+  <canvas id="glcanvas" width="330" height="600"></canvas>
+</div>
 
 
 <script>

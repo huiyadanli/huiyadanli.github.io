@@ -40,9 +40,9 @@
         
         <li><a data-pjax href="/categories/软件/">软件</a></li>
         
-        <li><a data-pjax href="/categories/研究/">研究</a></li>
-        
         <li><a data-pjax href="/categories/代码/">代码</a></li>
+        
+        <li><a data-pjax href="/categories/研究/">研究</a></li>
         
       </ul>
     </div>
@@ -95,7 +95,7 @@
     <a class="grey-text text-darken-2" href="https://hexo.io/">Hexo</a>
     <div class="grey-text text-darken-1 right">
       <a href="/atom.xml">
-        <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
+        <i id="rss-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 16px;">rss_feed</i> 
       </a>
       <a class="modal-trigger" href="#modal-keybinding-panel">
         <i id="keybinding-info" class="material-icons" style="font-size: 18px; position: relative; top: 4px; right: 10px;">keyboard</i> 
@@ -114,7 +114,7 @@
     <dl>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
-      <dt><kbd>g</kbd>&nbsp<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
+      <dt><kbd>g</kbd>&nbsp;<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
       <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
     </dl>
   </div>
@@ -124,7 +124,10 @@
 </div>
 </footer>
 
-<canvas id="glcanvas" width="300" height="600"></canvas>
+<div class="live2d">
+  <div class="live2d-tips"></div>
+  <canvas id="glcanvas" width="330" height="600"></canvas>
+</div>
 
 
 <script>
