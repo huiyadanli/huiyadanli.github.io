@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link id="favicon" rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <title>标签 - 壹亩地</title>
+  <title>标签 - 辉鸭蛋の壹亩地</title>
   
     
       <link rel="stylesheet" href="/css/block.min.css">
@@ -36,11 +36,11 @@
       <a id="menu-categories" class="dropdown-button btn grey darken-2" data-activates='dropdown-categories' href="#" title="分类">分类</a>
       <ul id='dropdown-categories' class='dropdown-content'>
         
-        <li><a data-pjax href="/categories/日常/">日常</a></li>
+        <li><a data-pjax href="/categories/代码/">代码</a></li>
         
         <li><a data-pjax href="/categories/软件/">软件</a></li>
         
-        <li><a data-pjax href="/categories/代码/">代码</a></li>
+        <li><a data-pjax href="/categories/日常/">日常</a></li>
         
         <li><a data-pjax href="/categories/研究/">研究</a></li>
         
@@ -48,6 +48,9 @@
     </div>
     <div class="menu-item">
       <a data-pjax id="menu-tags" class="waves-effect waves-light btn grey darken-2" href="/tags" title="标签">标签</a>
+    </div>
+    <div class="menu-item">
+      <a data-pjax class="waves-effect waves-light btn grey darken-2" href="/friends" title="友链">友链</a>
     </div>
     <div class="menu-item">
       <a data-pjax class="waves-effect waves-light btn grey darken-2" href="/about" title="关于">关于</a>
@@ -75,7 +78,7 @@
             <label for="search">Search</label>
           </div>
           <div class="tag-cloud col s12">
-            <a href="/tags/C/" style="font-size: 30px;">C#</a> <a href="/tags/Eclipse/" style="font-size: 12px;">Eclipse</a> <a href="/tags/GitHub/" style="font-size: 12px;">GitHub</a> <a href="/tags/HTML/" style="font-size: 30px;">HTML</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Javascript/" style="font-size: 30px;">Javascript</a> <a href="/tags/Json/" style="font-size: 12px;">Json</a> <a href="/tags/VB/" style="font-size: 30px;">VB</a> <a href="/tags/blog/" style="font-size: 30px;">blog</a> <a href="/tags/pelican/" style="font-size: 12px;">pelican</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/主题/" style="font-size: 12px;">主题</a> <a href="/tags/模拟登录/" style="font-size: 12px;">模拟登录</a> <a href="/tags/消息轰炸/" style="font-size: 12px;">消息轰炸</a> <a href="/tags/隐藏/" style="font-size: 12px;">隐藏</a>
+            <a href="/tags/C/" style="font-size: 30px;">C#</a> <a href="/tags/CTF/" style="font-size: 12px;">CTF</a> <a href="/tags/Eclipse/" style="font-size: 12px;">Eclipse</a> <a href="/tags/GitHub/" style="font-size: 12px;">GitHub</a> <a href="/tags/HTML/" style="font-size: 21px;">HTML</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/Javascript/" style="font-size: 21px;">Javascript</a> <a href="/tags/Json/" style="font-size: 12px;">Json</a> <a href="/tags/VB/" style="font-size: 21px;">VB</a> <a href="/tags/WinForm/" style="font-size: 12px;">WinForm</a> <a href="/tags/blog/" style="font-size: 21px;">blog</a> <a href="/tags/pelican/" style="font-size: 12px;">pelican</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/主题/" style="font-size: 12px;">主题</a> <a href="/tags/国际化/" style="font-size: 12px;">国际化</a> <a href="/tags/模拟登录/" style="font-size: 12px;">模拟登录</a> <a href="/tags/消息轰炸/" style="font-size: 12px;">消息轰炸</a> <a href="/tags/解谜/" style="font-size: 12px;">解谜</a> <a href="/tags/隐藏/" style="font-size: 12px;">隐藏</a>
           </div>
         </div>
       </div>
@@ -116,6 +119,7 @@
       <dt><kbd>←</kbd></dt> <dd>前往上一页或上一篇文章</dd>
       <dt><kbd>g</kbd>&nbsp;<kbd>g</kbd></dt> <dd>前往页面顶部</dd>
       <dt><kbd>G</kbd></dt> <dd>前往页面底部</dd>
+      <dt><kbd>s</kbd></dt> <dd>地址栏的鲨鱼</dd>
     </dl>
   </div>
   <div class="modal-footer">
@@ -152,13 +156,13 @@
   
     <script src="/js/materialize.min.js"></script>
   
-    <script src="/js/block.min.js"></script>
-  
     <script src="//cdn.bootcss.com/mousetrap/1.6.1/mousetrap.min.js"></script>
   
     <script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   
     <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    <script src="/js/block.min.js"></script>
   
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>壹亩地</title>
+  <title>辉鸭蛋の壹亩地</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://huiyadanli.github.io/"/>
-  <updated>2017-01-25T08:32:26.772Z</updated>
+  <updated>2018-06-02T02:27:46.000Z</updated>
   <id>http://huiyadanli.github.io/</id>
   
   <author>
@@ -14,6 +14,139 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nazo.moe 解谜小游戏攻略</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/nazo-ctf/"/>
+    <id>http://huiyadanli.github.io/代码/nazo-ctf/</id>
+    <published>2018-05-23T12:42:00.000Z</published>
+    <updated>2018-06-02T02:27:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>据说是类似 CTF 题的东东，一不小心玩了很多关，觉着挺有趣的，顺便把攻略写写下来。地址：<a href="https://nazo.moe/" target="_blank" rel="external">https://nazo.moe/</a><br><a id="more"></a></p>
+<h2 id="题1-欢迎"><a href="#题1-欢迎" class="headerlink" title="题1 欢迎"></a>题1 欢迎</h2><p>用到的工具：一双明亮的眼睛<br>答案就写在页面上，颜色很淡。。。实在看不清就看源码好了。。。</p>
+<p></p><p style="color:#FFFFFF">key: welcome</p><p></p>
+<h2 id="题2-F12"><a href="#题2-F12" class="headerlink" title="题2 F12"></a>题2 F12</h2><p>用到的工具：F12<br>F12 看 console</p>
+<p></p><p style="color:#FFFFFF">key: c0nso1e</p>
+<h2 id="题3-Git"><a href="#题3-Git" class="headerlink" title="题3 Git"></a>题3 Git</h2><p>用到的工具：Git Bash<br>页面上只有一张 git 的 logo，下载下来扩展名改成 zip 试试，发现是个本地的 git 仓库。<br>解压出来是一个空白文件名的文件和一个 .git 的文件夹，文件里面是空白的字符，翻了下 .git 文件夹中的内容，发现有两个分支（master 与 owo）。</p>
+<p>在 Git Bash 中输入 <code>git branch</code> 确认下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git branch</div><div class="line">* master</div><div class="line">  owo</div></pre></td></tr></table></figure></p>
+<p>果然有两个分支，切换到 owo 分支试试（分支名这么萌真的好么www）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout owo</div><div class="line">Switched to branch &apos;owo&apos;</div></pre></td></tr></table></figure></p>
+<p>然后再看看那个空白文件名的文件的内容。。。</p>
+<p></p><p style="color:#FFFFFF">key: g1tbr@nch</p>
+<h2 id="题4-Redirect"><a href="#题4-Redirect" class="headerlink" title="题4 Redirect"></a>题4 Redirect</h2><p>用到的工具：Fiddler<br>跳转的页面抓包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Server: openresty/1.13.6.1</div><div class="line">Date: Tue, 15 May 2018 13:20:59 GMT</div><div class="line">Content-Type: text/html</div><div class="line">Content-Length: 82</div><div class="line">Connection: keep-alive</div><div class="line">Last-Modified: Sat, 12 May 2018 05:03:07 GMT</div><div class="line">ETag: &quot;52-56bfb2b17e0f0-gzip&quot;</div><div class="line">Accept-Ranges: bytes</div><div class="line">Vary: Accept-Encoding</div><div class="line">X-Cache: MISS from hkg1.hk.smartgslb.com</div><div class="line">Via: 1.1 hkg1.hk.smartgslb.com (squid/3.4.9)</div><div class="line"></div><div class="line">&lt;script&gt;window.location.href = &quot;https://satori.moe&quot;&lt;/script&gt;&lt;!--key: pK4fJ4Z73D--&gt;</div></pre></td></tr></table></figure></p>
+<p></p><p style="color:#FFFFFF">key: pK4fJ4Z73D</p>
+<h2 id="题5-Simple-Authorize"><a href="#题5-Simple-Authorize" class="headerlink" title="题5 Simple Authorize"></a>题5 Simple Authorize</h2><p>用到的工具：Fiddler、F12<br>打开页面提示 403 Forbidden，权限不够。Fiddler 看到请求 Cookie 有个 <code>is_admin=0</code>，Chrome 调出开发者工具 Application 标签下把 Cookie 改成 <code>is_admin=1</code>，再刷新页面就能看到 Key 了。当然用 Fiddler 直接重新发包也可以。</p>
+<p></p><p style="color:#FFFFFF">key: c00kie_1s_n0t_5ecure</p>
+<h2 id="题6-Bypass-GFW"><a href="#题6-Bypass-GFW" class="headerlink" title="题6 Bypass GFW"></a>题6 Bypass GFW</h2><p>用到的工具：Telegram、任意翻墙工具<br>这题简单。。翻着墙点开连接直达 Telegram 就可以了。。。</p>
+<p></p><p style="color:#FFFFFF">key: a3o44HGNB6</p>
+<h2 id="题7-TXT-Record"><a href="#题7-TXT-Record" class="headerlink" title="题7 TXT Record"></a>题7 TXT Record</h2><p>用到的工具：CMD 或者 Shell<br>查询当前域名的 TXT Record 即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nslookup -qt=txt nazo.moe</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; nslookup -qt=txt nazo.moe</div><div class="line">服务器:  public1.alidns.com</div><div class="line">Address:  223.5.5.5</div><div class="line"></div><div class="line">非权威应答:</div><div class="line">nazo.moe        text =</div><div class="line"></div><div class="line">        &quot;a2V5OiBITDZtcTdyODJWCg==&quot;</div></pre></td></tr></table></figure>
+<p>一看就是 Base64，解密得：</p>
+<p></p><p style="color:#FFFFFF">key: HL6mq7r82V</p>
+<h2 id="题8-ASCII-Art"><a href="#题8-ASCII-Art" class="headerlink" title="题8 ASCII Art"></a>题8 ASCII Art</h2><p>用到的工具：任意文本编辑器<br>把 <code>#</code> 替换为 <code>换行</code>，<code>1</code> 替换为 <code>11</code>，就是个字符画了。<br><img src="https://i.loli.net/2018/05/14/5af9877cecb56.png" alt=""></p>
+<p></p><p style="color:#FFFFFF">key: 7YL38</p>
+<h2 id="题9-Familiar-Sound"><a href="#题9-Familiar-Sound" class="headerlink" title="题9 Familiar Sound"></a>题9 Familiar Sound</h2><p>用到的工具：Adobe Audition<br>听音频是拨号的声音，当时就想到某学生通过拨号声音找出360周鸿祎手机号的事了。搜了相关资料以后找到了声音频率对应号码的表，然后 Au 导入音频，Alt + z 打开频率分析窗口，看每次拨号音频的低频和高频的所对应数字。。。<br><img src="/images/article/nazo-crf-9-1.png" alt="AU分析"></p>
+<p>结果是：89#57#65#105#122#55（真是个体力活）<br>然后输入居然不对，在看了一眼应该是 ASCII 编码的，以 <code>#</code> 作为间隔。解码得到：</p>
+<p></p><p style="color:#FFFFFF">key: Y9Aiz7<br><img src="/images/article/nazo-crf-9-2.png" alt="对应表"></p>
+<h2 id="题10-条件判断"><a href="#题10-条件判断" class="headerlink" title="题10 条件判断"></a>题10 条件判断</h2><p>用到的工具：百度<br>PHP 不熟悉，研究了半天没找到 id 到底该等于多少，遂百度之。<br>访问 <code>https://nazo.moe/assets/nazo/key.php?id[]=1</code> 即可。</p>
+<p></p><p style="color:#FFFFFF">key: 3hmrt6P</p>
+<h2 id="题11-Where-is-Key"><a href="#题11-Where-is-Key" class="headerlink" title="题11 Where is Key?"></a>题11 Where is Key?</h2><p>用到的工具：Fiddler<br>点击链接，看了眼 Response。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Server: openresty/1.13.6.1</div><div class="line">Date: Tue, 15 May 2018 05:39:08 GMT</div><div class="line">Content-Type: text/html</div><div class="line">Connection: keep-alive</div><div class="line">PoweredBy: Hostker App Service</div><div class="line">Key: An8mtE9q47</div><div class="line">CpuTime: 0</div><div class="line">Vary: Accept-Encoding</div><div class="line">X-Cache: MISS from hkg4.hk.smartgslb.com</div><div class="line">Via: 1.1 hkg4.hk.smartgslb.com (squid/3.4.9)</div><div class="line">Content-Length: 15</div><div class="line"></div><div class="line">Key is Not Here</div></pre></td></tr></table></figure></p>
+<p></p><p style="color:#FFFFFF">key: An8mtE9q47</p>
+<h2 id="题12-Private-Repository"><a href="#题12-Private-Repository" class="headerlink" title="题12 Private Repository"></a>题12 Private Repository</h2><p>用到的工具：Git Bash<br>提示是个带密码的私钥，不知道要不要解密，我反正在[<a href="http://tool.chacuo.net/cryptrsapassclear" target="_blank" rel="external">http://tool.chacuo.net/cryptrsapassclear</a>]<br>(<a href="http://tool.chacuo.net/cryptrsapassclear)解密了私钥。" target="_blank" rel="external">http://tool.chacuo.net/cryptrsapassclear)解密了私钥。</a><br>然后 ssh-add 了这个私钥，接着就可以 <code>git clone git@github.com:komeiji-satori/nazo.git</code> 。<br>里面文件保存着 Key。</p>
+<p></p><p style="color:#FFFFFF">key: f463X4njxk</p>
+<h2 id="题13-Swap-File"><a href="#题13-Swap-File" class="headerlink" title="题13 Swap File"></a>题13 Swap File</h2><p>用到的工具：任意16进制编辑器<br>linux 文本的交换文件，原以为要去 linux 下构造一下。。结果习惯性的用 EmEditor 看了一眼就看到 Key 了<br><img src="/images/article/nazo-crf-13.png" alt=""></p>
+<p></p><p style="color:#FFFFFF">key: 38ayyke64Z</p>
+<h2 id="题14-Encryped-Video"><a href="#题14-Encryped-Video" class="headerlink" title="题14 Encryped Video"></a>题14 Encryped Video</h2><p>用到的工具：FFmpeg<br>修改 frame.m3u8 加上一行 <code>#EXT-X-KEY:METHOD=AES-128,URI=&quot;http://127.0.0.1:8000/key.m3u8&quot;,IV=0x00000000000000000000000000000001</code><br>由于 FFmpeg 的某种白名单机制我把 key 改名成 key.m3u8，并在本地建立简单的 http 服务器用于访问这个 key。即<code>http://127.0.0.1:8000/key.m3u8</code>。<br>然后用 FFmpeg 合并输出 mp4 即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg.exe -protocol_whitelist &quot;crypto,file,http,https,tcp,tls&quot; -i frame.m3u8 -c copy frame.mp4</div></pre></td></tr></table></figure></p>
+<p>打开 mp4：<br><img src="/images/article/nazo-crf-14.png" alt=""></p>
+<p></p><p style="color:#FFFFFF">key: uoy99gCm32</p>
+<h2 id="题15-Pixel"><a href="#题15-Pixel" class="headerlink" title="题15 Pixel"></a>题15 Pixel</h2><p>用到的工具：任意编程语言<br>看了 json 数据内容配合标题，肯定又是像素画。处理 json 最好用的当人是 js 啦，直接在浏览器里执行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> json = &#123;...&#125;</div><div class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; json.h; i++) &#123;</div><div class="line">    <span class="keyword">var</span> line = <span class="string">""</span>;</div><div class="line">    <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt; json.w; j++) &#123;</div><div class="line">        line += json.pixel[i][j];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.write(line + <span class="string">"\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/images/article/nazo-crf-15-1.png" alt=""><br>看上去是个二维码，查找替换，处理一下。<br><img src="/images/article/nazo-crf-15-2.png" alt=""><br>PS 二值化，然后扫一扫~<br><img src="/images/article/nazo-crf-15-3.png" alt=""></p>
+<p></p><p style="color:#FFFFFF">key: 2k28a7yE</p>
+<h2 id="题16-Element"><a href="#题16-Element" class="headerlink" title="题16 Element"></a>题16 Element</h2><p>用到的工具：F12<br>看标题是和网页元素相关联的东西，但是和以前关卡的网页对比，毫无区别呐。。<br>最后发现 app.css 里面的 .nazo-hint 样式里面的背景图有问题。。。下载下来用文本文档打开即可。。。<br>这个样式在前几关就注意到了，然后在这一关下意识忽略了。。。</p>
+<p></p><p style="color:#FFFFFF">key: 24xKwQ32</p>
+<h2 id="题17-Script"><a href="#题17-Script" class="headerlink" title="题17 Script"></a>题17 Script</h2><p>用到的工具：F12<br>上一题是元素，这一题是脚本，看源码和提示，直接断点执行 js 就能看到答案了。</p>
+<p><img src="/images/article/nazo-crf-17.png" alt=""></p>
+<p></p><p style="color:#FFFFFF">key: 26JN6zY6</p>
+<h2 id="题18-Weak-Type"><a href="#题18-Weak-Type" class="headerlink" title="题18 Weak Type"></a>题18 Weak Type</h2><p>用到的工具：任意发送请求工具<br>php 的题，百度之，得知 <code>0==&quot;admin&quot;</code> 这种形式可以绕过 key 的判断。<br>发送 POST 请求 <code>message={&quot;key&quot;:0}</code> 就能得到 key 了 </p>
+<p></p><p style="color:#FFFFFF">key: Y8k736Py</p>
+<h2 id="题19-Doki-Doki-Literature-Club"><a href="#题19-Doki-Doki-Literature-Club" class="headerlink" title="题19 Doki Doki Literature Club!"></a>题19 Doki Doki Literature Club!</h2><p>链接点进去就能看到 key 了。。</p>
+<p></p><p style="color:#FFFFFF">key: just^monika&amp;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;据说是类似 CTF 题的东东，一不小心玩了很多关，觉着挺有趣的，顺便把攻略写写下来。地址：&lt;a href=&quot;https://nazo.moe/&quot;&gt;https://nazo.moe/&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="CTF" scheme="http://huiyadanli.github.io/tags/CTF/"/>
+    
+      <category term="解谜" scheme="http://huiyadanli.github.io/tags/%E8%A7%A3%E8%B0%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C# WinForm 国际化/本地化/多语化的方法与各种坑</title>
+    <link href="http://huiyadanli.github.io/%E4%BB%A3%E7%A0%81/i18n-in-csharp-winform/"/>
+    <id>http://huiyadanli.github.io/代码/i18n-in-csharp-winform/</id>
+    <published>2018-04-13T13:20:00.000Z</published>
+    <updated>2018-04-13T14:56:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>巨硬提供了完整的 WinForm 国际化方案，操作起来也比较简单（坑也比较多），本文主要记录一下国际化中会遇到的一些问题。<br><a id="more"></a></p>
+<h2 id="基本的国际化方案"><a href="#基本的国际化方案" class="headerlink" title="基本的国际化方案"></a>基本的国际化方案</h2><p>基本的国际化/本地化操作我就不再赘述了，主要涉及以下3点：</p>
+<ul>
+<li>窗体文本、图片等内容的国际化（窗体文本）</li>
+<li>内部提示文本、时间等区域化内容的国际化（代码文本）</li>
+<li>语言的动态切换（不退出程序动态切换语言）</li>
+</ul>
+<p>可供参考的文章：</p>
+<ul>
+<li><a href="https://github.com/Luke31/i18n-cs/wiki/C-Sharp" target="_blank" rel="external">i18n-cs</a></li>
+<li><a href="http://www.jytek.com/csharpwinformbdh" target="_blank" rel="external">C# Winform本地化</a></li>
+</ul>
+<h2 id="坑1：图片资源文件的重复使用"><a href="#坑1：图片资源文件的重复使用" class="headerlink" title="坑1：图片资源文件的重复使用"></a>坑1：图片资源文件的重复使用</h2><p>一个含有图标的窗体，VS在新建新的语言的资源文件（.resx）的时候会把图标也给复制一份放在里面，然后导致最后编译出来的资源 dll 体积很大。<br>个人的解决方案是：</p>
+<p>不在属性窗口配置 Icon 。图标扔到一个资源文件里统一管理，然后直接修改窗体设计文件源码 FormMain.Designer.cs ，加上一行：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.Icon = global::PasteEx.Properties.Resources.ico;</div></pre></td></tr></table></figure>
+<p>删除其他语言资源文件中的 Icon 节点。直接编辑源码，VS是用对应的资源管理器打开的，不好修改。图片内容是 base64 编码的，一下就能找到</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">data</span> <span class="attr">name</span>=<span class="string">"$this.Icon"</span> <span class="attr">type</span>=<span class="string">"System.Drawing.Icon, System.Drawing"</span> <span class="attr">mimetype</span>=<span class="string">"application/x-microsoft.net.object.bytearray.base64"</span>&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">data</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>具体可以参考我的这个提交 <a href="https://github.com/huiyadanli/PasteEx/commit/e2f5f940612966a30b63bb6e10793c280227992a" target="_blank" rel="external">e2f5f94</a></p>
+<h2 id="坑2：无法修改语言-dll-的生成路径"><a href="#坑2：无法修改语言-dll-的生成路径" class="headerlink" title="坑2：无法修改语言 dll 的生成路径"></a>坑2：无法修改语言 dll 的生成路径</h2><p>这是很多使用过 WinForm 国际化方案的人都会说坑爹的地方，网上有很多相关讨论。</p>
+<p>国际化后编译生成出来的程序目录下会出现和语言区域同名文件夹，内有相关的资源 dll 。</p>
+<p>数量一多强迫症简直不能忍啊，如图：</p>
+<p><img src="/images/article/steam-asf-muti-lang.png" alt="Steam 挂卡软件的多语目录"></p>
+<p>stackoverflow 搜索一阵以后发现的几个比较靠谱的方案。</p>
+<p>参考：<a href="https://stackoverflow.com/questions/1952638/single-assembly-multi-language-windows-forms-deployment-ilmerge-and-satellite-a" target="_blank" rel="external">Single-assembly multi-language Windows Forms deployment (ILMerge and satellite assemblies / localization) - possible?</a></p>
+<ol>
+<li>使用 ILMerge 或者 ILRepack 把 dll 直接嵌入到主程序 exe 中。两个我都试过，直接合并，反编译看到的内部路径是错误的，exe 无法找到相关的资源 dll 。</li>
+<li>使用 AppDomain.CurrentDomain.AssemblyResolve 方法，在找不到 dll 的时候重新指定 dll 位置进行加载。相关解决方案 <a href="https://github.com/Fody/Costura" target="_blank" rel="external">Costura</a> 。</li>
+<li>重写 System.ComponentModel.ComponentResourceManager ，随心所欲的修改生成和加载 dll 的位置与方式，但是方法过于复杂，不推荐。</li>
+<li>放弃嵌入到 exe 中，修改 dll 的存放目录，然后增加程序集的解析目录。参考：<a href="https://blog.csdn.net/skysword2/article/details/52604770" target="_blank" rel="external">如何控制 C# 引用 DLL 的位置</a></li>
+</ol>
+<p>我最后无奈的使用了方法 4 ，在 App.config 添加如下内容，然后把那些多语言资源文件夹全扔到了 Language 文件夹下。好歹是清爽了点。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">runtime</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">assemblyBinding</span> <span class="attr">xmlns</span>=<span class="string">"urn:schemas-microsoft-com:asm.v1"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">probing</span> <span class="attr">privatePath</span>=<span class="string">"Language"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">assemblyBinding</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">runtime</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>然而又发现如果程序运行的当前目录下 *.exe.config 不存在的话，这个配置不起效。（我 Release 新版本的时候都是删除这个文件的）</p>
+<p>只好采用了一个过时方法来增加程序集的解析目录，在窗体载入前加上这行代码就可以了（Program.cs）</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span> disable 0618</span></div><div class="line">AppDomain.CurrentDomain.AppendPrivatePath(<span class="string">"Language"</span>);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;巨硬提供了完整的 WinForm 国际化方案，操作起来也比较简单（坑也比较多），本文主要记录一下国际化中会遇到的一些问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
+    
+      <category term="WinForm" scheme="http://huiyadanli.github.io/tags/WinForm/"/>
+    
+      <category term="国际化" scheme="http://huiyadanli.github.io/tags/%E5%9B%BD%E9%99%85%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>恶俗古风生成器 web 版</title>
@@ -231,13 +364,13 @@
       <category term="代码" scheme="http://huiyadanli.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
     
     
-      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
-    
-      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
-    
       <category term="C#" scheme="http://huiyadanli.github.io/tags/C/"/>
     
       <category term="Json" scheme="http://huiyadanli.github.io/tags/Json/"/>
+    
+      <category term="Javascript" scheme="http://huiyadanli.github.io/tags/Javascript/"/>
+    
+      <category term="HTML" scheme="http://huiyadanli.github.io/tags/HTML/"/>
     
   </entry>
   

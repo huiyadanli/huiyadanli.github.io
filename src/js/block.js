@@ -9,7 +9,7 @@
  * --------------------------------------------------
  */
 var BlockConfig = {
-  SITE_URLS : ["localhost", "127.0.0.1", "huiyadanli.github.io", "huiyadanli.coding.me"],
+  SITE_URLS : ["localhost", "127.0.0.1", "huiyadanli.github.io", "huiyadanli.coding.me", "www.huiyadan.com"],
 
   BANNER_START_NUM : 1,
   BANNER_END_NUM : 22
@@ -24,6 +24,18 @@ var heartClickCounter = 0;
 
 var live2DHelper;
 
+// Valine Comment
+// var valineOption = {
+//   el:'.comment',
+//   app_id:'T3BE7EKhbYY2AUTh1oGjiWYv-gzGzoHsz',
+//   app_key:'XDgghIHlt0vSINLIn0pRIQnr',
+//   placeholder:'ヾﾉ≧∀≦) 提交评论前请先按F5刷新当前页面…',
+//   region:'cn',
+//   path:window.location.pathname,
+//   avatar:'mm',
+//   pageSize:10
+// };
+// var valine;
 /**
  * --------------------------------------------------
  *                 page initializes 
@@ -40,6 +52,7 @@ $(function(){
   initHeaderImage();
   initContentImage();
   initModal();
+  //initComment();
 
   // something fun
   initLive2D();
@@ -307,6 +320,14 @@ function initContentImage() {
   $(".card-content img").materialbox();
 }
 
+// function initComment() {
+//   if(valine == null) {
+//     valine = new Valine(valineOption);
+//   } else {
+//     valine.init(valineOption);
+//   }
+// }
+
 function initModal() {
   $('.modal-trigger').leanModal({
     starting_top: '10%',
@@ -348,6 +369,7 @@ function initPjax() {
       initHeaderImage();
       initContentImage();
       initModal();
+      //initComment();
     },
     'pjax:popstate': function () {
 
