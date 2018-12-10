@@ -1,0 +1,203 @@
+<!-- 
+Source : http://static.demo.ruyo.net/html/vedio-api.html
+Author : huiyadanli
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>国内视频网站在线解析接口</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://cdn.bootcss.com/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
+  <style type="text/css">
+    /**
+    * herat beat animation
+    */
+    @-webkit-keyframes heartb {
+        0% {
+            -webkit-transform:scale(1)
+        }
+        50% {
+            -webkit-transform:scale(.8)
+        }
+        to {
+            -webkit-transform:scale(1)
+        }
+    }
+    @keyframes heartb {
+        0% {
+            -webkit-transform:scale(1);
+            transform:scale(1)
+        }
+        50% {
+            -webkit-transform:scale(.8);
+            transform:scale(.8)
+        }
+        to {
+            -webkit-transform:scale(1);
+            transform:scale(1)
+        }
+    }
+    .heart-beat {
+        font-size: 13px;
+        color: #E94F06;
+        -webkit-animation:heartb 1.33s ease-in-out infinite;
+        animation:heartb 1.33s ease-in-out infinite
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="margin-top: 20px">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter" style="text-align: center">
+        <h4 class="title is-4">
+          国内视频网站在线解析接口
+        </h4>
+        <div class="content">
+          <span class="icon has-text-info">
+            <i class="fas fa-info-circle"></i>
+          </span>
+          支持国内绝大多数视频网站，部分接口可能会临时失效, API数据来源：<a href="https://51.ruyo.net/3127.html">如有乐享</a>
+          <br/>
+          <span class="icon has-text-danger">
+            <i class="fas fa-ban"></i>
+          </span>
+          请不要下载播放页面提供的任何播放软件，包括 Flash ！
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <!-- 播放啦 -->
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="field has-addons">
+          <p class="control">
+            <span class="select">
+              <select id='sel-api'></select>
+            </span>
+          </p>
+          <p class="control is-expanded">
+            <input class="input" type="text" id="url" placeholder="http://">
+          </p>
+          <p class="control">
+            <a class="button" onclick="play();">点击播放</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 啦啦啦 -->
+    <div class="columns" style="margin-top: 40px">
+      <div class="column is-half is-offset-one-quarter" style="text-align: center">
+        <div class="content">
+          Made with 
+            <i class="fas fa-heart heart-beat"></i>
+          by <a href="https://www.huiyadan.com/">huiyadanli</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+<script>
+  var data = [
+    { name:"通用解析1", url:"https://jx.hezeshi.net/ce/jlexi.php?url=" },
+    { name:"通用解析2", url:"http://api.hellosex.cc/jlexi.php?url=" },
+    { name:"通用解析3", url:"https://api.pangujiexi.com/player.php?url=" },
+    { name:"通用解析4", url:"http://at520.cn/jx/?url=" },
+    { name:"通用解析5", url:"http://player.jidiaose.com/supapi/iframe.php?v=" },
+    { name:"通用解析6", url:"https://jx.okokjx.com/okok/?url=" },
+    { name:"通用解析7", url:"http://api.jykkk.com/?url=" },
+    { name:"通用解析8", url:"https://jx.km58.top/jx/?url=" },
+    { name:"通用解析9", url:"http://jx.fantee.net/fantee/?url=" },
+    { name:"通用解析10", url:"http://api.51ckm.com/Box.php?url=" },
+    { name:"通用解析11", url:"http://www.1717yun.com/jx/ty.php?url=" },
+    { name:"通用解析12", url:"https://www.3aym.cn/?url=" },
+    { name:"通用解析13", url:"http://beaacc.com/api.php?url=" },
+    { name:"通用解析14", url:"http://api.zuilingxian.com/jiexi.php?url=" },
+    { name:"通用解析15", url:"http://jx.2tv.org/?url=" },
+    { name:"通用解析16", url:"http://cdn.yangju.vip/k/?url=" },
+    { name:"通用解析17", url:"http://api.bbbbbb.me/ipsign/player.php?v=" },
+    { name:"通用解析18", url:"http://17kyun.com/api.php?url=" },
+    { name:"通用解析19", url:"http://www.fantee.net/fantee/?url=" },
+    { name:"通用解析20", url:"http://jx.71ki.com/index.php?url=" },
+    { name:"通用解析21", url:"http://000o.cc/jx/ty.php?url=" },
+    { name:"通用解析22", url:"http://yun.mt2t.com/yun?url=" },
+    { name:"通用解析23", url:"http://yyygwz.com/index.php?url=" },
+    { name:"通用解析24", url:"http://www.97zxkan.com/jiexi/97zxkanapi.php?url=" },
+    { name:"通用解析25", url:"http://www.wmxz.wang/video.php?url=" },
+    { name:"优酷解析1", url:"http://api.baiyug.cn/vip/index.php?url=" },
+  ];
+
+  window.onload = function() {
+    for (var i in data) {
+      var opt = document.createElement ("option");
+      opt.value = data[i].url;
+      opt.innerText = data[i].name;
+      document.getElementById('sel-api').appendChild (opt);
+    }
+    verify();
+  }
+
+  function generateUrl() {
+    var url = document.getElementById("url").value;
+    if(url.indexOf('http') == -1) {	
+      alert('视频地址不正确！');
+      return null;
+    }
+    var api = document.getElementById("sel-api").value;
+    return api + url;
+  }
+  
+  function play() {
+    var url = generateUrl();
+    if(url != null) {
+      window.open(url);
+    }
+  }
+
+  // 验证 url 是否能访问
+  function verify() {
+    for (let o of data) {
+      testUrl(o.url).then(function (result) {
+          console.log('成功：' + result);
+      }).catch(function () {
+          console.log('失败：' + o.name);
+          signSelectOption(o.name);
+      });
+    }
+  }
+
+  // 标记不能访问的 url
+  function signSelectOption(name) {
+    var items = document.getElementById("sel-api").options;
+    for (let o of items) {
+      if(name == o.innerHTML) {
+        o.innerHTML = o.innerHTML + "(X)"
+        o.style.color = "red";
+      }
+    }
+  }
+
+  // 判断链接是否能访问
+  function testUrl(url){
+    return new Promise(function (resolve, reject) {
+        var dom= document.createElement('link');
+        dom.href = url;
+        dom.rel = 'stylesheet';
+        document.head.appendChild(dom);
+        dom.onload = function () {
+          document.head.removeChild(dom);
+          resolve(url);
+        }
+        dom.onerror = reject;
+    });
+  }
+</script>
+
+</html>
