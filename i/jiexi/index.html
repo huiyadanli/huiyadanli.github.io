@@ -84,7 +84,7 @@ Author : huiyadanli
             <input class="input" type="text" id="url" placeholder="http://">
           </p>
           <p class="control">
-            <a class="button" onclick="play();">点击播放</a>
+            <a id="btn-play" class="button" onclick="play();">点击播放</a>
           </p>
         </div>
       </div>
@@ -136,12 +136,20 @@ Author : huiyadanli
 
   window.onload = function() {
     for (var i in data) {
-      var opt = document.createElement ("option");
+      var opt = document.createElement("option");
       opt.value = data[i].url;
       opt.innerText = data[i].name;
       document.getElementById('sel-api').appendChild (opt);
     }
     //verify();
+  }
+
+  // 回车播放
+  document.onkeydown = function(event){
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if(e && e.keyCode==13) {
+      document.getElementById('btn-play').click();
+    }
   }
 
   function generateUrl() {
