@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<title>Red Heart</title>
+	<title>huiyadanli & coconot !</title>
 	<style>
 		html, body {
 			height: 100%;
@@ -483,9 +483,9 @@
 		}
 		
 		window.addEventListener("mousedown", function(e) {
-			if (pressed == false) clearInterval(timeOut);
+			// if (pressed == false) clearInterval(timeOut);
 		
-			pressed = true;
+			// pressed = true;
 			pushBalls(randBetween(10, 20), e.clientX, e.clientY);
 		
 			document.body.classList.add("is-pressed");
@@ -511,9 +511,9 @@
 		}, false);
 		
 		// Keep it going
-		let timeOut = setInterval(function() {
-		  pushBalls(randBetween(10, 20), origin.x + randBetween(-50,50), origin.y + randBetween(-50,50));
-		}, 200);
+		// let timeOut = setInterval(function() {
+		//   pushBalls(randBetween(10, 20), origin.x + randBetween(-50,50), origin.y + randBetween(-50,50));
+		// }, 200);
 		
 		// Pointer stuff
 		const pointer = document.createElement("span");
