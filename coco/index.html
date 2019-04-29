@@ -41,7 +41,7 @@
                 <li class="done"><del>一起看电影</del></li>
                 <li class=><p>一起熬夜玩游戏</p></li>
                 <li class="">随叫随到</li>
-                <li class=><p>一起发呆</p></li>
+                <li class="done"><del>一起发呆</del></li>
                 <li class="">一起坐摩天轮</li>
                 <li class="done"><p><del>每天说晚安</del></p></li>
                 <li class="">一起进鬼屋</li>
@@ -147,8 +147,36 @@
         <p>本站使用 Github Pages 强力驱动 <a class="top" href="#">返回</a><br>[&nbsp;倒计时:<a href="#" target="blank">纪念日</a>&nbsp;模板:<a href="https://www.xujianhua.com/18.html" target="blank">Love</a>&nbsp;]<a class="top" href="#">顶部</a></p>
     </div>
 </div>
+<script src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
 <script>
 console.log("不要看啦，这里啥都没有");
+fun();
+function fun() {
+    $("html").click(function(e) {
+      var n=16;
+      //var $i=$("<b></b>").text("+"+n);
+      var $i=$("<b></b>").text("亲密度+1");
+      var x=e.pageX,y=e.pageY;
+      $i.css({
+          "z-index":9999,
+          "top":y-20,
+          "left":x,
+          "position":"absolute",
+          "color":"#E94F06",
+          "font-size":n,
+          "-moz-user-select": "none",
+          "-webkit-user-select": "none",
+          "-ms-user-select": "none"
+      });
+      $("body").append($i);
+      $i.animate(
+          {"top":y-180,"opacity":0},
+          1500,
+          function(){$i.remove();}
+      );
+      //e.stopPropagation();
+    });
+}
 </script>
 
 </body>

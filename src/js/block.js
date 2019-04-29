@@ -666,7 +666,7 @@ function fun() {
   console.log("%c(。﹏。) 不要这么看人家，人家害羞\nCopyright © 2013-2017 Made with ♥ by huiyadanli","text-shadow: -2px 0 rgba(0, 255, 255, .5), 2px 0 rgba(255, 0, 0, .5)");
   console.log("------------------------------------------------\n");
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // what the fuking Valentine's Day
+  // what the fucking Valentine's Day
   // enable it at 14th every month!
   if(today.getDate() == 14) {
     $("html").click(function(e) {
