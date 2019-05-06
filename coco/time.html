@@ -348,8 +348,9 @@
 	</div>
 
 	<script type="text/javascript">
+		// 准确时间是 2019.01.27 22:30 左右，27日算作第一天，所以从26号开始计算
 		var together = new Date();
-		together.setFullYear(2019, 0, 27);
+		together.setFullYear(2019, 0, 26);
 		together.setHours(20);
 		var current = new Date();
 		var seconds = (current.getTime() - together.getTime()) / 1000;
